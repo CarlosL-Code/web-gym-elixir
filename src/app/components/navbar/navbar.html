@@ -1,10 +1,10 @@
 <!-- Top Navbar -->
 <nav [class]="'fixed top-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300 ' + (isScrolled ? 'py-2 bg-black/95' : 'py-4 bg-background/80')">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-full">
-    <div class="flex items-center gap-sm">
-      <img alt="Elixir Gym Logo" class="h-10 w-10 object-contain rounded-full border border-primary-container/30" src="/logo.png">
-      <span class="font-display-lg-mobile text-2xl font-black italic text-primary-container tracking-tighter uppercase">ELIXIR</span>
-    </div>
+    <!-- Logo -->
+    <a href="#home" class="flex items-center group">
+      <img alt="Elixir Gym Logo" class="h-24 w-auto object-contain group-hover:scale-105 transition-transform duration-300 transform translate-y-2" src="/logo.png">
+    </a>
     
     <!-- Desktop Links -->
     <div class="hidden lg:flex items-center gap-lg">
@@ -72,7 +72,7 @@
        [ngClass]="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
     
     <div class="flex justify-between items-center p-6 border-b border-white/5">
-      <span class="font-display-lg-mobile text-xl font-black italic text-primary-container tracking-tighter uppercase">ELIXIR</span>
+      <img alt="Elixir Gym Logo" class="h-16 w-auto object-contain" src="/logo.png">
       <button (click)="closeMobileMenu()" class="text-on-surface-variant hover:text-white bg-transparent border-none">
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
