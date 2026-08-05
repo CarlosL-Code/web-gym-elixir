@@ -1,0 +1,23 @@
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="classes">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div class="max-w-xl">
+        <h2 class="font-headline-xl text-3xl md:text-5xl text-on-surface uppercase italic font-black mb-4">SERVICIOS ELIXIR</h2>
+        <p class="text-on-surface-variant leading-relaxed">Infraestructura de primer nivel diseñada para maximizar cada minuto de tu entrenamiento.</p>
+      </div>
+      <div class="flex flex-wrap gap-3 bg-white/5 p-2 rounded-lg">
+        <div class="bg-primary-container text-white px-6 py-2 font-label-bold text-[10px] uppercase tracking-widest">LUN-VIE: 06:30 - 22:00</div>
+        <div class="bg-surface-container-high text-on-surface px-6 py-2 font-label-bold text-[10px] uppercase tracking-widest border border-white/5">SÁB: 09:00 - 16:00</div>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div *ngFor="let gymClass of classes" class="group bg-surface p-10 border border-white/5 bento-card relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary-container/10 transition-colors"></div>
+        <span class="material-symbols-outlined text-primary-container text-5xl mb-8 group-hover:scale-110 transition-transform duration-500">{{ gymClass.icon }}</span>
+        <h3 class="font-headline-md text-xl text-on-surface mb-4 uppercase tracking-wider">{{ gymClass.name }}</h3>
+        <p class="font-body-md text-sm text-on-surface-variant/80 leading-relaxed">{{ gymClass.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,105 @@
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="testimonials">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">LO QUE DICEN <br class="md:hidden"><span class="text-gradient">NUESTROS SOCIOS</span></h2>
+      <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Comunidad Elixir Gym</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let t of testimonials" class="bg-surface-container-low border border-white/5 p-8 rounded-xl relative hover:-translate-y-2 transition-transform duration-300">
+        <div class="absolute -top-5 -left-2 text-primary-container/20">
+          <span class="material-symbols-outlined text-6xl">format_quote</span>
+        </div>
+        
+        <div class="flex gap-1 mb-6 relative z-10">
+          <span *ngFor="let star of stars" class="material-symbols-outlined text-yellow-400 text-sm" [class.opacity-30]="star > t.rating">star</span>
+        </div>
+        
+        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed mb-8 relative z-10">
+          "{{ t.comment }}"
+        </p>
+        
+        <div class="flex items-center gap-4 border-t border-white/5 pt-6 mt-auto">
+          <img [src]="t.avatar" [alt]="t.name" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container">
+          <div>
+            <h4 class="font-label-bold text-sm text-on-surface uppercase">{{ t.name }}</h4>
+            <p class="font-caption text-[10px] text-primary-container uppercase tracking-widest mt-1">{{ t.timeClient }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+      <a href="javascript:void(0)" (click)="openReviewModal($event)" class="bg-transparent border border-white/20 text-white font-label-bold text-xs uppercase px-12 py-4 rounded-none tracking-[0.2em] backdrop-blur-sm hover:bg-white hover:text-black transition-all inline-block text-center w-full sm:w-auto">
+        DEJAR UNA RESEÑA
+      </a>
+      <a href="https://wa.me/56991832903" target="_blank" class="bg-primary-container text-white font-label-bold text-xs uppercase px-12 py-4 rounded-none tracking-[0.2em] hover:bg-white hover:text-black transition-all inline-block text-center w-full sm:w-auto">
+        QUIERO COMENZAR
+      </a>
+    </div>
+  </div>
+
+  <!-- Review Modal -->
+  <div *ngIf="isReviewModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" (click)="closeReviewModal()"></div>
+    <div class="bg-surface-container-high border border-white/10 p-6 md:p-8 rounded-xl relative z-10 w-full max-w-md shadow-2xl flex flex-col items-center">
+      <button (click)="closeReviewModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      
+      <h3 class="font-headline-md text-2xl text-on-surface uppercase italic font-black mb-2 text-center">TÚ OPINIÓN <span class="text-gradient">IMPORTA</span></h3>
+      <p class="text-on-surface-variant text-sm mb-8 text-center">Inicia sesión para dejar tu reseña oficial.</p>
+
+      <!-- Step 1: Login -->
+      <div *ngIf="!googleUser" class="flex flex-col items-center w-full">
+        <div id="google-btn-container" class="mb-4 flex justify-center w-full h-[40px]"></div>
+        
+        <div class="w-full border-t border-white/10 my-4 relative">
+          <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-high px-2 text-xs text-on-surface-variant">O para probar</span>
+        </div>
+        <button (click)="simulateGoogleLogin()" class="text-xs text-primary-container hover:text-white underline">Simular inicio de sesión (Dev)</button>
+      </div>
+
+      <!-- Step 2: Review Form -->
+      <div *ngIf="googleUser" class="w-full flex flex-col items-center animate-fade-in">
+        <!-- Profile Info -->
+        <div class="flex items-center gap-3 mb-6 bg-surface-container-low p-3 rounded-full border border-white/5 pr-6 self-start w-full">
+          <img [src]="googleUser.picture" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-primary-container">
+          <div class="text-left">
+            <div class="text-[10px] text-on-surface-variant uppercase tracking-widest">Publicando como</div>
+            <div class="font-label-bold text-sm text-white">{{ googleUser.name }}</div>
+          </div>
+        </div>
+
+        <!-- Stars -->
+        <div class="flex gap-2 mb-6">
+          <button *ngFor="let star of stars" 
+                  (mouseenter)="setHoverStar(star)" 
+                  (mouseleave)="setHoverStar(0)"
+                  (click)="setStar(star)"
+                  class="transition-transform hover:scale-110 focus:outline-none bg-transparent border-none">
+            <span class="material-symbols-outlined text-4xl"
+                  [style.fontVariationSettings]="(hoveredStar >= star || selectedStar >= star) ? '\'FILL\' 1' : '\'FILL\' 0'"
+                  [ngClass]="(hoveredStar >= star || selectedStar >= star) ? 'text-yellow-400' : 'text-on-surface-variant'">
+              star
+            </span>
+          </button>
+        </div>
+
+        <!-- Text Area -->
+        <textarea [(ngModel)]="reviewText" 
+                  placeholder="Escribe tu experiencia aquí..." 
+                  class="w-full bg-surface-container-low border border-white/10 rounded-lg p-4 text-white text-sm min-h-[120px] focus:outline-none focus:border-primary-container transition-colors mb-6 resize-none"></textarea>
+        
+        <!-- Submit Button -->
+        <button (click)="sendReview()" 
+                [disabled]="selectedStar === 0 || !reviewText.trim()"
+                [ngClass]="{'opacity-50 cursor-not-allowed': selectedStar === 0 || !reviewText.trim()}"
+                class="w-full py-4 bg-primary-container text-white font-label-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all btn-premium">
+          ENVIAR RESEÑA
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</section>

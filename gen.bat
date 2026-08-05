@@ -1,0 +1,15 @@
+call npx ng g c components/navbar --skip-tests
+call npx ng g c components/hero --skip-tests
+call npx ng g c components/benefits --skip-tests
+call npx ng g c components/plans --skip-tests
+call npx ng g c components/classes --skip-tests
+call npx ng g c components/trainers --skip-tests
+call npx ng g c components/gallery --skip-tests
+call npx ng g c components/stats --skip-tests
+call npx ng g c components/testimonials --skip-tests
+call npx ng g c components/faq --skip-tests
+call npx ng g c components/contact --skip-tests
+call npx ng g c components/location --skip-tests
+call npx ng g c components/final-cta --skip-tests
+call npx ng g c components/footer --skip-tests
+call npx ng g c components/whatsapp-button --skip-tests

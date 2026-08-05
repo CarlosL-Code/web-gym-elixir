@@ -1,0 +1,545 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ELIXIR GYM | Entrenamiento Premium en Temuco</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "surface-bright": "#393939",
+                    "on-primary": "#5f1500",
+                    "on-secondary": "#2f3131",
+                    "primary-container": "#ff5722",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-tertiary": "#303030",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error": "#690005",
+                    "surface": "#131313",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-background": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "outline-variant": "#5b4039",
+                    "secondary-container": "#454747",
+                    "primary": "#ffb5a0",
+                    "background": "#131313",
+                    "secondary": "#c6c6c7",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary-fixed-variant": "#862200",
+                    "surface-dim": "#131313",
+                    "tertiary": "#c8c6c5",
+                    "inverse-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed": "#ffdbd1",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-tint": "#ffb5a0",
+                    "surface-container-high": "#2a2a2a",
+                    "outline": "#ab8980",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary-fixed": "#3b0900",
+                    "on-surface": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#541200",
+                    "inverse-primary": "#b02f00",
+                    "on-tertiary-container": "#2a2a2a",
+                    "surface-container-highest": "#353534",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "on-surface-variant": "#e4beb4",
+                    "surface-variant": "#353534",
+                    "secondary-fixed": "#e2e2e2",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#e4e2e1",
+                    "tertiary-container": "#929090",
+                    "mint-accent": "#2de5bb",
+                    "electric-blue": "#00d4ff",
+                    "vibrant-pink": "#ff3b8f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "gutter": "20px",
+                    "margin-mobile": "16px",
+                    "lg": "48px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-xl-mobile": ["Montserrat"],
+                    "caption": ["Inter"],
+                    "headline-xl": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131313; color: #e5e2e1; overflow-x: hidden; }
+        .hero-gradient { background: linear-gradient(to bottom, rgba(19, 19, 19, 0.2) 0%, rgba(19, 19, 19, 1) 100%); }
+        .bento-card { transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+        .bento-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px -20px rgba(255, 87, 34, 0.3); }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .premium-border { border: 1px solid rgba(255, 255, 255, 0.1); }
+        .premium-border:hover { border-color: rgba(255, 87, 34, 0.5); }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #353534; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff5722; }
+        .text-gradient { background: linear-gradient(135deg, #ffb5a0 0%, #ff5722 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .instagram-style-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        @media (max-width: 640px) { .instagram-style-grid { grid-template-columns: repeat(2, 1fr); } }
+        .btn-premium { position: relative; overflow: hidden; transition: all 0.4s ease; }
+        .btn-premium::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
+        .btn-premium:hover::after { left: 100%; }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 glass-nav border-b border-white/5 transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-full">
+<div class="flex items-center gap-sm">
+<img alt="Elixir Gym Logo" class="h-10 w-10 object-contain rounded-full border border-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK6WZn-o_MJslRbXENQ_CWpLe3S5a6rOL_aeGCD4wbj6f8CxjLH8moVu7Bniyq74NBakQ2soinbQzAPgh17-8GBavTWoG_Cad_zJZl6V8SfGY8iVUAWWIbOe6Y9sBEQ48ZheNg3qiIP4Zrm6bhLRtfVpZNv-PXh-Y-qlY-mi2a8r8xLA29_mn_Uw_Jq-oMq9_sBG7wre-DFmjazT6MayfDB0H9Zp_5Nk2nWudNXA_x9Cr5a2wlsuM5JQ">
+<span class="font-display-lg-mobile text-2xl font-black italic text-primary-container tracking-tighter uppercase">ELIXIR</span>
+</div>
+<div class="hidden lg:flex items-center gap-lg">
+<a class="font-label-bold text-xs uppercase tracking-[0.2em] text-primary transition-all duration-300" href="#home">Inicio</a>
+<a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#about">Nosotros</a>
+<a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#services">Servicios</a>
+<a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#classes">Horarios</a>
+<a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#plans">Planes</a>
+<a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#contact">Contacto</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="hidden md:block bg-primary-container text-white font-label-bold text-xs uppercase tracking-widest px-8 py-3 rounded-none btn-premium shadow-lg shadow-primary-container/20">
+                PRUEBA GRATIS
+            </button>
+<button class="lg:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen flex items-center justify-center overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/50 z-10 hero-gradient"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[10s] hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdsi9yvlosUv6BiDUrXtyYiJRFGwcTnmnz7Tr0lbQJUb59pneoAlcdz1smeE896hWxCAg_-W7H7CYi6cB_c0pfQDI0kaukVFYO1_dLVMLN1vIQnn8vjpvJdVeoDhzKHkjfneFl02tVrBxygG-aUhB92bqg7v5_fcYw4cJtkO5z9UvuGLfV-W_qBmOTLSeLEtXaOhTQA-zTmKLLY_pi3OUOpUxr_RGw6jPOHEvxEb9ILv3WT34ICqB8Uw');"></div>
+</div>
+<div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-5xl">
+<div class="inline-flex items-center gap-2 mb-md py-2 px-4 bg-white/5 backdrop-blur-md border border-white/10 text-primary-container font-label-bold text-[10px] uppercase tracking-[0.3em] rounded-full">
+<span class="material-symbols-outlined text-sm">location_on</span>
+            MONTT #1027 (3ER PISO) • TEMUCO
+        </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-tight md:leading-[1.1] uppercase">
+            REDEFINE TUS <br class="hidden md:block"><span class="text-gradient italic">LÍMITES</span> EN ELIXIR
+        </h1>
+<p class="font-body-lg text-body-lg text-tertiary/80 mb-lg max-w-2xl mx-auto leading-relaxed">
+            Experimenta el alto rendimiento en el corazón de Temuco. Un espacio diseñado para atletas reales que buscan resultados excepcionales.
+        </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center mb-xl">
+<a class="bg-primary-container text-white font-label-bold text-xs uppercase px-12 py-5 rounded-none tracking-[0.2em] btn-premium shadow-2xl shadow-primary-container/30 inline-block text-center" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20clase%20de%20prueba%20en%20Elixir%20Gym." target="_blank">COMENZAR AHORA</a>
+<button class="border border-white/20 text-white font-label-bold text-xs uppercase px-12 py-5 rounded-none tracking-[0.2em] backdrop-blur-sm hover:bg-white hover:text-black transition-all">
+                VER PLANES
+            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 border-t border-white/5 pt-12 gap-12 gap-16">
+<div class="space-y-1">
+<div class="text-2xl font-black text-on-surface">LUN-VIE</div>
+<div class="text-[10px] tracking-[0.3em] text-primary-container font-bold uppercase">06:30 - 22:00 HRS</div>
+</div>
+<div class="space-y-1">
+<div class="text-2xl font-black text-on-surface">SÁBADO</div>
+<div class="text-[10px] tracking-[0.3em] text-primary-container font-bold uppercase">09:00 - 16:00 HRS</div>
+</div>
+<div class="space-y-1">
+  <div class="flex items-center justify-center md:justify-start gap-2 text-2xl font-black text-on-surface">
+    <svg class="w-6 h-6 text-[#25D366]" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+    </svg>
+    WHATSAPP
+  </div>
+  <div class="text-[10px] tracking-[0.3em] text-primary-container font-bold uppercase">+56 9 9183 2903</div>
+</div>
+</div>
+</div>
+</header>
+<!-- About Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="about">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<div class="inline-block py-2 px-4 bg-primary-container/5 border-l-2 border-primary-container">
+<span class="font-label-bold text-xs uppercase tracking-[0.2em] text-primary-container">Nuestra Filosofía</span>
+</div>
+<h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase leading-tight italic font-black">EL ESPÍRITU <br> ELIXIR GYM</h2>
+<p class="font-body-lg text-lg text-on-surface-variant leading-relaxed">
+                Ubicados en Manuel Montt #1027, Elixir es más que un gimnasio; es un santuario del esfuerzo. Hemos creado un entorno auténtico donde el alto rendimiento y la comunidad se encuentran para transformar vidas.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+<div class="flex gap-4 group">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-full group-hover:bg-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-label-bold text-sm text-on-surface uppercase tracking-wider">Alto Nivel</h4>
+<p class="font-caption text-on-surface-variant/70 mt-1">Equipamiento de última generación y ambiente profesional.</p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-full group-hover:bg-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white">center_focus_strong</span>
+</div>
+<div>
+<h4 class="font-label-bold text-sm text-on-surface uppercase tracking-wider">Ubicación Clave</h4>
+<p class="font-caption text-on-surface-variant/70 mt-1">Pleno centro de Temuco, accesible y conveniente.</p>
+</div>
+</div>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center gap-3 text-primary-container hover:text-white transition-all group" href="https://instagram.com/elixirgymtemuco" target="_blank">
+<span class="font-label-bold text-xs uppercase tracking-[0.2em]">SÍGUENOS EN INSTAGRAM</span>
+<span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<div class="relative group">
+<div class="instagram-style-grid rounded-xl overflow-hidden p-2 bg-surface-container-low border border-white/5 shadow-2xl">
+<img alt="Interior Gimnasio" class="aspect-square object-cover rounded hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfo47ZHQdEkx1FFvSGQ6MBvgmHlXAMyTviAcO203O2zYZFqW6UfChTMJ349ojA-414ATfnusxR2KsV7ab7mJZXuhfvDonWsiD-nh6SIFPoauzfCR8U9lXTSweyJ3fTQBYle4n2g-BVo1xUvVwS5IKoUswCIWjn8mdBX6Nlcpcf7wIDGtzwq4a4nkFcThv7ml8rP6v-VkqEB033JpJToYAtVr0Y5oT_LBGlLZ7iP2pwhRzrnHfns0a6JBFZFsa6F3XzSmc">
+<img alt="Entrenamiento" class="aspect-square object-cover rounded hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7KIkRjI8LeWMrOCA4OIJeVZ72dy5viCLSu1GhHybnjxeQwTAPbOSRbD5Fpa8tUZk5Hc81seFWsRnvbyHFBLwmK2eDTEkETLfhggKLndhKc_qrrLOx6pqTNPVqHqx75CcGKzJPLRV4Z6SkToWMzJ0fSBUHuLcYW0mneM7M_rqQ5pq20YBFVo0qnkBRlVlm64JP60OgBMb8xYt1HKMPWKAarcZ0folaA1AzFvOW64slDVm9hTY2ldnxwg30cVC3QZWg3-U">
+<img alt="Boxeo" class="aspect-square object-cover rounded hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3yl2zgWs8OaiN1Rc05DqAQtoBoFVpweKbiH2E5aOtWDMuWamNFUhrQarZjQSacbae-n4S-rFa8jx-YYqALArqkIHtJ9slaqF3Ibs3yAZkKB5fs2cG6EjJd7CgEr-zRpfLQS4D8ofKKl4bcP4OhYeClXnMNvIiMs_ZeSb7ia-jCw6WW_tTl3IxHY4ZD6Qcd6f43MpZwCLIi2jvW7-MfkefWTvyVar4g_M8woBISJVGoRJ20Tgu-LdkZsbYMwb5tp-epJ4">
+<img alt="Máquinas" class="aspect-square object-cover rounded hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU7BLjFmHcizoOkO4zEdKEm-go8bacJdFpOEfSb0alI-xGfOaP8Fw8J7zxVowA_zUgJOODI12O24qNgxZs7-wGMBLZYlZgkIE6WLG2mRJqQoBa5g1tRGu3WDvGOA9pFWZCO42JyyNgzSXofaUW38oxhlM9SBr_O8n2CzI9amKWbcX5jUo0x2eKEUSRc0CebcxFyPmNu6rVHALKgfpGPixbYJuxXEcnPAd6btV9bPXmYU5FwMM_SYaAkeAzfNEkeS2q9qQ">
+<img alt="Cinta" class="aspect-square object-cover rounded hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9UK20Ju385Lw0k7RUsNG6q-X0bafq4vQWMQPvGLHkhdxN0eqMJX7y0kbgaKi-zDeUlW7GHO3RYg_bqnsSql4sCKmKdWENGdY3wpf7lPoFQygXsM5kBfonAH1_MXLtv5XSJcYJXkAURf-6K-01RnwBapUlKCIM44uMBDBTT-H01r-MSIyEWXJeYmoGcpUFYlkAPDqqsd91L5a4HYF_wJHf4WUsFJ1PDAN8n1f9QXXmUVC4bJxfadx8gg">
+<img alt="Personalizado" class="aspect-square object-cover rounded hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPen41oUVq4rnQWk2lk1UGiNRTWHDYl082WDnfXltp6DYmqt_A4Eq34VEJ4_cCsSOlbgQBG4KO_3v0w7rmWIAKzl37bRgycxvzvOkPhDWFh8VSJ9MpvcPVt1avhJwRQQr8-7kMLcqEUWLmREbbzOwbNZocvky4zEchXCY6nUEo4mbb1fxtOD-R-5tPnRo8AOmJTb1APk4vqVRAATlMH5Dt6EC5a3QWfaMpyeufUF-IZSRQuNhUayKNPcjuolS-MQcqm-c">
+</div>
+<div class="absolute -bottom-8 -left-8 bg-primary-container text-white px-8 py-6 shadow-2xl hidden lg:block z-10">
+<div class="text-[10px] tracking-[0.4em] font-black opacity-80 uppercase mb-1">VIVE LA EXPERIENCIA</div>
+<div class="text-2xl font-black italic uppercase">3er PISO • MONTT</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services/Schedule Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="services">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-xl text-3xl md:text-5xl text-on-surface uppercase italic font-black mb-4">SERVICIOS ELIXIR</h2>
+<p class="text-on-surface-variant leading-relaxed">Infraestructura de primer nivel diseñada para maximizar cada minuto de tu entrenamiento.</p>
+</div>
+<div class="flex flex-wrap gap-3 bg-white/5 p-2 rounded-lg">
+<div class="bg-primary-container text-white px-6 py-2 font-label-bold text-[10px] uppercase tracking-widest">LUN-VIE: 06:30 - 22:00</div>
+<div class="bg-surface-container-high text-on-surface px-6 py-2 font-label-bold text-[10px] uppercase tracking-widest border border-white/5">SÁB: 09:00 - 16:00</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group bg-surface p-10 border border-white/5 bento-card relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary-container/10 transition-colors"></div>
+<span class="material-symbols-outlined text-primary-container text-5xl mb-8 group-hover:scale-110 transition-transform duration-500">fitness_center</span>
+<h3 class="font-headline-md text-xl text-on-surface mb-4 uppercase tracking-wider">Musculación</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 leading-relaxed">Sala de máquinas completa con marcas líderes para hipertrofia y fuerza.</p>
+</div>
+<div class="group bg-surface p-10 border border-white/5 bento-card relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary-container/10 transition-colors"></div>
+<span class="material-symbols-outlined text-primary-container text-5xl mb-8 group-hover:scale-110 transition-transform duration-500">speed</span>
+<h3 class="font-headline-md text-xl text-on-surface mb-4 uppercase tracking-wider">HIIT &amp; Cardio</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 leading-relaxed">Zona cardiovascular y espacios para entrenamiento funcional de alta intensidad.</p>
+</div>
+<div class="group bg-surface p-10 border border-white/5 bento-card relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary-container/10 transition-colors"></div>
+<span class="material-symbols-outlined text-primary-container text-5xl mb-8 group-hover:scale-110 transition-transform duration-500">monitoring</span>
+<h3 class="font-headline-md text-xl text-on-surface mb-4 uppercase tracking-wider">Asesoría</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 leading-relaxed">Instructores capacitados para guiar tu técnica y optimizar tus objetivos.</p>
+</div>
+<div class="group bg-surface p-10 border border-white/5 bento-card relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/5 rounded-full -mr-16 -mt-16 group-hover:bg-primary-container/10 transition-colors"></div>
+<span class="material-symbols-outlined text-primary-container text-5xl mb-8 group-hover:scale-110 transition-transform duration-500">sports_mma</span>
+<h3 class="font-headline-md text-xl text-on-surface mb-4 uppercase tracking-wider">Boxeo</h3>
+<p class="font-body-md text-sm text-on-surface-variant/80 leading-relaxed">Espacio dedicado al boxeo recreativo y formativo para todos los niveles.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Plans Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="plans">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">MEMBRESÍAS <span class="text-gradient">EXCLUSIVAS</span></h2>
+<p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Matrícula costo cero en todos los planes</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- New Users Plan -->
+<div class="group bg-surface-container-low border border-white/5 flex flex-col bento-card relative p-1 overflow-hidden">
+<div class="absolute top-4 right-4 bg-primary-container text-white px-3 py-1 text-[8px] font-black uppercase tracking-widest z-10">BEST SELLER</div>
+<div class="h-48 overflow-hidden">
+<img alt="Planes General" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyJwWS6642LGMXoyBIzJLMnRfAeLkAzOffSTmlnAHNUJdugI7jNaDmcm-gJnSNqK_LEAcRbCYUynS-Vq7MM-zk1IE-CPKdejRe7AWxbeKCfrlH9bZWU3yOaobeaIA3hz7-AFfFlzY1Qw42O_Coc4oSifiwdgi6qBxchDObQiQnldL9IPgTBkSlSmLkU1IXWMww63me_xhyjT7qmpUdqo2NxgfkNGwq3x47Oh00NFCdtgANud4vvG8qcU_7q1UUzc1E2SM">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-lg text-on-surface uppercase mb-6 tracking-widest">Plan General</h3>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between items-center bg-white/5 px-4 py-3 border-l-2 border-mint-accent">
+<span class="font-label-bold text-[10px] text-mint-accent tracking-widest uppercase">MENSUAL</span>
+<span class="text-xl font-black text-on-surface">$28.000</span>
+</div>
+<div class="flex justify-between items-center bg-white/5 px-4 py-3 border-l-2 border-yellow-400">
+<span class="font-label-bold text-[10px] text-yellow-400 tracking-widest uppercase">BIMESTRAL</span>
+<span class="text-xl font-black text-on-surface">$50.000</span>
+</div>
+<div class="flex justify-between items-center bg-white/5 px-4 py-3 border-l-2 border-vibrant-pink">
+<span class="font-label-bold text-[10px] text-vibrant-pink tracking-widest uppercase">TRIMESTRAL</span>
+<span class="text-xl font-black text-on-surface">$66.000</span>
+</div>
+</div>
+<a class="w-full py-4 bg-primary-container text-white font-label-bold text-[10px] uppercase tracking-[0.2em] btn-premium mt-auto inline-block text-center" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20de%20%2428.000%20visto%20en%20el%20sitio%20web." target="_blank">SELECCIONAR</a>
+</div>
+</div>
+<!-- Student Plan -->
+<div class="group bg-surface-container-low border border-white/5 flex flex-col bento-card p-1 overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img alt="Universitarios" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPIjqlvXb_hw2h7fKn11F_wzgHYpyxxjRnFC0Ntqa5tdPmAnQpJt8x4e58Kzs-BrGHvRRdxwF6bKmrmZAVdg9ipqwzhQ-ntQ4tpVVfTky3KpuePlNnqe-TTDpQO0Kel6dMFpfluTwLsCFUPfRwMVKWFFbuxsoAsgfabezkF3RcXQHUh2riaHYBDMJ66PxXfXJUcTh9DWSTSNYADAsrsrTnrqnWH20eeCtAdoy4RAop1TX2NCo2isHgVpiGiMjdbbu5eZw">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-lg text-electric-blue uppercase mb-2 tracking-widest">Universitario</h3>
+<p class="text-[10px] text-on-surface-variant mb-6 uppercase tracking-widest">Con Certificado o Pase</p>
+<div class="bg-electric-blue/5 p-6 mb-8 text-center border-y border-electric-blue/20">
+<span class="text-4xl font-black text-on-surface">$22.000</span>
+<p class="text-[10px] text-electric-blue font-bold uppercase tracking-widest mt-2">PAGO MENSUAL</p>
+</div>
+<ul class="space-y-3 mb-8 text-[10px] uppercase tracking-widest text-on-surface-variant/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-lg">check</span> Horario Libre</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-electric-blue text-lg">check</span> Sin Matrícula</li>
+</ul>
+<a class="w-full py-4 border border-electric-blue text-electric-blue font-label-bold text-[10px] uppercase tracking-[0.2em] hover:bg-electric-blue hover:text-black transition-all mt-auto inline-block text-center" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Universitario%20de%20%2422.000%20visto%20en%20el%20sitio%20web." target="_blank">SELECCIONAR</a>
+</div>
+</div>
+<!-- School Plan -->
+<div class="group bg-surface-container-low border border-white/5 flex flex-col bento-card p-1 overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img alt="Escolares" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwymJf6Ig79zo_0SPd8zr2MHsA0ntEIshhUpWGrW45gT4KDbFzlbW2X1hhqdk96LjDsL9r-teE6QcT355tDfN0m51AGuZFC-GPf9p65zAWRBvThXkW3e_jFtZ59Ce_CKsn2zR1BhjzkcoKKRoX7z2qfM4L8-sa-eC1Ig6ByMFwIxxuQoM6cfHDOX5bm-KPOIPm8G3CC9L_Nod523bCrYz76glBoMyi7-7CXYecUEcGLlxsGpf2qo2iPTWYIUQYu3suwt8">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-lg text-mint-accent uppercase mb-2 tracking-widest">Escolares</h3>
+<p class="text-[10px] text-on-surface-variant mb-6 uppercase tracking-widest">14 a 18 años con pase</p>
+<div class="space-y-2 mb-8">
+<div class="bg-mint-accent/5 p-4 text-center border-l-2 border-mint-accent">
+<span class="text-2xl font-black text-on-surface">$20.000</span>
+<p class="text-[9px] text-mint-accent font-bold uppercase tracking-widest mt-1">PLAN LIBRE</p>
+</div>
+<div class="bg-white/5 p-4 text-center border-l-2 border-white/20">
+<span class="text-2xl font-black text-on-surface">$15.000</span>
+<p class="text-[9px] text-on-surface-variant font-bold uppercase tracking-widest mt-1">RESTRINGIDO</p>
+</div>
+</div>
+<a class="w-full py-4 border border-mint-accent text-mint-accent font-label-bold text-[10px] uppercase tracking-[0.2em] hover:bg-mint-accent hover:text-black transition-all mt-auto inline-block text-center" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Escolar%20visto%20en%20el%20sitio%20web." target="_blank">SELECCIONAR</a>
+</div>
+</div>
+<!-- Adulto Mayor Plan -->
+<div class="group bg-surface-container-low border border-white/5 flex flex-col bento-card p-1 overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img alt="Adulto Mayor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFIVOhNqc2sWJ1NTRGvXqq4A7ImbVIjm2ErH5fF6NuQ7kzsg0e3TA0YeXjmIFbORVCYn8xP-UBNLjKYtopFXY1r9ACCIPOhBg7NlKtyV4XhQNfHODiorm1BoVwLy6SHf34eTTOpGOa-R0brQc7PJmhaODdBPVFbbmReygDP2S25UH5mUsqPp9Gvp4JVMKBuV5FOcjRBpetSA0f1dwj7FaGowv2SitbVYzpQuIvT_4_05FVWhLhc_sYTaDb41lX0c7nZU0">
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-md text-lg text-yellow-400 uppercase mb-2 tracking-widest">Adulto Mayor</h3>
+<p class="text-[10px] text-on-surface-variant mb-6 uppercase tracking-widest">Entrenamiento Adaptado</p>
+<div class="bg-yellow-400/5 p-6 mb-8 text-center border-y border-yellow-400/20">
+<span class="text-4xl font-black text-on-surface">$15.000</span>
+<p class="text-[10px] text-yellow-400 font-bold uppercase tracking-widest mt-2">PLAN MENSUAL</p>
+</div>
+<ul class="space-y-3 mb-8 text-[10px] uppercase tracking-widest text-on-surface-variant/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-yellow-400 text-lg">favorite</span> Supervisión Especial</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-yellow-400 text-lg">check</span> Sin Matrícula</li>
+</ul>
+<a class="w-full py-4 border border-yellow-400 text-yellow-400 font-label-bold text-[10px] uppercase tracking-[0.2em] hover:bg-yellow-400 hover:text-black transition-all mt-auto inline-block text-center" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Adulto%20Mayor%20de%20%2415.000%20visto%20en%20el%20sitio%20web." target="_blank">SELECCIONAR</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="contact">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
+<div class="lg:col-span-1 space-y-12">
+<h2 class="font-headline-xl text-3xl md:text-5xl text-on-surface uppercase italic font-black leading-tight">VISÍTANOS EN <br> EL CENTRO</h2>
+<div class="space-y-8">
+<div class="flex gap-6 items-start group">
+<div class="w-10 h-10 flex items-center justify-center border border-primary-container/30 rounded-full group-hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-xl">location_on</span>
+</div>
+<div>
+<h4 class="font-label-bold text-xs text-on-surface uppercase tracking-[0.2em] mb-2">UBICACIÓN</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">MANUEL MONTT #1027, 3ER PISO<br>Temuco, Chile</p>
+</div>
+</div>
+<div class="flex gap-6 items-start group">
+<div class="w-10 h-10 flex items-center justify-center border border-primary-container/30 rounded-full group-hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-primary-container group-hover:text-white text-xl">chat</span>
+</div>
+<div>
+<h4 class="font-label-bold text-xs text-on-surface uppercase tracking-[0.2em] mb-2">CONTACTO DIRECTO</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed"><span class="text-primary-container font-bold">WhatsApp:</span> +56 9 9183 2903<br>@elixirgymtemuco</p>
+</div>
+</div>
+</div>
+<div class="aspect-video w-full grayscale hover:grayscale-0 transition-all duration-700 rounded-xl overflow-hidden border border-white/5 relative">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAu6fVMdSDK9WoiTOxdQ3MO6cDIBmCMWOvwhZrx7VYAnOv9-VkeHp4lvAxkk9BNdN4cAVtDxEzgBeTr_Gb98OwuMZ6Wr-IovsVCL4VqFYDRzbhvI287TWpxBxERTgD5YOK4Xf2zhWk7urHpoh9U5rAGzHiLdgRfyUweZJgvEEKGVpsu0cvxv_lEfLDkecsDkrv-ThFEUzuW68p6GAICZXLYfLfK6JXhWLsXVa2onTuXBQbPW8CnRYI7jw');"></div>
+<div class="absolute inset-0 bg-primary-container/10"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary-container text-white p-4 rounded-full shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-2 bg-surface p-8 md:p-16 border border-white/5 rounded-2xl shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/5 -mr-32 -mt-32 rounded-full blur-3xl"></div>
+<h3 class="font-headline-md text-2xl md:text-3xl text-on-surface mb-8 uppercase italic font-bold">SOLICITA TU DÍA DE PRUEBA</h3>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary-container">Nombre Completo</label>
+<input class="w-full bg-surface-container-high border-none p-5 text-on-surface focus:ring-1 focus:ring-primary-container outline-none transition-all placeholder:text-on-surface-variant/30 text-sm" placeholder="Juan Pérez" type="text">
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary-container">WhatsApp</label>
+<input class="w-full bg-surface-container-high border-none p-5 text-on-surface focus:ring-1 focus:ring-primary-container outline-none transition-all placeholder:text-on-surface-variant/30 text-sm" placeholder="+56 9 ..." type="tel">
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary-container">Interés</label>
+<select class="w-full bg-surface-container-high border-none p-5 text-on-surface focus:ring-1 focus:ring-primary-container outline-none transition-all text-sm appearance-none cursor-pointer">
+<option value="prueba">Día de Prueba Gratis</option>
+<option value="general">Plan General</option>
+<option value="universitario">Estudiante Universitario</option>
+<option value="escolar">Plan Escolar</option>
+<option value="adulto-mayor">Adulto Mayor</option>
+</select>
+</div>
+</div>
+<div class="space-y-6 flex flex-col">
+<div class="space-y-2 flex-grow">
+<label class="text-[10px] font-bold uppercase tracking-widest text-primary-container">Mensaje (Opcional)</label>
+<textarea class="w-full bg-surface-container-high border-none p-5 text-on-surface focus:ring-1 focus:ring-primary-container outline-none transition-all h-full min-h-[200px] placeholder:text-on-surface-variant/30 text-sm" placeholder="Cuéntanos tus objetivos..."></textarea>
+</div>
+<button class="bg-primary-container text-white font-label-bold text-xs uppercase px-12 py-6 w-full btn-premium shadow-xl shadow-primary-container/20 tracking-[0.2em] font-black">ENVIAR CONSULTA</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black border-t border-white/5 py-16">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="Elixir Gym Logo" class="h-12 w-12 object-contain grayscale brightness-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK6WZn-o_MJslRbXENQ_CWpLe3S5a6rOL_aeGCD4wbj6f8CxjLH8moVu7Bniyq74NBakQ2soinbQzAPgh17-8GBavTWoG_Cad_zJZl6V8SfGY8iVUAWWIbOe6Y9sBEQ48ZheNg3qiIP4Zrm6bhLRtfVpZNv-PXh-Y-qlY-mi2a8r8xLA29_mn_Uw_Jq-oMq9_sBG7wre-DFmjazT6MayfDB0H9Zp_5Nk2nWudNXA_x9Cr5a2wlsuM5JQ">
+<span class="text-3xl font-black italic text-primary-container tracking-tighter uppercase">ELIXIR</span>
+</div>
+<p class="text-xs text-on-surface-variant max-w-xs leading-loose tracking-wide">
+                    La mejor infraestructura de Temuco dedicada al alto rendimiento y la superación personal.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-6">
+<div class="space-y-4">
+<h5 class="text-[10px] font-black tracking-[0.4em] text-white uppercase">MENÚ</h5>
+<ul class="space-y-2 text-xs text-on-surface-variant">
+<li class=""><a class="hover:text-primary-container transition-colors" href="#home">Inicio</a></li>
+<li class=""><a class="hover:text-primary-container transition-colors" href="#about">Nosotros</a></li>
+<li class=""><a class="hover:text-primary-container transition-colors" href="#plans">Membresías</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-[10px] font-black tracking-[0.4em] text-white uppercase">LEGAL</h5>
+<ul class="space-y-2 text-xs text-on-surface-variant">
+<li class=""><a class="hover:text-primary-container transition-colors" href="#">Privacidad</a></li>
+<li class=""><a class="hover:text-primary-container transition-colors" href="#">Términos</a></li>
+<li class=""><a class="hover:text-primary-container transition-colors" href="#">Reglamento</a></li>
+</ul>
+</div>
+</div>
+<div class="text-left md:text-right space-y-4">
+<p class="text-[10px] tracking-[0.2em] font-bold text-white uppercase">MONTT #1027, 3ER PISO • TEMUCO</p>
+<p class="text-xs text-on-surface-variant">© 2024 Elixir Gym. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-300 active:scale-95 group" href="https://wa.me/56991832903" target="_blank">
+<svg fill="currentColor" height="32" viewBox="0 0 16 16" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+</svg>
+<span class="absolute right-20 bg-black text-white text-[10px] px-3 py-1 font-bold rounded uppercase tracking-widest pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Hablemos por WhatsApp</span>
+</a>
+<script>
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('py-2', 'bg-black/95');
+            nav.classList.remove('py-4', 'bg-background/80');
+        } else {
+            nav.classList.add('py-4', 'bg-background/80');
+            nav.classList.remove('py-2', 'bg-black/95');
+        }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    const contactForm = document.querySelector('form');
+    if(contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = '¡CONSULTA ENVIADA!';
+            btn.style.backgroundColor = '#2de5bb';
+            btn.style.color = '#000';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+                contactForm.reset();
+            }, 3000);
+        });
+    }
+</script>
+
+
+</body></html>

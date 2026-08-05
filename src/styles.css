@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(to bottom, rgba(19, 19, 19, 0.2) 0%, rgba(19, 19, 19, 1) 100%);
+  }
+  .bento-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .bento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -20px rgba(255, 87, 34, 0.3);
+  }
+  .glass-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .premium-border {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .premium-border:hover {
+    border-color: rgba(255, 87, 34, 0.5);
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0e0e0e; }
+  ::-webkit-scrollbar-thumb { background: #353534; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ff5722; }
+  .text-gradient {
+    background: linear-gradient(135deg, #ffb5a0 0%, #ff5722 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .btn-premium {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .btn-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+  }
+  .btn-premium:hover::after { left: 100%; }
+}
+
+@layer components {
+  .btn-plan-universitario {
+    @apply border-2 border-solid border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-black hover:font-black transition-all;
+  }
+  .btn-plan-escolares {
+    @apply border-2 border-solid border-mint-accent text-mint-accent hover:bg-mint-accent hover:text-black hover:font-black transition-all;
+  }
+  .btn-plan-adulto {
+    @apply border-2 border-solid border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:font-black transition-all;
+  }
+}

@@ -1,0 +1,40 @@
+<nav [class]="'fixed top-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300 ' + (isScrolled ? 'py-2 bg-black/95' : 'py-4 bg-background/80')">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-full">
+    <div class="flex items-center gap-sm">
+      <img alt="Elixir Gym Logo" class="h-10 w-10 object-contain rounded-full border border-primary-container/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK6WZn-o_MJslRbXENQ_CWpLe3S5a6rOL_aeGCD4wbj6f8CxjLH8moVu7Bniyq74NBakQ2soinbQzAPgh17-8GBavTWoG_Cad_zJZl6V8SfGY8iVUAWWIbOe6Y9sBEQ48ZheNg3qiIP4Zrm6bhLRtfVpZNv-PXh-Y-qlY-mi2a8r8xLA29_mn_Uw_Jq-oMq9_sBG7wre-DFmjazT6MayfDB0H9Zp_5Nk2nWudNXA_x9Cr5a2wlsuM5JQ">
+      <span class="font-display-lg-mobile text-2xl font-black italic text-primary-container tracking-tighter uppercase">ELIXIR</span>
+    </div>
+    
+    <div class="hidden lg:flex items-center gap-lg">
+      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#home">Inicio</a>
+      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#about">Nosotros</a>
+      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#classes">Clases</a>
+      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#plans">Planes</a>
+      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#trainers">Entrenadores</a>
+      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#contact">Contacto</a>
+    </div>
+    
+    <div class="flex items-center gap-sm">
+      <a href="https://wa.me/56991832903?text=Hola,%20quisiera%20solicitar%20mi%20prueba%20gratis" target="_blank" class="hidden md:inline-block bg-primary-container text-white font-label-bold text-xs uppercase tracking-widest px-8 py-3 rounded-none btn-premium shadow-lg shadow-primary-container/20">
+        PRUEBA GRATIS
+      </a>
+      <button (click)="toggleMobileMenu()" class="lg:hidden text-on-surface p-2 focus:outline-none">
+        <span class="material-symbols-outlined">{{ isMobileMenuOpen ? 'close' : 'menu' }}</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div *ngIf="isMobileMenuOpen" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-md pt-24 px-8 lg:hidden flex flex-col gap-6 items-center">
+  <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#home">Inicio</a>
+  <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#about">Nosotros</a>
+  <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#classes">Clases</a>
+  <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#plans">Planes</a>
+  <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#trainers">Entrenadores</a>
+  <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#contact">Contacto</a>
+  
+  <a (click)="closeMobileMenu()" href="https://wa.me/56991832903" target="_blank" class="bg-primary-container text-white font-label-bold text-sm uppercase tracking-widest px-10 py-4 mt-8 rounded-none btn-premium shadow-lg shadow-primary-container/20">
+    PRUEBA GRATIS
+  </a>
+</div>

@@ -1,0 +1,34 @@
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="trainers">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">NUESTROS <span class="text-gradient">ENTRENADORES</span></h2>
+      <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Profesionales enfocados en tus resultados</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div *ngFor="let trainer of trainers" class="group bg-surface-container-low border border-white/5 rounded-xl overflow-hidden bento-card relative">
+        <div class="aspect-[3/4] overflow-hidden relative">
+          <img [src]="trainer.image" [alt]="trainer.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <h3 class="font-headline-md text-2xl text-white uppercase italic font-black">{{ trainer.name }}</h3>
+            <p class="text-primary-container font-label-bold text-xs uppercase tracking-widest mb-2">{{ trainer.specialty }}</p>
+            
+            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+              <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">{{ trainer.description }}</p>
+              
+              <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                <span class="text-[10px] text-white/50 uppercase tracking-widest font-bold">Experiencia: <span class="text-white">{{ trainer.experience }}</span></span>
+                
+                <a *ngIf="trainer.socials?.instagram" [href]="trainer.socials?.instagram" target="_blank" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-container transition-colors">
+                  <span class="material-symbols-outlined text-sm text-white">photo_camera</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
