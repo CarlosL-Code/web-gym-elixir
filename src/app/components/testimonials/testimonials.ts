@@ -69,7 +69,7 @@ export class Testimonials implements OnInit {
     
     // NOTA: Para un entorno de producción, reemplaza este ID con tu Client ID real de Google Cloud
     window.google.accounts.id.initialize({
-      client_id: 'TU_CLIENT_ID_AQUI.apps.googleusercontent.com', 
+      client_id: '1038927173267-ciusai9svcoosep45rsqflinpokfao85.apps.googleusercontent.com', 
       callback: this.handleCredentialResponse.bind(this)
     });
     
