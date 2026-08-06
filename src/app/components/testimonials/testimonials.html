@@ -20,7 +20,7 @@
         </p>
         
         <div class="flex items-center gap-4 border-t border-white/5 pt-6 mt-auto">
-          <img [src]="t.avatar" [alt]="t.name" loading="lazy" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container">
+          <img [src]="t.avatar" alt="" loading="lazy" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container">
           <div>
             <h4 class="font-label-bold text-sm text-on-surface uppercase">{{ t.name }}</h4>
             <p class="font-caption text-[10px] text-primary-container uppercase tracking-widest mt-1">{{ t.timeClient }}</p>
@@ -64,7 +64,7 @@
       <div *ngIf="googleUser" class="w-full flex flex-col items-center animate-fade-in">
         <!-- Profile Info -->
         <div class="flex items-center gap-3 mb-6 bg-surface-container-low p-3 rounded-full border border-white/5 pr-6 self-start w-full">
-          <img [src]="googleUser.picture" alt="Avatar Usuario Google" loading="lazy" class="w-10 h-10 rounded-full border-2 border-primary-container">
+          <img [src]="googleUser.picture" alt="" loading="lazy" class="w-10 h-10 rounded-full border-2 border-primary-container">
           <div class="text-left">
             <div class="text-[10px] text-on-surface-variant uppercase tracking-widest">Publicando como</div>
             <div class="font-label-bold text-sm text-white">{{ googleUser.name }}</div>
