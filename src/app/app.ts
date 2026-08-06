@@ -15,13 +15,14 @@ import { Location } from './components/location/location';
 import { FinalCta } from './components/final-cta/final-cta';
 import { Footer } from './components/footer/footer';
 import { WhatsappButton } from './components/whatsapp-button/whatsapp-button';
+import { VideoShowcase } from './components/video-showcase/video-showcase';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    Navbar, Hero, Benefits, Plans, Classes, Trainers, Gallery, Stats, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
+    Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Gallery, Stats, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
