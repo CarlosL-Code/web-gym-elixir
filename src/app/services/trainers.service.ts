@@ -22,10 +22,10 @@ export class TrainersService {
     return [
       {
         id: 'trainer-1',
-        name: 'Carlos Mendoza',
-        specialty: 'Head Coach & Fuerza',
-        description: 'Especialista en levantamiento de potencia y acondicionamiento físico de alto rendimiento.',
-        experience: '+10 años',
+        name: 'Felipe Torres',
+        specialty: 'Preparador Físico',
+        description: 'Profesional certificado con más de 5 años de experiencia, enfocado en potenciar tus habilidades al máximo.',
+        experience: '+5 años',
         image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=400&h=400',
         socials: {
           instagram: '#'
