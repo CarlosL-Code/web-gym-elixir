@@ -1,5 +1,5 @@
-<!-- Top Navbar -->
-<nav [class]="'fixed top-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300 ' + (isScrolled ? 'py-2 bg-black/95' : 'py-4 bg-background/80')">
+<!-- Top Navbar (Desktop Only) -->
+<nav [class]="'hidden lg:block fixed top-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300 ' + (isScrolled ? 'py-2 bg-black/95' : 'py-4 bg-background/80')">
   <div class="flex justify-center md:justify-between items-center px-margin-mobile md:px-margin-desktop max-w-full">
     <!-- Logo -->
     <a href="#home" class="flex items-center group">
