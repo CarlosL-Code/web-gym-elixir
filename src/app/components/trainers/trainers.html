@@ -8,7 +8,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div *ngFor="let trainer of trainers" class="group bg-surface-container-low border border-white/5 rounded-xl overflow-hidden bento-card relative">
         <div class="aspect-[3/4] overflow-hidden relative">
-          <img [src]="trainer.image" [alt]="trainer.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0">
+          <img [src]="trainer.image" [alt]="trainer.name" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0">
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
           
           <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -52,7 +52,7 @@
     <!-- Media (Video or Image) -->
     <div class="w-full aspect-[9/16] max-h-[60vh] bg-black relative flex items-center justify-center overflow-hidden">
       <video *ngIf="selectedTrainer?.videoUrl" [src]="selectedTrainer?.videoUrl" class="w-full h-full object-cover" controls playsinline></video>
-      <img *ngIf="!selectedTrainer?.videoUrl && selectedTrainer?.image" [src]="selectedTrainer?.image" [alt]="selectedTrainer?.name" class="w-full h-full object-cover">
+      <img *ngIf="!selectedTrainer?.videoUrl && selectedTrainer?.image" [src]="selectedTrainer?.image" [alt]="selectedTrainer?.name" loading="lazy" class="w-full h-full object-cover">
     </div>
 
     <!-- Info -->
