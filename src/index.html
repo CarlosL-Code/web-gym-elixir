@@ -29,15 +29,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 </head>
+  <style>
+    /* Global Loader para evitar FOUC */
+    #global-loader {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background-color: #0b0b0b;
+      z-index: 999999;
+      display: flex; justify-content: center; align-items: center;
+      transition: opacity 0.6s ease;
+    }
+    .loader-logo { width: 120px; height: auto; animation: pulse 2s infinite ease-in-out; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.5; } }
+  </style>
+
+  <div id="global-loader">
+    <img src="/logo.png" alt="Cargando Elixir Gym..." class="loader-logo">
+  </div>
+
+  <script>
+    // Remover el loader una vez que todos los estilos e imágenes hayan cargado
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('global-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(function() { loader.style.display = 'none'; }, 600);
+      }
+    });
+  </script>
+
 <body class="font-body-md text-body-md antialiased bg-background text-on-surface">
-  <app-root>
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw; background-color: #0b0b0b;">
-      <style>
-        .loader-logo { width: 100px; height: auto; animation: pulse 2s infinite ease-in-out; }
-        @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.5; } }
-      </style>
-      <img src="/logo.png" alt="Cargando Elixir Gym..." class="loader-logo">
-    </div>
-  </app-root>
+  <app-root></app-root>
 </body>
 </html>
