@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
 import { Benefits } from './components/benefits/benefits';
@@ -21,7 +20,6 @@ import { VideoShowcase } from './components/video-showcase/video-showcase';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Gallery, Stats, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
   ],
   templateUrl: './app.html',
