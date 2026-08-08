@@ -1,32 +1,51 @@
 <!-- Top Navbar (Desktop Only) -->
-<nav [class]="'hidden lg:block fixed top-0 w-full z-50 glass-nav border-b border-white/5 transition-all duration-300 ' + (isScrolled ? 'py-2 bg-black/95' : 'py-4 bg-background/80')">
-  <div class="flex justify-center md:justify-between items-center px-margin-mobile md:px-margin-desktop max-w-full">
+<nav [class]="'hidden lg:block fixed top-0 w-full z-50 transition-all duration-500 border-b ' + (isScrolled ? 'py-3 bg-black/70 backdrop-blur-xl border-white/10 shadow-2xl' : 'py-6 bg-gradient-to-b from-black/90 to-transparent border-transparent')">
+  <div class="flex justify-between items-center px-10 max-w-[1400px] mx-auto">
     <!-- Logo -->
     <a href="#home" class="flex items-center group">
-      <img alt="Logotipo de Elixir Gym" class="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300" src="/logo.png">
+      <img alt="Logotipo de Elixir Gym" class="w-auto object-contain transition-all duration-500" [ngClass]="isScrolled ? 'h-12' : 'h-16'" src="/logo.png">
     </a>
     
     <!-- Desktop Links -->
-    <div class="hidden lg:flex items-center gap-lg">
-      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#home">Inicio</a>
-      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#about">Nosotros</a>
-      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#classes">Clases</a>
-      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#plans">Planes</a>
-      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#trainers">Entrenadores</a>
-      <a class="font-label-bold text-xs uppercase tracking-[0.2em] text-on-surface/70 hover:text-primary transition-all duration-300" href="#contact">Contacto</a>
+    <div class="hidden lg:flex items-center gap-10">
+      <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#home">
+        Inicio
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#about">
+        Nosotros
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#classes">
+        Clases
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#plans">
+        Planes
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#trainers">
+        Entrenadores
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#contact">
+        Contacto
+        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
     </div>
     
     <!-- Desktop CTA -->
-    <div class="hidden lg:flex items-center gap-sm">
-      <a href="https://wa.me/56991832903?text=Hola,%20quisiera%20solicitar%20mi%20prueba%20gratis" target="_blank" class="bg-primary-container text-white font-label-bold text-xs uppercase tracking-widest px-8 py-3 rounded-none btn-premium shadow-lg shadow-primary-container/20">
-        PRUEBA GRATIS
+    <div class="hidden lg:flex items-center">
+      <a href="https://wa.me/56991832903?text=Hola,%20quisiera%20solicitar%20mi%20prueba%20gratis" target="_blank" class="relative overflow-hidden group bg-transparent border border-primary-container text-white font-label-bold text-[11px] uppercase tracking-widest px-8 py-3 transition-all duration-500">
+        <span class="relative z-10 transition-colors duration-300">PRUEBA GRATIS</span>
+        <div class="absolute inset-0 bg-primary-container transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
       </a>
     </div>
   </div>
 </nav>
 
 <!-- Mobile Bottom Navigation -->
-<div class="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-high/90 backdrop-blur-md border-t border-white/10 pb-safe">
+<div class="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-black/90 backdrop-blur-xl border-t border-white/5 pb-safe">
   <div class="flex justify-between items-end px-6 py-2 relative">
     
     <a href="#home" class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-white transition-colors pb-2">
@@ -41,7 +60,7 @@
     
     <!-- Central Floating Action Button -->
     <div class="relative -top-6">
-      <a href="https://wa.me/56991832903" target="_blank" class="flex items-center justify-center w-16 h-16 bg-primary-container rounded-full shadow-lg shadow-primary-container/40 text-white hover:scale-105 transition-transform">
+      <a href="https://wa.me/56991832903" target="_blank" class="flex items-center justify-center w-16 h-16 bg-primary-container rounded-full shadow-[0_0_20px_rgba(255,255,255,0.1)] text-white hover:scale-110 transition-transform duration-300">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
         </svg>
@@ -61,35 +80,57 @@
 </div>
 
 <!-- Off-Canvas Sidebar Menu (Mobile) -->
-<div class="lg:hidden fixed inset-0 z-[60] flex justify-end transition-opacity duration-300"
+<div class="lg:hidden fixed inset-0 z-[60] flex justify-end transition-opacity duration-500"
      [ngClass]="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'">
   
   <!-- Backdrop -->
-  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" (click)="closeMobileMenu()"></div>
+  <div class="absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-500" (click)="closeMobileMenu()"></div>
   
   <!-- Sidebar -->
-  <div class="relative w-[75%] max-w-sm h-full bg-surface-container-high border-l border-white/10 flex flex-col transform transition-transform duration-300"
+  <div class="relative w-[85%] max-w-sm h-full bg-black/95 border-l border-white/5 flex flex-col transform transition-transform duration-500 ease-out"
        [ngClass]="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'">
     
-    <div class="flex justify-between items-center p-6 border-b border-white/5">
-      <img alt="Logotipo de Elixir Gym" class="h-12 w-auto object-contain" src="/logo.png">
-      <button (click)="closeMobileMenu()" class="text-on-surface-variant hover:text-white bg-transparent border-none">
+    <div class="flex justify-between items-center p-8 border-b border-white/5">
+      <img alt="Logotipo de Elixir Gym" class="h-10 w-auto object-contain" src="/logo.png">
+      <button (click)="closeMobileMenu()" class="text-white/50 hover:text-white bg-transparent border-none transition-colors">
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
     </div>
     
-    <div class="flex flex-col px-8 py-6 gap-6 overflow-y-auto h-full">
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#home">Inicio</a>
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#about">Nosotros</a>
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#classes">Clases</a>
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#plans">Planes</a>
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#trainers">Entrenadores</a>
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#gallery">Galería</a>
-      <a (click)="closeMobileMenu()" class="font-display-lg-mobile text-xl uppercase tracking-[0.2em] text-white hover:text-primary transition-all" href="#contact">Contacto</a>
+    <div class="flex flex-col px-10 py-10 gap-8 overflow-y-auto h-full">
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#home">
+        Inicio
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#about">
+        Nosotros
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#classes">
+        Clases
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#plans">
+        Planes
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#trainers">
+        Entrenadores
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#gallery">
+        Galería
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a (click)="closeMobileMenu()" class="relative w-fit group font-display-lg-mobile text-2xl uppercase tracking-[0.2em] text-white/80 hover:text-white transition-colors" href="#contact">
+        Contacto
+        <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
+      </a>
       
       <div class="mt-auto pt-8">
-        <a (click)="closeMobileMenu()" href="https://wa.me/56991832903" target="_blank" class="w-full text-center block bg-primary-container text-white font-label-bold text-xs uppercase tracking-widest px-8 py-4 rounded-none btn-premium shadow-lg shadow-primary-container/20">
-          PRUEBA GRATIS
+        <a (click)="closeMobileMenu()" href="https://wa.me/56991832903" target="_blank" class="relative overflow-hidden group block w-full text-center bg-transparent border border-primary-container text-white font-label-bold text-[11px] uppercase tracking-widest px-8 py-4 transition-all duration-500">
+          <span class="relative z-10">PRUEBA GRATIS</span>
+          <div class="absolute inset-0 bg-primary-container transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
         </a>
       </div>
     </div>
