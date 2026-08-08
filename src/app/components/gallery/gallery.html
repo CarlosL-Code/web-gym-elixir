@@ -5,11 +5,11 @@
       <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Conoce tu próximo lugar de entrenamiento</p>
     </div>
     
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
-      <div *ngFor="let img of images" class="relative group overflow-hidden rounded-xl border border-white/5" [ngClass]="img.span">
-        <img [src]="img.src" [alt]="img.alt" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 saturate-[1.15] contrast-[1.1]">
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div *ngFor="let img of images" class="relative group overflow-hidden rounded-xl border border-white/5 break-inside-avoid">
+        <img [src]="img.src" [alt]="img.alt" loading="lazy" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 saturate-[1.15] contrast-[1.1]">
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span class="text-white font-label-bold text-xs md:text-sm uppercase tracking-widest border border-white/20 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-center">{{ img.alt }}</span>
+          <span class="text-white font-label-bold text-sm uppercase tracking-widest border border-white/20 bg-black/50 backdrop-blur-md px-6 py-2 rounded-full text-center">{{ img.alt }}</span>
         </div>
       </div>
     </div>
