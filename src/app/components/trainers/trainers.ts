@@ -12,6 +12,7 @@ export class Trainers implements OnInit, OnDestroy {
   trainers: Trainer[] = [];
   selectedTrainer: Trainer | null = null;
   isModalOpen = false;
+  hoveredTrainerId: string | null = null;
   
   activeImageIndices: { [id: string]: number } = {};
   private slideInterval: any;
@@ -26,7 +27,7 @@ export class Trainers implements OnInit, OnDestroy {
     this.slideInterval = setInterval(() => {
       let changed = false;
       this.trainers.forEach(t => {
-        if (t.images && t.images.length > 1) {
+        if (t.images && t.images.length > 1 && this.hoveredTrainerId !== t.id) {
           this.activeImageIndices[t.id] = (this.activeImageIndices[t.id] + 1) % t.images.length;
           changed = true;
         }
@@ -34,7 +35,7 @@ export class Trainers implements OnInit, OnDestroy {
       if (changed) {
         this.cdr.detectChanges();
       }
-    }, 3500); // 3.5 segundos por slide
+    }, 6000); // 6 segundos por slide
   }
 
   ngOnDestroy() {
