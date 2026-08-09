@@ -27,7 +27,7 @@ export class TrainersService {
         specialty: 'Preparador Físico',
         description: 'Profesional certificado con más de 5 años de experiencia, enfocado en potenciar tus habilidades al máximo.',
         experience: '+5 años',
-        image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=400&h=400',
+        image: '/perfil-1.jpg',
         videoUrl: '/video-gym.mp4',
         socials: {
           instagram: '#'
@@ -39,7 +39,7 @@ export class TrainersService {
         specialty: 'HIIT & Funcional',
         description: 'Enfocada en mejorar la resistencia cardiovascular y la agilidad mediante entrenamientos dinámicos.',
         experience: '6 años',
-        image: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&q=80&w=400&h=400',
+        image: '/perfil-2.jpg',
         socials: {
           instagram: '#'
         }
@@ -50,7 +50,7 @@ export class TrainersService {
         specialty: 'Boxeo & Artes Marciales',
         description: 'Entrenador certificado en boxeo recreativo y competitivo. Mejora tu técnica y libera estrés.',
         experience: '8 años',
-        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=400&h=400',
+        image: '/perfil-3.jpg',
         socials: {
           instagram: '#'
         }
