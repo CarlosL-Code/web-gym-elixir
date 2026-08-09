@@ -8,7 +8,18 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div *ngFor="let trainer of trainers" class="group bg-surface-container-low border border-white/5 rounded-xl overflow-hidden bento-card relative">
         <div class="aspect-[3/4] overflow-hidden relative">
-          <img [src]="trainer.image" [alt]="trainer.name" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0">
+          <!-- Imagen estática si no hay slider -->
+          <img *ngIf="!trainer.images || trainer.images.length <= 1" [src]="trainer.image" [alt]="trainer.name" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0">
+          
+          <!-- Slider automático -->
+          <ng-container *ngIf="trainer.images && trainer.images.length > 1">
+            <img *ngFor="let img of trainer.images; let i = index" 
+                 [src]="img" 
+                 [alt]="trainer.name" 
+                 loading="lazy" 
+                 class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 filter grayscale group-hover:grayscale-0"
+                 [ngClass]="activeImageIndices[trainer.id] === i ? 'opacity-100 group-hover:scale-105 z-10' : 'opacity-0 scale-100 z-0'">
+          </ng-container>
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
           
           <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
