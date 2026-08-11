@@ -62,19 +62,20 @@ export class TrainersService {
       },
       {
         id: 'trainer-2',
-        name: 'Lorenzo Hernández',
-        specialty: 'Entrenamiento Funcional',
-        shortDescription: 'Especialista en entrenamiento funcional y acondicionamiento físico integral.',
-        fullDescription: 'Especialista en entrenamiento funcional y acondicionamiento físico. Diseña rutinas personalizadas y progresivas para llevar tu rendimiento al siguiente nivel, adaptando cada sesión a tus necesidades, objetivos y nivel físico actual.',
-        experience: '+3 años',
-        image: '/personal/lorenzo-1.jpg',
-        images: ['/personal/lorenzo-1.jpg', '/personal/lorenzo-2.jpg', '/personal/lorenzo-3.jpg'],
+        name: 'Coach Lorenzo',
+        specialty: 'Preparador Físico',
+        shortDescription: 'Coach y Preparador Físico con más de 4 años de experiencia trabajando con personas de diferentes edades y niveles.',
+        fullDescription: 'Soy Coach y Preparador Físico con más de 4 años de experiencia trabajando en distintos gimnasios y con personas de diferentes edades y niveles. Planifico y adapto cada entrenamiento según los objetivos, capacidades y necesidades de cada persona, enfocándome principalmente en fuerza, hipertrofia y rendimiento físico. Mi objetivo es que cada persona entrene con propósito, técnica y progresión, buscando resultados reales y sostenibles.',
+        experience: '+4 años',
+        image: '/personal/Lorenzo/imagen-1.jpeg',
+        images: ['/personal/Lorenzo/imagen-1.jpeg', '/personal/Lorenzo/imagen-2.jpeg', '/personal/Lorenzo/imagen-3.jpeg'],
+        videoUrl: '/personal/Lorenzo/video-1.mp4',
         whatsapp: '56975144096',
         modalities: [
-          'Entrenamiento funcional',
-          'Acondicionamiento físico',
-          'Movilidad y flexibilidad',
-          'Entrenamiento en circuito'
+          'Fuerza',
+          'Hipertrofia',
+          'Rendimiento físico',
+          'Acondicionamiento físico'
         ],
         socials: {
           instagram: '#'
