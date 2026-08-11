@@ -37,22 +37,24 @@ export class TrainersService {
       },
       {
         id: 'trainer-2',
-        name: 'Valentina Rojas',
-        specialty: 'HIIT & Funcional',
-        description: 'Enfocada en mejorar la resistencia cardiovascular y la agilidad mediante entrenamientos dinámicos.',
-        experience: '6 años',
-        image: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&q=80&w=400&h=400',
+        name: 'Lorenzo Hernández',
+        specialty: 'Entrenamiento Funcional',
+        description: 'Especialista en entrenamiento funcional y acondicionamiento físico. Diseña rutinas personalizadas para llevar tu rendimiento al siguiente nivel.',
+        experience: '+3 años',
+        image: '/personal/lorenzo-1.jpg',
+        images: ['/personal/lorenzo-1.jpg', '/personal/lorenzo-2.jpg', '/personal/lorenzo-3.jpg'],
         socials: {
           instagram: '#'
         }
       },
       {
         id: 'trainer-3',
-        name: 'Andrés Silva',
-        specialty: 'Boxeo & Artes Marciales',
-        description: 'Entrenador certificado en boxeo recreativo y competitivo. Mejora tu técnica y libera estrés.',
-        experience: '8 años',
-        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=400&h=400',
+        name: 'Exabiel Cartas',
+        specialty: 'Musculación & Fuerza',
+        description: 'Experto en hipertrofia y entrenamiento de fuerza. Te guía con técnica impecable para maximizar tus resultados de forma segura.',
+        experience: '+4 años',
+        image: '/personal/exabiel-1.jpg',
+        images: ['/personal/exabiel-1.jpg', '/personal/exabiel-2.jpg'],
         socials: {
           instagram: '#'
         }
