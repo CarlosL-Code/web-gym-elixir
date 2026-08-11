@@ -146,8 +146,8 @@
         <!-- Video -->
         <div *ngIf="selectedTrainer?.videoUrl" class="flex flex-col gap-2">
           <h4 class="text-[9px] text-on-surface-variant uppercase tracking-[0.3em] font-bold px-1">Video</h4>
-          <div class="rounded-xl overflow-hidden border border-white/10 w-full aspect-video">
-            <video [src]="selectedTrainer?.videoUrl" class="w-full h-full object-cover" controls playsinline preload="metadata"></video>
+          <div class="rounded-xl overflow-hidden border border-white/10 w-full bg-black flex justify-center">
+            <video [src]="selectedTrainer?.videoUrl" class="w-full h-auto max-h-[500px] object-contain" controls playsinline preload="metadata"></video>
           </div>
         </div>
 
