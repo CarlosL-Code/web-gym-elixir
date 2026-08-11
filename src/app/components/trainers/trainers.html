@@ -1,41 +1,62 @@
 <section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="trainers">
   <div class="max-w-7xl mx-auto">
+
+    <!-- Heading -->
     <div class="text-center mb-16">
       <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">NUESTROS <span class="text-gradient">ENTRENADORES</span></h2>
       <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Profesionales enfocados en tus resultados</p>
     </div>
-    
+
+    <!-- Grid de tarjetas — altura fija uniforme para todos -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div *ngFor="let trainer of trainers" class="group bg-surface-container-low border border-white/5 rounded-xl overflow-hidden bento-card relative" (mouseenter)="hoveredTrainerId = trainer.id" (mouseleave)="hoveredTrainerId = null">
+      <div *ngFor="let trainer of trainers"
+           class="group bg-surface-container-low border border-white/5 rounded-2xl overflow-hidden relative cursor-pointer"
+           (mouseenter)="hoveredTrainerId = trainer.id"
+           (mouseleave)="hoveredTrainerId = null"
+           (click)="openModal(trainer)"
+           [attr.aria-label]="'Ver perfil de ' + trainer.name"
+           tabindex="0"
+           (keydown.enter)="openModal(trainer)">
+
+        <!-- Foto — aspect ratio fijo para TODOS -->
         <div class="aspect-[3/4] overflow-hidden relative">
-          <!-- Imagen estática si no hay slider -->
-          <img *ngIf="!trainer.images || trainer.images.length <= 1" [src]="trainer.image" [alt]="trainer.name" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale group-hover:grayscale-0">
-          
+          <!-- Imagen estática -->
+          <img *ngIf="!trainer.images || trainer.images.length <= 1"
+               [src]="trainer.image" [alt]="trainer.name" loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0">
+
           <!-- Slider automático -->
           <ng-container *ngIf="trainer.images && trainer.images.length > 1">
-            <img *ngFor="let img of trainer.images; let i = index" 
-                 [src]="img" 
-                 [alt]="trainer.name" 
-                 loading="lazy" 
+            <img *ngFor="let img of trainer.images; let i = index"
+                 [src]="img" [alt]="trainer.name" loading="lazy"
                  class="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] ease-in-out filter grayscale group-hover:grayscale-0"
-                 [ngClass]="activeImageIndices[trainer.id] === i ? 'opacity-100 group-hover:scale-105 z-10' : 'opacity-0 scale-100 z-0'">
+                 [ngClass]="activeImageIndices[trainer.id] === i ? 'opacity-100 group-hover:scale-105 z-10' : 'opacity-0 z-0'">
           </ng-container>
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-20 pointer-events-none"></div>
-          
-          <div class="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 z-30">
-            <h3 class="font-headline-md text-2xl text-white uppercase italic font-black">{{ trainer.name }}</h3>
-            <p class="text-primary-container font-label-bold text-xs uppercase tracking-widest mb-2">{{ trainer.specialty }}</p>
-            
-            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-              <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">{{ trainer.description }}</p>
-              
-              <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                <span class="text-[10px] text-white/50 uppercase tracking-widest font-bold">Experiencia: <span class="text-white">{{ trainer.experience }}</span></span>
-                
-                <button (click)="openModal(trainer)" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-container transition-colors focus:outline-none" title="Ver Perfil">
-                  <span class="material-symbols-outlined text-sm text-white">photo_camera</span>
-                </button>
-              </div>
+
+          <!-- Overlay gradiente -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-20 pointer-events-none"></div>
+
+          <!-- Info sobre la foto — siempre visible -->
+          <div class="absolute bottom-0 left-0 w-full p-5 z-30">
+            <p class="text-primary-container font-label-bold text-[9px] uppercase tracking-[0.35em] mb-1">{{ trainer.specialty }}</p>
+            <h3 class="font-headline-md text-xl text-white uppercase italic font-black leading-tight mb-3">{{ trainer.name }}</h3>
+
+            <!-- Chip de experiencia + 1 stat si existe -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="inline-flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1 text-[9px] text-white font-bold uppercase tracking-wider">
+                <span class="material-symbols-outlined text-primary-container" style="font-size:10px">workspace_premium</span>
+                {{ trainer.experience }}
+              </span>
+              <span *ngIf="trainer.stats && trainer.stats.length > 0"
+                    class="inline-flex items-center gap-1 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1 text-[9px] text-white font-bold uppercase tracking-wider">
+                {{ trainer.stats[0].value }}
+              </span>
+            </div>
+
+            <!-- Botón explícito Ver Perfil -->
+            <div class="flex items-center gap-2 text-white/70 group-hover:text-white transition-colors duration-300">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em]">Ver perfil</span>
+              <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
             </div>
           </div>
         </div>
@@ -44,67 +65,165 @@
   </div>
 </section>
 
-<!-- Modal del entrenador -->
-<div class="fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-300 p-4"
-     [ngClass]="isModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'">
-  
+<!-- ============================================================ -->
+<!-- MODAL DE PERFIL DEL ENTRENADOR                                -->
+<!-- ============================================================ -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 transition-opacity duration-300"
+     [ngClass]="isModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
+     role="dialog" [attr.aria-modal]="isModalOpen" [attr.aria-label]="'Perfil de ' + (selectedTrainer?.name || '')">
+
   <!-- Backdrop -->
   <div class="absolute inset-0 bg-black/85 backdrop-blur-md" (click)="closeModal()"></div>
-  
-  <!-- Modal Content -->
-  <div class="relative w-full max-w-sm bg-surface border border-white/10 rounded-2xl overflow-hidden transform transition-all duration-300 shadow-2xl"
-       [ngClass]="isModalOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-8'">
-    
-    <!-- Close Button -->
-    <button (click)="closeModal()" class="absolute top-4 right-4 z-20 w-9 h-9 bg-black/60 hover:bg-primary-container text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors focus:outline-none">
+
+  <!-- Modal panel: 80% viewport en desktop, casi full en móvil -->
+  <div class="relative w-full max-w-4xl max-h-[90vh] bg-surface border border-white/10 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-300 flex flex-col"
+       [ngClass]="isModalOpen ? 'scale-100 translate-y-0' : 'scale-95 translate-y-6'">
+
+    <!-- Botón cerrar -->
+    <button (click)="closeModal()" aria-label="Cerrar perfil"
+            class="absolute top-4 right-4 z-30 w-9 h-9 bg-black/60 hover:bg-primary-container text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container">
       <span class="material-symbols-outlined text-base">close</span>
     </button>
 
-    <!-- Foto del entrenador -->
-    <div class="w-full aspect-[4/3] bg-black relative overflow-hidden">
-      <img [src]="selectedTrainer?.image" [alt]="selectedTrainer?.name" loading="lazy" class="w-full h-full object-cover object-top">
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-      <!-- Nombre sobre la foto -->
-      <div class="absolute bottom-0 left-0 w-full p-5">
-        <p class="text-primary-container font-label-bold text-[10px] uppercase tracking-[0.3em] mb-1">{{ selectedTrainer?.specialty }}</p>
-        <h3 class="font-headline-md text-2xl text-white uppercase italic font-black leading-tight">{{ selectedTrainer?.name }}</h3>
-      </div>
-    </div>
+    <!-- Layout: columna en móvil, dos columnas en desktop -->
+    <div class="flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden" style="max-height: 90vh;">
 
-    <!-- Info -->
-    <div class="p-6 bg-surface-container-low flex flex-col gap-4">
-      
-      <!-- Experiencia -->
-      <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/5">
-        <span class="material-symbols-outlined text-primary-container text-xl">workspace_premium</span>
-        <div>
-          <p class="text-[9px] text-on-surface-variant uppercase tracking-widest font-bold">Experiencia</p>
-          <p class="text-white font-label-bold text-sm">{{ selectedTrainer?.experience }}</p>
+      <!-- ── Columna IZQUIERDA: foto grande ── -->
+      <div class="lg:w-2/5 shrink-0 relative">
+        <div class="w-full h-56 lg:h-full min-h-[220px] overflow-hidden relative">
+          <img [src]="selectedTrainer?.image" [alt]="selectedTrainer?.name" loading="lazy"
+               class="w-full h-full object-cover object-top">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-black/60"></div>
+          <!-- Nombre sobre la foto en móvil -->
+          <div class="absolute bottom-0 left-0 w-full p-5 lg:hidden">
+            <p class="text-primary-container font-label-bold text-[9px] uppercase tracking-[0.3em] mb-1">{{ selectedTrainer?.specialty }}</p>
+            <h3 class="font-headline-md text-2xl text-white uppercase italic font-black leading-tight">{{ selectedTrainer?.name }}</h3>
+          </div>
         </div>
       </div>
 
-      <!-- Descripción -->
-      <p class="text-on-surface-variant text-sm leading-relaxed">{{ selectedTrainer?.description }}</p>
+      <!-- ── Columna DERECHA: info con scroll ── -->
+      <div class="lg:w-3/5 overflow-y-auto p-6 lg:p-8 flex flex-col gap-6 bg-surface-container-low">
 
-      <!-- Separador -->
-      <div class="border-t border-white/5"></div>
+        <!-- Nombre (solo desktop) -->
+        <div class="hidden lg:block">
+          <p class="text-primary-container font-label-bold text-[9px] uppercase tracking-[0.35em] mb-1">{{ selectedTrainer?.specialty }}</p>
+          <h3 class="font-headline-md text-3xl text-white uppercase italic font-black leading-tight">{{ selectedTrainer?.name }}</h3>
+        </div>
 
-      <!-- Video si existe -->
-      <div *ngIf="selectedTrainer?.videoUrl" class="w-full rounded-xl overflow-hidden border border-white/10">
-        <video [src]="selectedTrainer?.videoUrl" class="w-full max-h-48 object-cover" controls playsinline></video>
-      </div>
+        <!-- Stats chips -->
+        <div *ngIf="selectedTrainer?.stats && selectedTrainer!.stats!.length > 0"
+             class="grid grid-cols-3 gap-3">
+          <div *ngFor="let stat of selectedTrainer!.stats"
+               class="bg-white/5 border border-white/8 rounded-xl p-3 text-center">
+            <p class="text-white font-black text-base leading-tight">{{ stat.value }}</p>
+            <p class="text-on-surface-variant text-[9px] uppercase tracking-wider font-bold mt-1">{{ stat.label }}</p>
+          </div>
+        </div>
 
-      <!-- Botón de contacto para personalizados -->
-      <a *ngIf="selectedTrainer?.whatsapp"
-         [href]="'https://wa.me/' + selectedTrainer?.whatsapp + '?text=' + getWhatsappMessage(selectedTrainer)"
-         target="_blank"
-         class="relative overflow-hidden group flex items-center justify-center gap-3 w-full py-4 bg-primary-container text-white font-label-bold text-xs uppercase tracking-[0.2em] rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-container/30 hover:scale-[1.02]">
-        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
-        Solicitar Entrenamiento Personalizado
-      </a>
-    </div>
-  </div>
+        <!-- Descripción completa -->
+        <div>
+          <h4 class="text-[9px] text-on-surface-variant uppercase tracking-[0.3em] font-bold mb-2">Sobre el entrenador</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed">{{ selectedTrainer?.fullDescription }}</p>
+        </div>
+
+        <!-- Modalidades -->
+        <div *ngIf="selectedTrainer?.modalities && selectedTrainer!.modalities!.length > 0">
+          <h4 class="text-[9px] text-on-surface-variant uppercase tracking-[0.3em] font-bold mb-3">Especialidades</h4>
+          <ul class="flex flex-col gap-2">
+            <li *ngFor="let mod of selectedTrainer!.modalities"
+                class="flex items-center gap-2 text-sm text-white">
+              <span class="material-symbols-outlined text-primary-container shrink-0" style="font-size:14px">check_circle</span>
+              {{ mod }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Separador -->
+        <div class="border-t border-white/5"></div>
+
+        <!-- Video -->
+        <div *ngIf="selectedTrainer?.videoUrl" class="rounded-xl overflow-hidden border border-white/10">
+          <h4 class="text-[9px] text-on-surface-variant uppercase tracking-[0.3em] font-bold px-1 mb-2">Video</h4>
+          <video [src]="selectedTrainer?.videoUrl" class="w-full max-h-48 object-cover rounded-xl" controls playsinline></video>
+        </div>
+
+        <!-- Certificaciones -->
+        <div *ngIf="selectedTrainer?.certifications && selectedTrainer!.certifications!.length > 0">
+          <h4 class="text-[9px] text-on-surface-variant uppercase tracking-[0.3em] font-bold mb-3">Formación y Certificaciones</h4>
+          <div class="flex flex-col gap-3">
+            <div *ngFor="let cert of selectedTrainer!.certifications"
+                 class="bg-white/5 border border-white/8 rounded-xl p-4 flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary-container shrink-0 mt-0.5">verified</span>
+              <div class="flex-1 min-w-0">
+                <p class="text-white font-bold text-sm leading-tight">{{ cert.title }}</p>
+                <p class="text-on-surface-variant text-xs mt-1">{{ cert.issuer }}</p>
+                <p class="text-primary-container text-[10px] font-bold uppercase tracking-wider mt-1">{{ cert.year }}</p>
+              </div>
+              <!-- Botón Ver Certificación -->
+              <button *ngIf="cert.image"
+                      (click)="openCertModal(cert, $event)"
+                      aria-label="Ver certificación"
+                      class="shrink-0 flex items-center gap-1.5 bg-white/8 hover:bg-primary-container border border-white/10 hover:border-primary-container text-white text-[9px] font-bold uppercase tracking-wider px-3 py-2 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container">
+                <span class="material-symbols-outlined" style="font-size:14px">open_in_full</span>
+                Ver
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA WhatsApp -->
+        <a *ngIf="selectedTrainer?.whatsapp"
+           [href]="'https://wa.me/' + selectedTrainer?.whatsapp + '?text=' + getWhatsappMessage(selectedTrainer)"
+           target="_blank"
+           rel="noopener"
+           class="flex items-center justify-center gap-3 w-full py-4 bg-primary-container text-white font-label-bold text-xs uppercase tracking-[0.2em] rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-container/30 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+          </svg>
+          Solicitar Entrenamiento Personalizado
+        </a>
+
+      </div><!-- fin columna derecha -->
+    </div><!-- fin flex -->
+  </div><!-- fin modal panel -->
 </div>
 
+<!-- ============================================================ -->
+<!-- VISOR DE CERTIFICACIÓN (LIGHTBOX)                             -->
+<!-- ============================================================ -->
+<div class="fixed inset-0 z-[200] flex items-center justify-center p-4 transition-opacity duration-200"
+     [ngClass]="isCertModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
+     role="dialog" aria-label="Visor de certificación">
+
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/95 backdrop-blur-sm" (click)="closeCertModal()"></div>
+
+  <!-- Visor -->
+  <div class="relative w-full max-w-2xl transform transition-all duration-200"
+       [ngClass]="isCertModalOpen ? 'scale-100' : 'scale-95'">
+
+    <!-- Header del visor -->
+    <div class="flex items-start justify-between mb-3">
+      <div>
+        <p class="text-white font-bold text-sm">{{ selectedCert?.title }}</p>
+        <p class="text-on-surface-variant text-xs mt-0.5">{{ selectedCert?.issuer }}</p>
+      </div>
+      <button (click)="closeCertModal()" aria-label="Cerrar visor"
+              class="ml-4 shrink-0 w-9 h-9 bg-white/10 hover:bg-primary-container text-white rounded-full flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+        <span class="material-symbols-outlined text-base">close</span>
+      </button>
+    </div>
+
+    <!-- Imagen de certificación -->
+    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+      <img *ngIf="selectedCert?.image"
+           [src]="selectedCert!.image" [alt]="selectedCert!.title" loading="lazy"
+           class="w-full h-auto object-contain max-h-[75vh]">
+    </div>
+
+    <p class="text-center text-on-surface-variant text-[9px] uppercase tracking-wider mt-3">
+      Haz clic fuera de la imagen o presiona ESC para cerrar
+    </p>
+  </div>
+</div>
