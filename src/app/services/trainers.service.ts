@@ -9,6 +9,7 @@ export interface Trainer {
   image: string;
   images?: string[];
   videoUrl?: string;
+  whatsapp?: string;
   socials?: {
     instagram?: string;
     facebook?: string;
@@ -31,6 +32,7 @@ export class TrainersService {
         image: '/perfil-1.jpg',
         images: ['/perfil-1.jpg', '/perfil-2.jpg', '/perfil-3.jpg'],
         videoUrl: '/video-gym.mp4',
+        whatsapp: '56991832903',
         socials: {
           instagram: '#'
         }
@@ -43,6 +45,7 @@ export class TrainersService {
         experience: '+3 años',
         image: '/personal/lorenzo-1.jpg',
         images: ['/personal/lorenzo-1.jpg', '/personal/lorenzo-2.jpg', '/personal/lorenzo-3.jpg'],
+        whatsapp: '56991832903',
         socials: {
           instagram: '#'
         }
@@ -50,11 +53,12 @@ export class TrainersService {
       {
         id: 'trainer-3',
         name: 'Exabiel Cartas',
-        specialty: 'Musculación & Fuerza',
-        description: 'Experto en hipertrofia y entrenamiento de fuerza. Te guía con técnica impecable para maximizar tus resultados de forma segura.',
+        specialty: 'Boxeo & Entrenamiento',
+        description: 'Entrenador de boxeo especializado en técnica, defensa y acondicionamiento. Trabaja contigo desde cero o si ya tienes experiencia en el ring.',
         experience: '+4 años',
         image: '/personal/exabiel-1.jpg',
         images: ['/personal/exabiel-1.jpg', '/personal/exabiel-2.jpg'],
+        whatsapp: '56991832903',
         socials: {
           instagram: '#'
         }

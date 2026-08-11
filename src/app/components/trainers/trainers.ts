@@ -57,4 +57,10 @@ export class Trainers implements OnInit, OnDestroy {
       this.selectedTrainer = null;
     }, 300); // wait for animation
   }
+
+  getWhatsappMessage(trainer: Trainer | null): string {
+    if (!trainer) return '';
+    const msg = `Hola! Vi el perfil de ${trainer.name} en la web de Elixir Gym y me gustaría consultar sobre un entrenamiento personalizado de ${trainer.specialty}. ¿Cuándo podríamos coordinar?`;
+    return encodeURIComponent(msg);
+  }
 }
