@@ -20,7 +20,7 @@ import { VideoShowcase } from './components/video-showcase/video-showcase';
   selector: 'app-root',
   standalone: true,
   imports: [
-    Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Stats, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
+    Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Gallery, Stats, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
