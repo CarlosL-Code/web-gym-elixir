@@ -96,19 +96,15 @@
 
   @keyframes whatsapp-bounce-pulse {
     0% {
-      transform: translateY(0) scale(1);
+      transform: scale(1);
       box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
     }
-    40% {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-    }
-    60% {
-      transform: translateY(0) scale(1);
+    50% {
+      transform: scale(1.05);
       box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
     }
     100% {
-      transform: translateY(0) scale(1);
+      transform: scale(1);
       box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
   }
