@@ -1,13 +1,14 @@
 <!-- Top Navbar (Desktop Only) -->
-<nav [class]="'hidden lg:block fixed top-0 w-full z-50 transition-all duration-500 border-b ' + (isScrolled ? 'py-3 bg-black/70 backdrop-blur-xl border-white/10 shadow-2xl' : 'py-4 bg-transparent border-transparent')">
-  <div class="flex justify-between items-center px-10 max-w-[1400px] mx-auto">
+<nav class="hidden lg:block fixed top-0 left-0 w-full z-50 transition-all duration-500 pointer-events-none">
+  <div class="mx-auto pointer-events-auto transition-all duration-500 flex justify-between items-center"
+       [ngClass]="isScrolled ? 'w-full bg-black/95 backdrop-blur-xl border-b border-white/10 py-3 px-10 shadow-2xl' : 'w-[90%] max-w-[1200px] mt-6 rounded-full bg-[#1c1c1c]/40 backdrop-blur-xl border border-white/10 py-2 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'">
     <!-- Logo -->
     <a href="#home" class="flex items-center group">
-      <img alt="Logotipo de Elixir Gym" class="w-auto object-contain transition-all duration-500" [ngClass]="isScrolled ? 'h-12' : 'h-16'" src="/logo.png">
+      <img alt="Logotipo de Elixir Gym" class="w-auto object-contain transition-all duration-500" [ngClass]="isScrolled ? 'h-10' : 'h-12'" src="/logo.png">
     </a>
     
     <!-- Desktop Links -->
-    <div class="hidden lg:flex items-center gap-10">
+    <div class="hidden lg:flex items-center gap-8">
       <a class="relative group font-label-bold text-[11px] uppercase tracking-[0.25em] text-white/70 hover:text-white transition-colors duration-300 py-2" href="#home">
         Inicio
         <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
@@ -36,9 +37,9 @@
     
     <!-- Desktop CTA -->
     <div class="hidden lg:flex items-center">
-      <a href="https://wa.me/56991832903?text=Hola,%20quisiera%20solicitar%20mi%20prueba%20gratis" target="_blank" class="relative overflow-hidden group bg-transparent border border-primary-container text-white font-label-bold text-[11px] uppercase tracking-widest px-8 py-3 transition-all duration-500">
+      <a href="https://wa.me/56991832903?text=Hola,%20quisiera%20solicitar%20mi%20prueba%20gratis" target="_blank" class="relative overflow-hidden group bg-transparent border border-primary-container text-white font-label-bold text-[11px] uppercase tracking-widest px-8 py-3 rounded-full transition-all duration-500 hover:bg-primary-container/10">
         <span class="relative z-10 transition-colors duration-300">PRUEBA GRATIS</span>
-        <div class="absolute inset-0 bg-primary-container transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+        <div class="absolute inset-0 bg-primary-container transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out rounded-full"></div>
       </a>
     </div>
   </div>
