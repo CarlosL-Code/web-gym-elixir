@@ -16,11 +16,13 @@ import { Footer } from './components/footer/footer';
 import { WhatsappButton } from './components/whatsapp-button/whatsapp-button';
 import { VideoShowcase } from './components/video-showcase/video-showcase';
 
+import { RouterOutlet } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Gallery, Stats, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
+    RouterOutlet, Navbar, Footer, WhatsappButton
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -1,0 +1,44 @@
+<section *ngIf="post" class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop bg-background min-h-screen">
+  <div class="max-w-4xl mx-auto">
+    <!-- Breadcrumb -->
+    <a routerLink="/blog" class="inline-flex items-center gap-2 text-primary-container hover:text-white font-label-bold text-[10px] uppercase tracking-widest mb-12 transition-colors">
+      <span class="material-symbols-outlined text-sm">arrow_back</span>
+      VOLVER AL BLOG
+    </a>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <div class="flex items-center gap-4 text-[10px] uppercase tracking-widest text-primary-container font-bold mb-6">
+        <span>{{post.date}}</span>
+        <span class="w-1 h-1 bg-white/20 rounded-full"></span>
+        <span>{{post.author}}</span>
+      </div>
+      <h1 class="font-headline-xl text-4xl md:text-5xl lg:text-6xl text-on-surface uppercase italic font-black mb-8 leading-tight">
+        {{post.title}}
+      </h1>
+      
+      <div class="w-full h-64 md:h-[400px] rounded-xl overflow-hidden mb-12">
+        <img [src]="post.imageUrl" [alt]="post.title" class="w-full h-full object-cover">
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="prose prose-invert prose-lg max-w-none text-on-surface-variant font-body-lg leading-relaxed" [innerHTML]="post.content">
+    </div>
+    
+    <!-- CTA -->
+    <div class="mt-20 p-8 border border-white/10 rounded-xl bg-surface-container-high text-center">
+      <h3 class="text-2xl font-black italic uppercase text-white mb-4">¿LISTO PARA APLICARLO?</h3>
+      <p class="text-on-surface-variant mb-8 max-w-lg mx-auto">Te esperamos en Manuel Montt 1027, Temuco Centro. Solicita tu clase de prueba gratis hoy mismo.</p>
+      <a href="https://wa.me/56991832903?text=Hola%2C%20le%C3%AD%20el%20blog%20y%20me%20gustar%C3%ADa%20solicitar%20una%20clase%20de%20prueba." target="_blank" class="bg-primary-container text-white font-label-bold text-xs uppercase px-12 py-5 tracking-[0.2em] hover:bg-white hover:text-black transition-colors inline-block">
+        AGENDAR CLASE DE PRUEBA
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Error State -->
+<section *ngIf="!post" class="pt-40 pb-24 text-center min-h-[60vh] flex flex-col items-center justify-center">
+  <h2 class="text-3xl font-black italic uppercase text-white mb-4">ARTÍCULO NO ENCONTRADO</h2>
+  <a routerLink="/blog" class="text-primary-container hover:text-white uppercase tracking-widest text-xs font-bold transition-colors">Volver al Blog</a>
+</section>
