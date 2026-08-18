@@ -61,6 +61,18 @@ export class App implements AfterViewInit {
     this.mouseY = e.clientY;
   }
 
+  isHovering = false;
+
+  @HostListener('document:mouseover', ['$event'])
+  onMouseOver(e: MouseEvent) {
+    const target = e.target as HTMLElement;
+    const clickable = target.closest('a, button, [routerLink], input, select, textarea');
+    this.isHovering = !!clickable;
+  }
+
+  private ringScale = 1;
+  private dotScale = 1;
+
   private animate = () => {
     // Lerp ring
     this.ringX += (this.mouseX - this.ringX) * 0.2;
@@ -69,8 +81,21 @@ export class App implements AfterViewInit {
     const ring = document.getElementById('custom-cursor-ring');
     const dot = document.getElementById('custom-cursor-dot');
     
-    if (dot) dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0)`;
-    if (ring) ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0)`;
+    const targetScale = this.isHovering ? 1.5 : 1;
+    const targetDotScale = this.isHovering ? 0 : 1;
+    
+    this.ringScale += (targetScale - this.ringScale) * 0.2;
+    this.dotScale += (targetDotScale - this.dotScale) * 0.2;
+    
+    if (dot) dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0) scale(${this.dotScale})`;
+    if (ring) {
+      ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0) scale(${this.ringScale})`;
+      if (this.isHovering) {
+        ring.classList.add('cursor-hovered');
+      } else {
+        ring.classList.remove('cursor-hovered');
+      }
+    }
 
     // Calculate trail positions
     let leadX = this.mouseX;
