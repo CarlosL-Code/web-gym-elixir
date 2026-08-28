@@ -56,42 +56,53 @@
   }
   .btn-premium:hover::after { left: 100%; }
   
-  /* Custom Cursor Trail */
-  .custom-cursor-dot {
-    position: fixed;
-    top: 0; left: 0;
-    width: 10px; height: 10px;
-    background-color: #0084ff;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    will-change: transform;
+  /* Custom Cursor Trail - Only show on desktop/devices with a fine pointer */
+  @media (hover: hover) and (pointer: fine) {
+    .custom-cursor-dot {
+      position: fixed;
+      top: 0; left: 0;
+      width: 10px; height: 10px;
+      background-color: #0084ff;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      will-change: transform, opacity;
+      transition: opacity 0.3s ease;
+    }
+    .custom-cursor-ring {
+      position: fixed;
+      top: 0; left: 0;
+      width: 36px; height: 36px;
+      border: 2px solid rgba(0, 132, 255, 0.6);
+      background-color: transparent;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform, opacity;
+      transition: background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    }
+    .custom-cursor-ring.cursor-hovered {
+      background-color: rgba(0, 132, 255, 0.15);
+      border-color: rgba(0, 132, 255, 0.2);
+    }
+    .custom-cursor-trail-dot {
+      position: fixed;
+      top: 0; left: 0;
+      width: 10px; height: 10px;
+      background-color: rgba(0, 132, 255, 0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      will-change: transform, opacity;
+      transition: opacity 0.3s ease;
+    }
   }
-  .custom-cursor-ring {
-    position: fixed;
-    top: 0; left: 0;
-    width: 36px; height: 36px;
-    border: 2px solid rgba(0, 132, 255, 0.6);
-    background-color: transparent;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-  .custom-cursor-ring.cursor-hovered {
-    background-color: rgba(0, 132, 255, 0.15);
-    border-color: rgba(0, 132, 255, 0.2);
-  }
-  .custom-cursor-trail-dot {
-    position: fixed;
-    top: 0; left: 0;
-    width: 10px; height: 10px;
-    background-color: rgba(0, 132, 255, 0.4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    will-change: transform;
+
+  /* Hide cursors entirely on touch devices just in case */
+  @media (hover: none) {
+    .custom-cursor-dot, .custom-cursor-ring, .custom-cursor-trail-dot {
+      display: none !important;
+    }
   }
 
   @keyframes whatsapp-bounce-pulse {

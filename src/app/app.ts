@@ -55,10 +55,23 @@ export class App implements AfterViewInit {
     }
   }
 
+  isVisible = false;
+
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
     this.mouseX = e.clientX;
     this.mouseY = e.clientY;
+    if (!this.isVisible) this.isVisible = true;
+  }
+
+  @HostListener('document:mouseleave', ['$event'])
+  onMouseLeave(e: MouseEvent) {
+    this.isVisible = false;
+  }
+
+  @HostListener('document:mouseenter', ['$event'])
+  onMouseEnter(e: MouseEvent) {
+    this.isVisible = true;
   }
 
   isHovering = false;
@@ -87,9 +100,15 @@ export class App implements AfterViewInit {
     this.ringScale += (targetScale - this.ringScale) * 0.2;
     this.dotScale += (targetDotScale - this.dotScale) * 0.2;
     
-    if (dot) dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0) scale(${this.dotScale})`;
+    const opacity = this.isVisible ? 1 : 0;
+    
+    if (dot) {
+      dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0) scale(${this.dotScale})`;
+      dot.style.opacity = `${opacity}`;
+    }
     if (ring) {
       ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0) scale(${this.ringScale})`;
+      ring.style.opacity = `${opacity}`;
       if (this.isHovering) {
         ring.classList.add('cursor-hovered');
       } else {
@@ -109,7 +128,8 @@ export class App implements AfterViewInit {
 
       if (this.dots[i]) {
         this.dots[i].style.transform = `translate3d(calc(${point.x}px - 50%), calc(${point.y}px - 50%), 0) scale(${1 - i / this.numDots})`;
-        this.dots[i].style.opacity = `${1 - i / this.numDots}`;
+        // Trail opacity fades out anyway, but if not visible, hide completely
+        this.dots[i].style.opacity = this.isVisible ? `${1 - i / this.numDots}` : '0';
       }
 
       leadX = point.x;
