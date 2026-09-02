@@ -1,15 +1,27 @@
 import { Component, HostListener, AfterViewInit } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
+import { Hero } from './components/hero/hero';
+import { Benefits } from './components/benefits/benefits';
+import { Plans } from './components/plans/plans';
+import { Classes } from './components/classes/classes';
+import { Trainers } from './components/trainers/trainers';
+import { Gallery } from './components/gallery/gallery';
+import { Stats } from './components/stats/stats';
+import { Partners } from './components/partners/partners';
+import { Testimonials } from './components/testimonials/testimonials';
+import { Faq } from './components/faq/faq';
+import { Contact } from './components/contact/contact';
+import { Location } from './components/location/location';
+import { FinalCta } from './components/final-cta/final-cta';
 import { Footer } from './components/footer/footer';
 import { WhatsappButton } from './components/whatsapp-button/whatsapp-button';
-
-import { RouterOutlet } from '@angular/router';
+import { VideoShowcase } from './components/video-showcase/video-showcase';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, Navbar, Footer, WhatsappButton
+    Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Gallery, Stats, Partners, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -42,36 +54,11 @@ export class App implements AfterViewInit {
     }
   }
 
-  isVisible = false;
-
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
     this.mouseX = e.clientX;
     this.mouseY = e.clientY;
-    if (!this.isVisible) this.isVisible = true;
   }
-
-  @HostListener('document:mouseleave', ['$event'])
-  onMouseLeave(e: MouseEvent) {
-    this.isVisible = false;
-  }
-
-  @HostListener('document:mouseenter', ['$event'])
-  onMouseEnter(e: MouseEvent) {
-    this.isVisible = true;
-  }
-
-  isHovering = false;
-
-  @HostListener('document:mouseover', ['$event'])
-  onMouseOver(e: MouseEvent) {
-    const target = e.target as HTMLElement;
-    const clickable = target.closest('a, button, [routerLink], input, select, textarea');
-    this.isHovering = !!clickable;
-  }
-
-  private ringScale = 1;
-  private dotScale = 1;
 
   private animate = () => {
     // Lerp ring
@@ -81,27 +68,8 @@ export class App implements AfterViewInit {
     const ring = document.getElementById('custom-cursor-ring');
     const dot = document.getElementById('custom-cursor-dot');
     
-    const targetScale = this.isHovering ? 1.5 : 1;
-    const targetDotScale = this.isHovering ? 0 : 1;
-    
-    this.ringScale += (targetScale - this.ringScale) * 0.2;
-    this.dotScale += (targetDotScale - this.dotScale) * 0.2;
-    
-    const opacity = this.isVisible ? 1 : 0;
-    
-    if (dot) {
-      dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0) scale(${this.dotScale})`;
-      dot.style.opacity = `${opacity}`;
-    }
-    if (ring) {
-      ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0) scale(${this.ringScale})`;
-      ring.style.opacity = `${opacity}`;
-      if (this.isHovering) {
-        ring.classList.add('cursor-hovered');
-      } else {
-        ring.classList.remove('cursor-hovered');
-      }
-    }
+    if (dot) dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0)`;
+    if (ring) ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0)`;
 
     // Calculate trail positions
     let leadX = this.mouseX;
@@ -115,8 +83,7 @@ export class App implements AfterViewInit {
 
       if (this.dots[i]) {
         this.dots[i].style.transform = `translate3d(calc(${point.x}px - 50%), calc(${point.y}px - 50%), 0) scale(${1 - i / this.numDots})`;
-        // Trail opacity fades out anyway, but if not visible, hide completely
-        this.dots[i].style.opacity = this.isVisible ? `${1 - i / this.numDots}` : '0';
+        this.dots[i].style.opacity = `${1 - i / this.numDots}`;
       }
 
       leadX = point.x;
