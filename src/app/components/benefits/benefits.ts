@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { GradientTextComponent } from '../ui/gradient-text/gradient-text';
 
 @Component({
   selector: 'app-benefits',
-  imports: [GradientTextComponent],
+  imports: [],
   templateUrl: './benefits.html',
   styleUrl: './benefits.css',
 })

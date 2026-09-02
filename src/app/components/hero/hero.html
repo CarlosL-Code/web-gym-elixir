@@ -1,6 +1,6 @@
 <header class="relative min-h-[85dvh] md:min-h-[100dvh] flex items-center justify-center overflow-hidden" id="home">
   <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-black/70 z-10 hero-gradient"></div>
+    <div class="absolute inset-0 bg-black/50 z-10 hero-gradient"></div>
     <div class="w-full h-full bg-cover bg-[center_top] md:bg-center transition-transform duration-[10s] hover:scale-110" style="background-image: url('/assets/images/imagen-personas-entrenando.jpg');"></div>
   </div>
   
@@ -10,18 +10,9 @@
       MONTT #1027 (3ER PISO) • TEMUCO, CHILE <img src="https://flagcdn.com/w20/cl.png" srcset="https://flagcdn.com/w40/cl.png 2x" alt="Chile" class="inline-block w-4 h-auto align-text-bottom">
     </div>
     
-    <app-gradient-text
-      [colors]="['#ff5722', '#ff9800', '#ffeb3b', '#ff5722']"
-      [animationSpeed]="4"
-      [showBorder]="true"
-      className="font-display-lg-mobile md:font-display-lg mb-2 uppercase font-black text-center"
-    >
-      ELIXIR GYM
-    </app-gradient-text>
-    
-    <h2 class="text-xl md:text-3xl text-gradient italic uppercase font-black mb-8 tracking-widest mt-2">
-      GIMNASIO EN TEMUCO, CHILE
-    </h2>
+    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-tight md:leading-[1.1] uppercase">
+      ELIXIR GYM - <br class="hidden md:block">GIMNASIO EN <span class="text-gradient italic">TEMUCO, CHILE</span>
+    </h1>
     
     <p class="font-body-lg text-body-lg text-tertiary/80 mb-lg max-w-2xl mx-auto leading-relaxed">
       Experimenta el alto rendimiento en el corazón de Temuco. Un espacio diseñado para atletas reales que buscan resultados excepcionales.

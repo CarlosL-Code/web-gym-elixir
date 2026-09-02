@@ -1,12 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClassesService, GymClass } from '../../services/classes.service';
-import { GradientTextComponent } from '../ui/gradient-text/gradient-text';
 
 @Component({
   selector: 'app-classes',
   standalone: true,
-  imports: [CommonModule, GradientTextComponent],
+  imports: [CommonModule],
   templateUrl: './classes.html'
 })
 export class Classes implements OnInit {
