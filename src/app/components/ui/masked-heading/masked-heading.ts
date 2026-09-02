@@ -141,8 +141,8 @@ export class MaskedHeadingComponent implements AfterViewInit, OnDestroy, OnChang
     const maxX = Math.max(0, ((this.fillScale - 1) / 2) * W);
     const maxY = Math.max(0, ((this.fillScale - 1) / 2) * H);
 
-    media.style.transform = \`translate3d(\${clamp(this.offset.x, -maxX, maxX).toFixed(2)}px, \${clamp(this.offset.y, -maxY, maxY).toFixed(2)}px, 0) scale(\${this.fillScale})\`;
-    media.style.filter = \`brightness(\${this.brightness}) saturate(\${this.saturation})\${this.grayscale ? ' grayscale(1)' : ''}\`;
+    media.style.transform = `translate3d(${clamp(this.offset.x, -maxX, maxX).toFixed(2)}px, ${clamp(this.offset.y, -maxY, maxY).toFixed(2)}px, 0) scale(${this.fillScale})`;
+    media.style.filter = `brightness(${this.brightness}) saturate(${this.saturation})${this.grayscale ? ' grayscale(1)' : ''}`;
   }
 
   private sync() {
@@ -150,7 +150,7 @@ export class MaskedHeadingComponent implements AfterViewInit, OnDestroy, OnChang
     const measure = this.measureRef?.nativeElement;
     if (!root || !measure) return;
 
-    root.style.fontSize = \`\${clamp(root.clientWidth * this.textScale, 20, 200).toFixed(1)}px\`;
+    root.style.fontSize = `${clamp(root.clientWidth * this.textScale, 20, 200).toFixed(1)}px`;
 
     const cs = window.getComputedStyle(measure);
     const wordsArr = this.wordRefs.toArray();
@@ -164,8 +164,8 @@ export class MaskedHeadingComponent implements AfterViewInit, OnDestroy, OnChang
       
       if (!box || !base || !glyph) continue;
       
-      glyph.setAttribute('x', \`\${box.offsetLeft}\`);
-      glyph.setAttribute('y', \`\${base.offsetTop}\`);
+      glyph.setAttribute('x', `${box.offsetLeft}`);
+      glyph.setAttribute('y', `${base.offsetTop}`);
       glyph.style.fontFamily = cs.fontFamily;
       glyph.style.fontSize = cs.fontSize;
       glyph.style.fontWeight = cs.fontWeight;
@@ -223,7 +223,7 @@ export class MaskedHeadingComponent implements AfterViewInit, OnDestroy, OnChang
           ease: 'power3.inOut',
           overwrite: 'auto',
           onUpdate: () => {
-            layer.style.clipPath = \`inset(0% \${state.p}% 0% 0%)\`;
+            layer.style.clipPath = `inset(0% ${state.p}% 0% 0%)`;
           }
         });
       } else {

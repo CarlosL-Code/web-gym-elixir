@@ -159,8 +159,8 @@ void main() {
 @Component({
   selector: 'app-ghost-fibers',
   standalone: true,
-  template: \`<div class="ghost-fibers-container {{className}}"></div>\`,
-  styles: [\`
+  template: `<div class="ghost-fibers-container {{className}}"></div>`,
+  styles: [`
     :host {
       display: block;
       width: 100%;
@@ -176,7 +176,7 @@ void main() {
       height: 100%;
       overflow: hidden;
     }
-  \`]
+  `]
 })
 export class GhostFibersComponent implements AfterViewInit, OnDestroy, OnChanges {
   @Input() lineColor = '#140E35';
