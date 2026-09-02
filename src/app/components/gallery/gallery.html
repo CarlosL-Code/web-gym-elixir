@@ -1,17 +1,39 @@
-<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="gallery">
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-gradient-to-b from-surface-container-high to-surface" id="gallery">
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-16">
-      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">NUESTRAS <span class="text-gradient">INSTALACIONES</span></h2>
-      <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Conoce tu próximo lugar de entrenamiento</p>
+    <div class="text-center mb-16 relative">
+      <!-- Resplandor sutil detrás del título -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 bg-primary/20 blur-[80px] rounded-full pointer-events-none"></div>
+      
+      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black relative z-10">NUESTRAS <span class="text-gradient">INSTALACIONES</span></h2>
+      <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4 relative z-10">Conoce tu próximo lugar de entrenamiento</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 auto-rows-[250px] md:auto-rows-[300px]">
-      <div *ngFor="let img of images" class="relative group overflow-hidden rounded-xl border border-white/5" [ngClass]="img.span">
-        <img [src]="img.src" [alt]="img.alt" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 saturate-[1.15] contrast-[1.1]">
-        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span class="text-white font-label-bold text-sm uppercase tracking-widest border border-white/20 bg-black/50 backdrop-blur-md px-6 py-2 rounded-full text-center">{{ img.alt }}</span>
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5 lg:gap-6 auto-rows-[220px] md:auto-rows-fr md:h-[500px] lg:h-[650px]">
+      
+      <div *ngFor="let img of images; let i = index" 
+           class="relative group overflow-hidden rounded-3xl bg-surface-container-low shadow-2xl transition-all duration-500 hover:shadow-[0_0_40px_rgba(2,132,199,0.25)] border border-white/5 hover:border-primary/50 cursor-crosshair" 
+           [ngClass]="img.span">
+        
+        <!-- Imagen -->
+        <img [src]="img.src" [alt]="img.alt" loading="lazy" 
+             class="absolute inset-0 w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-110 filter brightness-75 group-hover:brightness-100 group-hover:saturate-150">
+        
+        <!-- Overlay oscuro -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+        
+        <!-- Texto / Etiqueta Glassmorphism -->
+        <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+          <div class="inline-flex items-center gap-3 backdrop-blur-md bg-black/40 border border-white/10 px-5 py-3 rounded-2xl group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors duration-500">
+            <span class="material-symbols-outlined text-primary text-xl">camera</span>
+            <span class="text-white font-headline-md text-sm md:text-base uppercase italic font-black tracking-widest drop-shadow-md">{{ img.alt }}</span>
+          </div>
         </div>
+        
+        <!-- Resplandor en la esquina en Hover -->
+        <div class="absolute -top-16 -right-16 w-32 h-32 bg-primary/40 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
       </div>
+      
     </div>
   </div>
 </section>
