@@ -1,10 +1,14 @@
-<section class="relative py-xl px-margin-mobile md:px-margin-desktop overflow-hidden" id="horarios-precios">
+<section class="relative py-xl px-margin-mobile md:px-margin-desktop overflow-hidden bg-slate-950" id="horarios-precios">
   <!-- Subtle dark gradient background to make glass stand out -->
   <div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest via-surface to-surface-container-lowest z-0"></div>
   
-  <!-- Decorative glowing orbs in the background -->
-  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none z-0"></div>
+  <!-- Interactive DotField Background -->
+  <app-dot-field 
+    [gradientFrom]="'#ff5722'" 
+    [gradientTo]="'#ff9800'"
+    [glowColor]="'rgba(255, 87, 34, 0.15)'"
+    customClass="absolute inset-0 z-0">
+  </app-dot-field>
 
   <div class="relative z-10 max-w-7xl mx-auto">
     <div class="text-center mb-16">
