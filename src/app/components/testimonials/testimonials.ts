@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectorRef, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, ChangeDetectorRef, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TestimonialsService, Testimonial } from '../../services/testimonials.service';
@@ -11,13 +11,17 @@ declare var window: any;
   imports: [CommonModule, FormsModule],
   templateUrl: './testimonials.html'
 })
-export class Testimonials implements OnInit {
+export class Testimonials implements OnInit, OnDestroy {
   testimonials: Testimonial[] = [];
   private testimonialsService = inject(TestimonialsService);
   private cdr = inject(ChangeDetectorRef);
   private platformId = inject(PLATFORM_ID);
   
   stars = [1, 2, 3, 4, 5];
+
+  // Slider State
+  currentIndex = 0;
+  private intervalId: any;
 
   // Modal State
   isReviewModalOpen = false;
@@ -32,6 +36,46 @@ export class Testimonials implements OnInit {
 
   ngOnInit() {
     this.testimonials = this.testimonialsService.getTestimonials();
+    this.startAutoPlay();
+  }
+
+  ngOnDestroy() {
+    this.stopAutoPlay();
+  }
+
+  startAutoPlay() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.intervalId = setInterval(() => {
+        this.nextTestimonial();
+      }, 5000);
+    }
+  }
+
+  stopAutoPlay() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  nextTestimonial() {
+    this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+    this.cdr.detectChanges();
+  }
+
+  prevTestimonial() {
+    this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+    this.cdr.detectChanges();
+  }
+
+  setTestimonial(index: number) {
+    this.currentIndex = index;
+    this.resetAutoPlay();
+  }
+
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+    this.cdr.detectChanges();
   }
 
   openReviewModal(event: Event) {
