@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { DotFieldComponent } from '../ui/dot-field/dot-field';
 
 @Component({
   selector: 'app-schedule',
   standalone: true,
-  imports: [DotFieldComponent],
+  imports: [],
   templateUrl: './schedule.html'
 })
 export class Schedule {
