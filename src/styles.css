@@ -100,3 +100,8 @@
     @apply border-2 border-solid border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:font-black transition-all;
   }
 }
+
+@keyframes shine {
+  100% { transform: translateX(100%) skewX(-12deg); }
+}
+

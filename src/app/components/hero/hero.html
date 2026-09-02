@@ -1,33 +1,51 @@
 <header class="relative min-h-[85dvh] md:min-h-[100dvh] flex items-center justify-center overflow-hidden" id="home">
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-black/60 z-10 hero-gradient"></div>
-    <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-surface to-transparent z-10"></div>
-    <div class="w-full h-full bg-cover bg-[center_top] md:bg-center transition-transform duration-[10s] hover:scale-110" style="background-image: url('/assets/images/imagen-personas-entrenando.jpg');"></div>
+  <!-- Fondo y Filtros -->
+  <div class="absolute inset-0 z-0 bg-black">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-surface z-10"></div>
+    <div class="absolute inset-0 bg-primary/20 mix-blend-screen z-10 pointer-events-none"></div>
+    <div class="w-full h-full bg-cover bg-[center_top] md:bg-center transition-transform duration-[20s] hover:scale-105 opacity-80" style="background-image: url('/assets/images/imagen-personas-entrenando.jpg');"></div>
+    <!-- Difuminado inferior -->
+    <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-surface to-transparent z-20 pointer-events-none"></div>
   </div>
   
-  <div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-5xl pb-24 lg:pb-0 pt-24 lg:pt-32">
-    <div class="inline-flex items-center gap-2 mb-md py-2 px-5 bg-black/60 backdrop-blur-md border border-white/20 text-white font-label-bold text-[10px] uppercase tracking-[0.3em] rounded-full shadow-xl">
-      <span class="material-symbols-outlined text-sm text-primary-container">location_on</span>
-      MONTT #1027 (3ER PISO) • TEMUCO, CHILE <img src="https://flagcdn.com/w20/cl.png" srcset="https://flagcdn.com/w40/cl.png 2x" alt="Chile" class="inline-block w-4 h-auto align-text-bottom">
+  <!-- Contenido -->
+  <div class="relative z-30 text-center px-margin-mobile md:px-margin-desktop max-w-6xl pb-24 lg:pb-0 pt-32 lg:pt-40">
+    
+    <!-- Etiqueta de Ubicación (Glassmorphism) -->
+    <div class="inline-flex items-center gap-2 mb-8 py-2.5 px-6 bg-white/5 backdrop-blur-md border border-white/10 text-white font-label-bold text-[10px] uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(2,132,199,0.2)]">
+      <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+      MONTT #1027 (3ER PISO) • TEMUCO, CHILE 
+      <img src="https://flagcdn.com/w20/cl.png" srcset="https://flagcdn.com/w40/cl.png 2x" alt="Chile" class="inline-block w-4 h-auto align-text-bottom ml-1 rounded-sm shadow-sm">
     </div>
     
-    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-tight md:leading-[1.1] uppercase">
-      ELIXIR GYM - <br class="hidden md:block">GIMNASIO EN <span class="text-gradient italic">TEMUCO, CHILE</span>
+    <!-- Titulo Principal -->
+    <h1 class="font-headline-xl text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6 leading-[1.05] uppercase italic font-black drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]">
+      ELIXIR GYM <br class="hidden md:block">
+      <span class="text-3xl md:text-5xl lg:text-6xl text-white/90">GIMNASIO EN</span> 
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-electric-blue drop-shadow-[0_0_30px_rgba(2,132,199,0.5)]">TEMUCO, CHILE</span>
     </h1>
     
-    <p class="font-body-lg text-body-lg text-tertiary/80 mb-lg max-w-2xl mx-auto leading-relaxed">
+    <!-- Subtitulo -->
+    <p class="font-body-lg text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
       Experimenta el alto rendimiento en el corazón de Temuco. Un espacio diseñado para atletas reales que buscan resultados excepcionales.
     </p>
     
-    <div class="flex flex-col md:flex-row gap-6 justify-center mb-xl">
-      <a class="bg-primary-container text-white font-label-bold text-xs uppercase px-12 py-5 rounded-none tracking-[0.2em] btn-premium shadow-2xl shadow-primary-container/30 inline-block text-center" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20clase%20de%20prueba%20en%20Elixir%20Gym." target="_blank">
-        PRUEBA GRATIS
+    <!-- Botones -->
+    <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
+      <!-- Botón Primario Metálico -->
+      <a class="relative group bg-gradient-to-r from-primary to-electric-blue text-black font-black text-xs uppercase px-12 py-5 rounded-2xl tracking-[0.2em] shadow-[0_0_30px_rgba(2,132,199,0.4)] hover:shadow-[0_0_50px_rgba(2,132,199,0.7)] hover:-translate-y-1 transition-all duration-300 text-center inline-block overflow-hidden" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20clase%20de%20prueba%20en%20Elixir%20Gym." target="_blank">
+        <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-[shine_1.5s_ease-in-out]"></div>
+        <span class="relative z-10 flex items-center justify-center gap-2">
+          PRUEBA GRATIS
+          <span class="material-symbols-outlined text-sm">flash_on</span>
+        </span>
       </a>
-      <a href="#plans" class="border border-white/20 text-white font-label-bold text-xs uppercase px-12 py-5 rounded-none tracking-[0.2em] backdrop-blur-sm hover:bg-white hover:text-black transition-all text-center inline-block">
+      
+      <!-- Botón Secundario Glass -->
+      <a href="#plans" class="bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase px-12 py-5 rounded-2xl tracking-[0.2em] hover:bg-white/10 hover:border-white/40 hover:-translate-y-1 transition-all duration-300 text-center inline-block shadow-xl">
         VER PLANES
       </a>
     </div>
-    
 
   </div>
 </header>
