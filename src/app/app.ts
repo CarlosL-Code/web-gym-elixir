@@ -36,6 +36,8 @@ export class App implements AfterViewInit {
   private dots: HTMLElement[] = [];
   private dotsPos: {x: number, y: number}[] = [];
   private readonly numDots = 10;
+  private isVisible = false;
+  private hasMoved = false;
 
   ngAfterViewInit() {
     // Check if we are in the browser to avoid SSR errors
@@ -58,18 +60,44 @@ export class App implements AfterViewInit {
   onMouseMove(e: MouseEvent) {
     this.mouseX = e.clientX;
     this.mouseY = e.clientY;
+    
+    if (!this.hasMoved) {
+      this.hasMoved = true;
+      this.ringX = this.mouseX;
+      this.ringY = this.mouseY;
+      for (let i = 0; i < this.numDots; i++) {
+        this.dotsPos[i] = { x: this.mouseX, y: this.mouseY };
+      }
+    }
+    this.isVisible = true;
+  }
+
+  @HostListener('document:mouseleave')
+  onMouseLeave() {
+    this.isVisible = false;
+  }
+
+  @HostListener('document:mouseenter')
+  onMouseEnter() {
+    this.isVisible = true;
   }
 
   private animate = () => {
     // Lerp ring
-    this.ringX += (this.mouseX - this.ringX) * 0.2;
-    this.ringY += (this.mouseY - this.ringY) * 0.2;
+    this.ringX += (this.mouseX - this.ringX) * 0.4;
+    this.ringY += (this.mouseY - this.ringY) * 0.4;
 
     const ring = document.getElementById('custom-cursor-ring');
     const dot = document.getElementById('custom-cursor-dot');
     
-    if (dot) dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0)`;
-    if (ring) ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0)`;
+    if (dot) {
+      dot.style.opacity = this.isVisible ? '1' : '0';
+      if (this.isVisible) dot.style.transform = `translate3d(calc(${this.mouseX}px - 50%), calc(${this.mouseY}px - 50%), 0)`;
+    }
+    if (ring) {
+      ring.style.opacity = this.isVisible ? '1' : '0';
+      if (this.isVisible) ring.style.transform = `translate3d(calc(${this.ringX}px - 50%), calc(${this.ringY}px - 50%), 0)`;
+    }
 
     // Calculate trail positions
     let leadX = this.mouseX;
@@ -78,12 +106,14 @@ export class App implements AfterViewInit {
     for (let i = 0; i < this.numDots; i++) {
       const point = this.dotsPos[i];
       // Lerp towards the previous point, lower factor for wider spacing
-      point.x += (leadX - point.x) * 0.25;
-      point.y += (leadY - point.y) * 0.25;
+      point.x += (leadX - point.x) * 0.4;
+      point.y += (leadY - point.y) * 0.4;
 
       if (this.dots[i]) {
-        this.dots[i].style.transform = `translate3d(calc(${point.x}px - 50%), calc(${point.y}px - 50%), 0) scale(${1 - i / this.numDots})`;
-        this.dots[i].style.opacity = `${1 - i / this.numDots}`;
+        this.dots[i].style.opacity = this.isVisible ? `${1 - i / this.numDots}` : '0';
+        if (this.isVisible) {
+          this.dots[i].style.transform = `translate3d(calc(${point.x}px - 50%), calc(${point.y}px - 50%), 0) scale(${1 - i / this.numDots})`;
+        }
       }
 
       leadX = point.x;

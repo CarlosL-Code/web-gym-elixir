@@ -5,6 +5,17 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    borderRadius: {
+      "none": "0px",
+      "sm": "0px",
+      DEFAULT: "0px",
+      "md": "0px",
+      "lg": "0px",
+      "xl": "0px",
+      "2xl": "0px",
+      "3xl": "0px",
+      "full": "0px"
+    },
     extend: {
       "colors": {
               "surface-container-low": "#1c1b1b",
@@ -58,12 +69,6 @@ module.exports = {
               "electric-blue": "#00d4ff",
               "vibrant-pink": "#ff3b8f"
       },
-      "borderRadius": {
-              "DEFAULT": "0.25rem",
-              "lg": "0.5rem",
-              "xl": "0.75rem",
-              "full": "9999px"
-      },
       "spacing": {
               "sm": "12px",
               "md": "24px",
@@ -76,15 +81,15 @@ module.exports = {
               "xs": "4px"
       },
       "fontFamily": {
-              "headline-md": ["Montserrat", "sans-serif"],
+              "headline-md": ["Inter", "sans-serif"],
               "body-lg": ["Inter", "sans-serif"],
-              "headline-xl-mobile": ["Montserrat", "sans-serif"],
+              "headline-xl-mobile": ["Inter", "sans-serif"],
               "caption": ["Inter", "sans-serif"],
-              "headline-xl": ["Montserrat", "sans-serif"],
+              "headline-xl": ["Inter", "sans-serif"],
               "body-md": ["Inter", "sans-serif"],
               "label-bold": ["Inter", "sans-serif"],
-              "display-lg": ["Montserrat", "sans-serif"],
-              "display-lg-mobile": ["Montserrat", "sans-serif"]
+              "display-lg": ["Inter", "sans-serif"],
+              "display-lg-mobile": ["Inter", "sans-serif"]
       },
       "fontSize": {
               "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],

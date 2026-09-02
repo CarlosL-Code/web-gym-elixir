@@ -1,57 +1,62 @@
 <section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="about">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-    <div class="space-y-8">
-      <div class="inline-block py-2 px-4 bg-primary-container/5 border-l-2 border-primary-container">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-block py-2 px-4 bg-primary-container/10 border-l-4 border-primary-container mb-4">
         <span class="font-label-bold text-xs uppercase tracking-[0.2em] text-primary-container">Nuestra Filosofía</span>
       </div>
-      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase leading-tight italic font-black">EL ESPÍRITU <br> ELIXIR GYM</h2>
-      <p class="font-body-lg text-lg text-on-surface-variant leading-relaxed">
-        Ubicados en Manuel Montt #1027, Elixir es más que un gimnasio; es un santuario del esfuerzo. Hemos creado un entorno auténtico donde el alto rendimiento y la comunidad se encuentran para transformar vidas.
-      </p>
+      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase leading-tight font-black">EL ESPÍRITU <span class="text-primary-container">ELIXIR</span></h2>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px]">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-        <div class="flex gap-4 group">
-          <div class="w-12 h-12 flex shrink-0 items-center justify-center bg-surface-container-high rounded-full group-hover:bg-primary-container transition-colors duration-300">
-            <span class="material-symbols-outlined text-primary-container group-hover:text-white">workspace_premium</span>
-          </div>
-          <div>
-            <h4 class="font-label-bold text-sm text-on-surface uppercase tracking-wider">Alto Nivel</h4>
-            <p class="font-caption text-on-surface-variant/70 mt-1">Equipamiento de última generación y ambiente profesional.</p>
-          </div>
-        </div>
-        
-        <div class="flex gap-4 group">
-          <div class="w-12 h-12 flex shrink-0 items-center justify-center bg-surface-container-high rounded-full group-hover:bg-primary-container transition-colors duration-300">
-            <span class="material-symbols-outlined text-primary-container group-hover:text-white">center_focus_strong</span>
-          </div>
-          <div>
-            <h4 class="font-label-bold text-sm text-on-surface uppercase tracking-wider">Ubicación Clave</h4>
-            <p class="font-caption text-on-surface-variant/70 mt-1">Pleno centro de Temuco, accesible y conveniente.</p>
-          </div>
+      <!-- Main Text Block -->
+      <div class="col-span-1 md:col-span-2 row-span-2 bg-surface-container-low border border-white/10 p-8 md:p-12 flex flex-col justify-center relative overflow-hidden group">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <p class="font-body-lg text-xl md:text-2xl text-on-surface leading-relaxed relative z-10 font-bold mb-6">
+          Ubicados en Manuel Montt #1027, Elixir es más que un gimnasio; es un santuario del esfuerzo.
+        </p>
+        <p class="font-body-lg text-base md:text-lg text-on-surface-variant leading-relaxed relative z-10">
+          Hemos creado un entorno auténtico donde el alto rendimiento y la comunidad se encuentran para transformar vidas. No hay atajos, solo trabajo duro y disciplina en cada entrenamiento.
+        </p>
+      </div>
+
+      <!-- Image 1 -->
+      <div class="col-span-1 row-span-1 relative overflow-hidden bg-surface-container-high border border-white/10 group">
+        <img alt="Máquinas de alto rendimiento" loading="lazy" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" src="/assets/images/discos-barra-sentadilla-libre.jpg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+          <h4 class="font-label-bold text-lg text-white uppercase tracking-wider">Alto Nivel</h4>
         </div>
       </div>
-      
-      <div class="pt-8">
-        <a class="inline-flex items-center gap-3 text-primary-container hover:text-white transition-all group" href="https://instagram.com/elixirgymtemuco" target="_blank">
-          <span class="font-label-bold text-xs uppercase tracking-[0.2em]">SÍGUENOS EN INSTAGRAM</span>
+
+      <!-- Image 2 -->
+      <div class="col-span-1 row-span-1 relative overflow-hidden bg-surface-container-high border border-white/10 group">
+        <img alt="Ambiente de entrenamiento" loading="lazy" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" src="/assets/images/personas-gym.jpg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+          <h4 class="font-label-bold text-lg text-white uppercase tracking-wider">Comunidad</h4>
+        </div>
+      </div>
+
+      <!-- Icon Block 1 -->
+      <div class="col-span-1 row-span-1 bg-surface-container-low border border-white/10 p-6 flex flex-col items-center justify-center text-center hover:border-primary-container hover:bg-surface-container transition-colors duration-300">
+        <span class="material-symbols-outlined text-4xl text-primary-container mb-4">location_on</span>
+        <h4 class="font-label-bold text-sm text-on-surface uppercase tracking-wider">Ubicación Clave</h4>
+        <p class="font-caption text-on-surface-variant/70 mt-2">Pleno centro de Temuco, accesible y conveniente.</p>
+      </div>
+
+      <!-- Icon Block 2 / CTA -->
+      <div class="col-span-1 md:col-span-2 row-span-1 bg-primary-container p-8 flex flex-col md:flex-row items-center justify-between text-white border border-primary-container hover:bg-primary transition-colors duration-300">
+        <div>
+          <h4 class="font-label-bold text-xl uppercase tracking-wider font-black">Súmate a la experiencia</h4>
+          <p class="font-caption text-white/80 mt-1 text-left">Sigue nuestro día a día en redes sociales.</p>
+        </div>
+        <a class="mt-4 md:mt-0 inline-flex items-center justify-center gap-3 bg-black/20 px-6 py-3 border border-white/20 hover:bg-black/40 transition-all group" href="https://instagram.com/elixirgymtemuco" target="_blank">
+          <span class="font-label-bold text-xs uppercase tracking-[0.2em]">INSTAGRAM</span>
           <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
         </a>
       </div>
-    </div>
-    
-    <div class="relative group">
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-2 rounded-xl overflow-hidden p-4 md:p-2 bg-surface-container-low border border-white/5 shadow-2xl">
-        <img alt="Computador con logo Elixir Gym" loading="lazy" class="aspect-square object-cover w-full h-full rounded hover:scale-105 transition-transform duration-500 saturate-[1.1] contrast-[1.05]" src="/assets/images/computador-con-logo-gym.jpg">
-        <img alt="Discos y barra de sentadilla" loading="lazy" class="aspect-square object-cover w-full h-full rounded hover:scale-105 transition-transform duration-500 saturate-[1.1] contrast-[1.05]" src="/assets/images/discos-barra-sentadilla-libre.jpg">
-        <img alt="Máquina de jalones" loading="lazy" class="aspect-square object-cover w-full h-full rounded hover:scale-105 transition-transform duration-500 saturate-[1.1] contrast-[1.05]" src="/assets/images/maquina-jalones-pecho.jpg">
-        <img alt="Máquina multifuncional" loading="lazy" class="aspect-square object-cover w-full h-full rounded hover:scale-105 transition-transform duration-500 saturate-[1.1] contrast-[1.05]" src="/assets/images/maquina-multifuncional.jpg">
-        <img alt="Trotadoras de cardio" loading="lazy" class="aspect-square object-cover w-full h-full rounded hover:scale-105 transition-transform duration-500 saturate-[1.1] contrast-[1.05]" src="/assets/images/maquinas-trotadoras.jpg">
-        <img alt="Personas entrenando en el gimnasio" loading="lazy" class="aspect-square object-cover w-full h-full rounded hover:scale-105 transition-transform duration-500 saturate-[1.1] contrast-[1.05]" src="/assets/images/personas-gym.jpg">
-      </div>
-      <div class="absolute -bottom-8 -left-8 bg-primary-container text-white px-8 py-6 shadow-2xl hidden lg:block z-10">
-        <div class="text-[10px] tracking-[0.4em] font-black opacity-80 uppercase mb-1">VIVE LA EXPERIENCIA</div>
-        <div class="text-2xl font-black italic uppercase">3er PISO • MONTT</div>
-      </div>
+
     </div>
   </div>
 </section>
