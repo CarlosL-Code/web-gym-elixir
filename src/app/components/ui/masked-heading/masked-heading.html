@@ -1,0 +1,30 @@
+<span #measureRef class="masked-heading__measure">
+  @for (word of words; track $index) {
+    <span #wordRef class="masked-heading__word">
+      {{ word }}
+      <i #baseRef class="masked-heading__baseline"></i>
+    </span>
+  }
+</span>
+
+<svg class="masked-heading__defs" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath [id]="clipId" clipPathUnits="userSpaceOnUse">
+      @for (word of words; track $index) {
+        <text #glyphRef>{{ word }}</text>
+      }
+    </clipPath>
+  </defs>
+</svg>
+
+<span #revealRef class="masked-heading__reveal">
+  <span class="masked-heading__clip" [style.clipPath]="'url(#' + clipId + ')'">
+    <span #mediaRef class="masked-heading__media">
+      @if (mediaType === 'video') {
+        <video class="masked-heading__source" [src]="src" [poster]="poster" autoPlay muted loop playsInline></video>
+      } @else {
+        <img class="masked-heading__source" [src]="src" alt="" draggable="false" />
+      }
+    </span>
+  </span>
+</span>
