@@ -1,0 +1,36 @@
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y border-white/5 relative overflow-hidden" id="convenios">
+  <div class="max-w-7xl mx-auto text-center mb-12 md:mb-16">
+    <div class="inline-block py-2 px-4 bg-primary-container/5 border-l-2 border-primary-container mb-6">
+      <span class="font-label-bold text-xs uppercase tracking-[0.2em] text-primary-container">Alianzas Corporativas</span>
+    </div>
+    <h2 class="font-headline-xl text-3xl md:text-5xl text-on-surface uppercase leading-tight italic font-black">EMPRESAS CON CONVENIO</h2>
+    <p class="font-body-lg text-on-surface-variant/70 mt-4 max-w-2xl mx-auto">
+      Colaboradores y afiliados de estas empresas acceden a beneficios y tarifas preferenciales en Elixir Gym.
+    </p>
+  </div>
+
+  <div class="relative">
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-surface-container-lowest to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-surface-container-lowest to-transparent z-10"></div>
+
+    <!-- Falta un logo: agrega su archivo en public/assets/images/logos/ y define `logoUrl` en partners.service.ts -->
+    <div class="marquee-viewport overflow-hidden">
+      <div class="marquee-track flex items-center gap-4 md:gap-6 w-max">
+        <div *ngFor="let partner of loopedPartners; let i = index"
+             [title]="partner.name"
+             class="logo-card shrink-0 flex items-center justify-center gap-3 h-24 md:h-28 w-48 md:w-56 px-6 md:px-8 bg-white rounded-lg shadow-lg shadow-black/20 hover:-translate-y-1 hover:shadow-primary-container/20 transition-all duration-300">
+          <img *ngIf="partner.logoUrl && !failedLogos.has(partner.id); else wordmark"
+               [src]="partner.logoUrl"
+               [alt]="'Logo ' + partner.name"
+               loading="lazy"
+               (error)="onLogoError(partner.id)"
+               class="max-h-14 md:max-h-16 w-auto object-contain" />
+          <ng-template #wordmark>
+            <span class="material-symbols-outlined text-primary-container text-xl">handshake</span>
+            <span class="font-headline-md text-sm md:text-base text-surface uppercase font-extrabold tracking-tight">{{ partner.name }}</span>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
