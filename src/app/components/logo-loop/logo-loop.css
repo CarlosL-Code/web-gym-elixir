@@ -27,20 +27,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 224px;
-  padding: 0 32px;
-  background: #ffffff;
-  border-radius: 0.5rem;
-  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: auto;
+  padding: 0 30px;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
 .logoloop__item:hover {
   transform: translateY(-4px);
+  box-shadow: 0 14px 28px -10px rgba(0, 0, 0, 0.45);
 }
 
 .logoloop__item img {
-  max-height: 64%;
+  max-height: 80%;
   max-width: 100%;
   width: auto;
   display: block;
@@ -86,7 +88,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: clamp(24px, 8%, 120px);
+  width: clamp(20px, 3.5%, 56px);
   pointer-events: none;
   z-index: 10;
 }

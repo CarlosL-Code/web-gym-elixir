@@ -33,7 +33,6 @@
             *ngIf="logo.src && !failedIds.has(logo.id); else fallback"
             [src]="logo.src"
             [alt]="logo.alt"
-            loading="lazy"
             decoding="async"
             draggable="false"
             (error)="onImageError(logo.id)"
