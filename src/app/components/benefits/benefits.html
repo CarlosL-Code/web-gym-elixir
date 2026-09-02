@@ -57,48 +57,73 @@
       </div>
     </div>
     
-    <!-- Columna Derecha: Mosaico de Imágenes -->
-    <div class="relative group mt-10 lg:mt-0">
+    <!-- Columna Derecha: Carrusel Deslizante -->
+    <div class="relative group mt-10 lg:mt-0 lg:ml-10">
       
-      <!-- Fondo cristal del mosaico -->
-      <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-xl border border-white/20 rounded-[2.5rem] transform rotate-3 scale-[1.02] opacity-50 group-hover:rotate-1 group-hover:scale-100 transition-transform duration-700 pointer-events-none"></div>
-      
-      <!-- Contenedor del mosaico -->
-      <div class="relative grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 rounded-[2.5rem] p-4 bg-gradient-to-br from-white/5 to-black/40 border border-white/10 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] z-10 overflow-hidden">
+      <!-- Contenedor del Carrusel -->
+      <div class="relative rounded-[2rem] bg-surface-container-low border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] z-10 overflow-hidden py-4">
         
-        <div class="overflow-hidden rounded-2xl relative group/img">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-10"></div>
-          <img alt="Computador con logo Elixir Gym" loading="lazy" class="aspect-square object-cover w-full h-full transform group-hover/img:scale-110 transition-transform duration-700 saturate-[1.2] contrast-125" src="/assets/images/computador-con-logo-gym.jpg">
-        </div>
-        
-        <div class="overflow-hidden rounded-2xl relative group/img">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-10"></div>
-          <img alt="Discos y barra de sentadilla" loading="lazy" class="aspect-square object-cover w-full h-full transform group-hover/img:scale-110 transition-transform duration-700 saturate-[1.2] contrast-125" src="/assets/images/discos-barra-sentadilla-libre.jpg">
-        </div>
-        
-        <div class="overflow-hidden rounded-2xl relative group/img">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-10"></div>
-          <img alt="Máquina de jalones" loading="lazy" class="aspect-square object-cover w-full h-full transform group-hover/img:scale-110 transition-transform duration-700 saturate-[1.2] contrast-125" src="/assets/images/maquina-jalones-pecho.jpg">
-        </div>
-        
-        <div class="overflow-hidden rounded-2xl relative group/img">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-10"></div>
-          <img alt="Máquina multifuncional" loading="lazy" class="aspect-square object-cover w-full h-full transform group-hover/img:scale-110 transition-transform duration-700 saturate-[1.2] contrast-125" src="/assets/images/maquina-multifuncional.jpg">
-        </div>
-        
-        <div class="overflow-hidden rounded-2xl relative group/img">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-10"></div>
-          <img alt="Trotadoras de cardio" loading="lazy" class="aspect-square object-cover w-full h-full transform group-hover/img:scale-110 transition-transform duration-700 saturate-[1.2] contrast-125" src="/assets/images/maquinas-trotadoras.jpg">
-        </div>
-        
-        <div class="overflow-hidden rounded-2xl relative group/img">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 z-10"></div>
-          <img alt="Personas entrenando en el gimnasio" loading="lazy" class="aspect-square object-cover w-full h-full transform group-hover/img:scale-110 transition-transform duration-700 saturate-[1.2] contrast-125" src="/assets/images/personas-gym.jpg">
+        <!-- Faders Laterales para que no se vea el corte brusco -->
+        <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface-container-low to-transparent z-20 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface-container-low to-transparent z-20 pointer-events-none"></div>
+
+        <div class="carousel-track px-4">
+          <!-- Primera tanda de imágenes -->
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Computador con logo Elixir Gym" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/computador-con-logo-gym.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Discos y barra de sentadilla" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/discos-barra-sentadilla-libre.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Máquina de jalones" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/maquina-jalones-pecho.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Máquina multifuncional" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/maquina-multifuncional.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Trotadoras de cardio" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/maquinas-trotadoras.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Personas entrenando en el gimnasio" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/personas-gym.jpg">
+          </div>
+          
+          <!-- Segunda tanda (Duplicado) para el loop infinito -->
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Computador con logo Elixir Gym" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/computador-con-logo-gym.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Discos y barra de sentadilla" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/discos-barra-sentadilla-libre.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Máquina de jalones" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/maquina-jalones-pecho.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Máquina multifuncional" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/maquina-multifuncional.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Trotadoras de cardio" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/maquinas-trotadoras.jpg">
+          </div>
+          <div class="w-64 h-80 shrink-0 overflow-hidden rounded-2xl relative">
+            <div class="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-300"></div>
+            <img alt="Personas entrenando en el gimnasio" loading="lazy" class="w-full h-full object-cover saturate-[1.2] contrast-110" src="/assets/images/personas-gym.jpg">
+          </div>
         </div>
       </div>
       
       <!-- Panel flotante decorativo -->
-      <div class="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 bg-gradient-to-r from-primary to-electric-blue text-black p-6 md:p-8 rounded-3xl shadow-[0_20px_50px_-10px_rgba(2,132,199,0.7)] hidden lg:block z-20 transform group-hover:-translate-y-2 group-hover:translate-x-2 transition-transform duration-500">
+      <div class="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 bg-gradient-to-r from-primary to-electric-blue text-black p-6 md:p-8 rounded-3xl shadow-[0_20px_50px_-10px_rgba(2,132,199,0.7)] hidden lg:block z-20 transition-transform duration-500">
         <div class="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl -mt-16 -mr-16 pointer-events-none"></div>
         <div class="text-[10px] tracking-[0.4em] font-black opacity-90 uppercase mb-2">VIVE LA EXPERIENCIA</div>
         <div class="text-3xl font-black italic uppercase leading-none drop-shadow-sm">3ER PISO • MONTT</div>

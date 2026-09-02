@@ -1,0 +1,15 @@
+@keyframes slide-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: slide-infinite 40s linear infinite;
+  gap: 1rem;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
