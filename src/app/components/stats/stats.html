@@ -1,20 +1,31 @@
-<section #statsSection class="py-16 px-margin-mobile md:px-margin-desktop bg-primary-container relative overflow-hidden" id="stats">
-  <!-- Decorative background -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute -top-24 -left-24 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl"></div>
-    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl"></div>
+<section #statsSection class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-high relative overflow-hidden border-y border-white/5 shadow-2xl" id="stats">
+  
+  <!-- Decorative Glowing Backgrounds -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-primary/10 rounded-full mix-blend-screen filter blur-[80px]"></div>
+    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-electric-blue/10 rounded-full mix-blend-screen filter blur-[80px]"></div>
   </div>
   
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div *ngFor="let stat of stats" class="p-4">
-        <div class="font-display-lg-mobile md:font-display-lg text-4xl md:text-5xl text-white font-black italic mb-2 tracking-tighter">
-          {{ stat.prefix }}{{ animatedValues[stat.id] }}{{ stat.suffix }}
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 text-center divide-x-0 lg:divide-x lg:divide-white/10">
+      
+      <div *ngFor="let stat of stats" class="flex flex-col items-center justify-center p-4 group">
+        <!-- Icon -->
+        <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-500 shadow-[0_0_15px_rgba(2,132,199,0)] group-hover:shadow-[0_0_20px_rgba(2,132,199,0.4)]">
+          <span class="material-symbols-outlined text-3xl text-primary drop-shadow-md">{{ stat.icon }}</span>
         </div>
-        <div class="font-label-bold text-[10px] md:text-xs text-on-primary-container uppercase tracking-[0.2em] font-bold">
+        
+        <!-- Number -->
+        <div class="font-headline-md text-5xl md:text-6xl text-white font-black italic mb-3 tracking-tighter drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">
+          <span class="text-primary">{{ stat.prefix }}</span>{{ animatedValues[stat.id] }}<span class="text-primary">{{ stat.suffix }}</span>
+        </div>
+        
+        <!-- Label -->
+        <div class="font-label-bold text-[10px] md:text-xs text-on-surface-variant uppercase tracking-[0.3em] font-bold">
           {{ stat.label }}
         </div>
       </div>
+      
     </div>
   </div>
 </section>
