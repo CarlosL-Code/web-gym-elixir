@@ -16,12 +16,13 @@ import { FinalCta } from './components/final-cta/final-cta';
 import { Footer } from './components/footer/footer';
 import { WhatsappButton } from './components/whatsapp-button/whatsapp-button';
 import { VideoShowcase } from './components/video-showcase/video-showcase';
+import { Schedule } from './components/schedule/schedule';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    Navbar, Hero, VideoShowcase, Benefits, Plans, Classes, Trainers, Gallery, Stats, Partners, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
+    Navbar, Hero, VideoShowcase, Schedule, Benefits, Plans, Classes, Trainers, Gallery, Stats, Partners, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
