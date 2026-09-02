@@ -6,10 +6,6 @@
   body {
     @apply bg-background text-on-surface;
     overflow-x: hidden;
-    background-image: url('/assets/images/background-site.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
   }
 }
 
