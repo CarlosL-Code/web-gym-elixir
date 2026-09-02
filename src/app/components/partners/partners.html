@@ -20,14 +20,14 @@
     </p>
   </div>
 
-  <!-- Decorative container for logo marquee -->
-  <div class="relative max-w-7xl mx-auto border-y border-white/10 bg-black/30 backdrop-blur-sm py-10 shadow-inner">
+  <!-- Logo marquee without box -->
+  <div class="relative max-w-[100vw] mx-auto py-10">
     <app-logo-loop
       [logos]="logos"
       [speed]="40"
       [gap]="80"
-      [logoHeight]="60"
-      fadeColor="transparent"
+      [logoHeight]="90"
+      [fadeOut]="false"
       ariaLabel="Empresas con convenio">
     </app-logo-loop>
   </div>
