@@ -1,7 +1,13 @@
-<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="plans">
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-background/50 backdrop-blur-sm" id="plans">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">MEMBRESÍAS <span class="text-gradient">EXCLUSIVAS</span></h2>
+      <app-gradient-text
+        [colors]="['#D8B4FE', '#818CF8', '#38BDF8', '#D8B4FE']"
+        [animationSpeed]="6"
+        className="font-headline-xl text-4xl md:text-5xl uppercase italic font-black text-center"
+      >
+        MEMBRESÍAS EXCLUSIVAS
+      </app-gradient-text>
       <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Matrícula costo cero en todos los planes</p>
     </div>
     

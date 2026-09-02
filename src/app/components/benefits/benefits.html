@@ -1,10 +1,16 @@
-<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface" id="about">
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-background/50 backdrop-blur-sm" id="about">
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
     <div class="space-y-8">
       <div class="inline-block py-2 px-4 bg-primary-container/5 border-l-2 border-primary-container">
         <span class="font-label-bold text-xs uppercase tracking-[0.2em] text-primary-container">Nuestra Filosofía</span>
       </div>
-      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase leading-tight italic font-black">FORJA TU <br> VERSIÓN</h2>
+      <app-gradient-text
+        [colors]="['#D8B4FE', '#818CF8', '#38BDF8', '#D8B4FE']"
+        [animationSpeed]="6"
+        className="font-headline-xl text-4xl md:text-5xl uppercase leading-tight italic font-black text-left m-0 justify-start"
+      >
+        FORJA TU VERSIÓN
+      </app-gradient-text>
       <p class="font-body-lg text-lg text-on-surface-variant leading-relaxed">
         Ubicados en el corazón de Temuco (Manuel Montt #1027), Elixir es la forja de tu mejor versión. Hemos creado un entorno auténtico donde el equipamiento de élite y nuestra comunidad se encuentran para empujar tus límites.
       </p>

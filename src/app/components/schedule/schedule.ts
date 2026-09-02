@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { GhostFibersComponent } from '../ui/ghost-fibers/ghost-fibers';
 
 @Component({
   selector: 'app-schedule',
   standalone: true,
-  imports: [GhostFibersComponent],
+  imports: [],
   templateUrl: './schedule.html'
 })
 export class Schedule {

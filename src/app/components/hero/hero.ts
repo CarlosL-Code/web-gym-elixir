@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { MaskedHeadingComponent } from '../ui/masked-heading/masked-heading';
+import { GradientTextComponent } from '../ui/gradient-text/gradient-text';
 
 @Component({
   selector: 'app-hero',
-  imports: [MaskedHeadingComponent],
+  imports: [GradientTextComponent],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
