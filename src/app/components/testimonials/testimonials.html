@@ -6,16 +6,22 @@
     </div>
     
     <!-- Carousel Container -->
-    <div class="relative max-w-5xl mx-auto min-h-[450px] md:min-h-[350px]">
+    <div class="relative max-w-5xl mx-auto mt-8 md:mt-16 mb-20 px-4 md:px-12">
       
-      <div class="relative w-full h-full flex items-center justify-center">
+      <!-- Grid overlapping container -->
+      <div class="grid w-full">
         <ng-container *ngFor="let t of testimonials; let i = index">
           
-          <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out flex flex-col md:flex-row gap-8 md:gap-16 items-center bg-gradient-to-br from-surface-container-high/50 to-surface-container-lowest/80 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] shadow-2xl"
+          <div style="grid-area: 1 / 1;" 
+               class="transition-all duration-1000 ease-in-out flex flex-col md:flex-row gap-8 md:gap-16 items-center bg-gradient-to-br from-surface-container-high/50 to-surface-container-lowest/80 backdrop-blur-xl border border-white/10 p-8 md:p-14 rounded-[2rem] shadow-2xl"
                [class.opacity-100]="i === currentIndex"
                [class.z-10]="i === currentIndex"
+               [class.translate-y-0]="i === currentIndex"
+               [class.scale-100]="i === currentIndex"
                [class.opacity-0]="i !== currentIndex"
                [class.z-0]="i !== currentIndex"
+               [class.translate-y-4]="i !== currentIndex"
+               [class.scale-95]="i !== currentIndex"
                [class.pointer-events-none]="i !== currentIndex">
                
             <!-- Left Side: Profile -->
@@ -34,10 +40,10 @@
             </div>
             
             <!-- Right Side: Quote -->
-            <div class="w-full md:w-2/3 relative">
+            <div class="w-full md:w-2/3 relative pt-4 md:pt-0">
               <!-- Giant minimal quote mark -->
-              <div class="absolute -top-12 -left-8 md:-top-16 md:-left-12 text-primary/10 select-none pointer-events-none">
-                <span class="font-display-lg text-[150px] leading-none">"</span>
+              <div class="absolute -top-10 -left-6 md:-top-16 md:-left-12 text-primary/10 select-none pointer-events-none">
+                <span class="font-display-lg text-[120px] md:text-[150px] leading-none">"</span>
               </div>
               
               <p class="font-body-md text-lg md:text-2xl text-on-surface leading-relaxed relative z-10 italic">

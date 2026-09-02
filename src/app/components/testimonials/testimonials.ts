@@ -47,7 +47,7 @@ export class Testimonials implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.intervalId = setInterval(() => {
         this.nextTestimonial();
-      }, 5000);
+      }, 8000);
     }
   }
 

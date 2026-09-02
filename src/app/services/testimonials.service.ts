@@ -26,7 +26,7 @@ export class TestimonialsService {
       {
         id: 't2',
         name: 'Camila Herrera',
-        avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
+        avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
         comment: 'He probado varios gimnasios en Temuco y ninguno se compara. La asesoría de los profesores es real, se nota que se preocupan por tus avances y tu técnica.',
         rating: 5,
         timeClient: 'Socia hace 8 meses'
