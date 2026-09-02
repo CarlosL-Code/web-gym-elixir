@@ -1,0 +1,52 @@
+<div
+  #container
+  class="logoloop"
+  [class.logoloop--fade]="fadeOut"
+  [style.--logoloop-gap.px]="gap"
+  [style.--logoloop-fadeColor]="fadeColor"
+  role="region"
+  [attr.aria-label]="ariaLabel"
+>
+  <div #track class="logoloop__track" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <ul
+      *ngFor="let copy of copies; let copyIndex = index; trackBy: trackByIndex"
+      class="logoloop__list"
+      role="list"
+      [attr.aria-hidden]="copyIndex > 0 ? 'true' : null"
+    >
+      <li
+        *ngFor="let logo of logos"
+        class="logoloop__item"
+        role="listitem"
+        [style.height.px]="logoHeight"
+        [title]="logo.alt"
+      >
+        <a *ngIf="logo.href" class="logoloop__link" [href]="logo.href" target="_blank" rel="noreferrer noopener" [attr.aria-label]="logo.alt">
+          <ng-container *ngTemplateOutlet="logoContent"></ng-container>
+        </a>
+        <ng-container *ngIf="!logo.href">
+          <ng-container *ngTemplateOutlet="logoContent"></ng-container>
+        </ng-container>
+
+        <ng-template #logoContent>
+          <img
+            *ngIf="logo.src && !failedIds.has(logo.id); else fallback"
+            [src]="logo.src"
+            [alt]="logo.alt"
+            loading="lazy"
+            decoding="async"
+            draggable="false"
+            (error)="onImageError(logo.id)"
+            (load)="onImageLoad()"
+          />
+          <ng-template #fallback>
+            <span class="logoloop__fallback">
+              <span class="material-symbols-outlined logoloop__fallback-icon">handshake</span>
+              <span class="logoloop__fallback-text">{{ logo.alt }}</span>
+            </span>
+          </ng-template>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</div>
