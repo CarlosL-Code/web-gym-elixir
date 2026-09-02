@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
 })
 export class Schedule {
   days = [
-    { name: 'LUN', hours: '06:30 - 22:00', active: true },
-    { name: 'MAR', hours: '06:30 - 22:00', active: true },
-    { name: 'MIE', hours: '06:30 - 22:00', active: true },
-    { name: 'JUE', hours: '06:30 - 22:00', active: true },
-    { name: 'VIE', hours: '06:30 - 22:00', active: true },
-    { name: 'SÁB', hours: '09:30 - 15:00', active: true, highlight: true },
-    { name: 'DOM', hours: 'CERRADO', active: false }
+    { name: 'LUNES', hours: '06:30 - 22:00', active: true },
+    { name: 'MARTES', hours: '06:30 - 22:00', active: true },
+    { name: 'MIÉRCOLES', hours: '06:30 - 22:00', active: true },
+    { name: 'JUEVES', hours: '06:30 - 22:00', active: true },
+    { name: 'VIERNES', hours: '06:30 - 22:00', active: true },
+    { name: 'SÁBADO', hours: '09:30 - 15:00', active: true, highlight: true },
+    { name: 'DOMINGO', hours: 'CERRADO', active: false }
   ];
 }
