@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 export class Navbar {
   isScrolled = false;
   isMobileMenuOpen = false;
-  activeTheme = 'theme-blue';
+  activeTheme = 'theme-orange';
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
