@@ -165,8 +165,9 @@
       
       <!-- Footer del modal -->
       <div class="p-6 border-t border-white/5 bg-surface/30 flex justify-end">
-        <button (click)="closeLegalModal()" class="bg-primary text-black hover:bg-white font-label-bold text-[10px] uppercase tracking-widest px-8 py-3 rounded-xl transition-colors shadow-lg">
-          Entendido
+        <button (click)="closeLegalModal()" class="relative overflow-hidden group bg-transparent border-2 border-primary text-primary hover:text-black font-label-bold text-[10px] uppercase tracking-widest px-8 py-3 rounded-xl transition-all duration-300">
+          <span class="relative z-10 transition-colors duration-300">Entendido</span>
+          <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
         </button>
       </div>
 

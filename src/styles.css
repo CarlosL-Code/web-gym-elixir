@@ -158,3 +158,10 @@ body.theme-blue {
   "opsz" 24;
 }
 
+
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor-dot, .custom-cursor-ring, .custom-cursor-trail-dot, #cursor-trail-container {
+    display: none !important;
+  }
+}
+
