@@ -3,14 +3,14 @@
 
     <!-- Heading -->
     <div class="text-center mb-16">
-      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase italic font-black">NUESTROS <span class="text-gradient">ENTRENADORES</span></h2>
+      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase font-black">NUESTROS <span class="text-gradient">ENTRENADORES</span></h2>
       <p class="text-on-surface-variant uppercase tracking-[0.4em] font-label-bold text-[10px] mt-4">Profesionales enfocados en tus resultados</p>
     </div>
 
     <!-- Expanding Cards Layout -->
-    <div class="flex flex-col lg:flex-row gap-4 h-auto lg:h-[600px] w-full">
+    <div class="flex flex-col lg:flex-row gap-4 lg:h-[600px] w-full">
       <div *ngFor="let trainer of trainers; let i = index"
-           class="group/card relative flex-1 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] overflow-hidden rounded-3xl cursor-pointer shadow-2xl border border-white/10 lg:hover:flex-[2.5]"
+           class="group/card relative flex-1 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] overflow-hidden rounded-3xl cursor-pointer shadow-2xl border border-white/10 lg:hover:flex-[2.5] h-[380px] lg:h-auto"
            (click)="openModal(trainer)"
            [attr.aria-label]="'Ver perfil de ' + trainer.name"
            tabindex="0"
@@ -47,7 +47,7 @@
             </div>
 
             <!-- Nombre -->
-            <h3 class="font-headline-md text-3xl md:text-4xl text-white uppercase italic font-black leading-tight mb-2 drop-shadow-lg lg:-rotate-90 lg:origin-bottom-left lg:absolute lg:bottom-12 lg:left-8 lg:whitespace-nowrap lg:group-hover/card:rotate-0 lg:group-hover/card:relative lg:group-hover/card:bottom-0 lg:group-hover/card:left-0 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
+            <h3 class="font-headline-md text-3xl md:text-4xl text-white uppercase font-black leading-tight mb-2 drop-shadow-lg lg:-rotate-90 lg:origin-bottom-left lg:absolute lg:bottom-12 lg:left-8 lg:whitespace-nowrap lg:group-hover/card:rotate-0 lg:group-hover/card:relative lg:group-hover/card:bottom-0 lg:group-hover/card:left-0 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]">
               {{ trainer.name }}
             </h3>
 
@@ -119,7 +119,7 @@
           <!-- Nombre sobre la foto en móvil -->
           <div class="absolute bottom-0 left-0 w-full p-6 lg:hidden">
             <p class="text-primary font-label-bold text-[10px] uppercase tracking-[0.3em] mb-1">{{ selectedTrainer?.specialty }}</p>
-            <h3 class="font-headline-md text-3xl text-white uppercase italic font-black leading-tight">{{ selectedTrainer?.name }}</h3>
+            <h3 class="font-headline-md text-3xl text-white uppercase font-black leading-tight">{{ selectedTrainer?.name }}</h3>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@
         <!-- Nombre (solo desktop) -->
         <div class="hidden lg:block">
           <p class="inline-block bg-primary/10 border border-primary/20 text-primary px-3 py-1 rounded-full font-label-bold text-[9px] uppercase tracking-[0.35em] mb-3">{{ selectedTrainer?.specialty }}</p>
-          <h3 class="font-headline-md text-4xl text-white uppercase italic font-black leading-tight">{{ selectedTrainer?.name }}</h3>
+          <h3 class="font-headline-md text-4xl text-white uppercase font-black leading-tight">{{ selectedTrainer?.name }}</h3>
         </div>
 
         <!-- Stats chips -->
