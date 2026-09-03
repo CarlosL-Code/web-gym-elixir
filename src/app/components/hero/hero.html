@@ -1,51 +1,112 @@
-<header class="relative min-h-[85dvh] md:min-h-[100dvh] flex items-center justify-center overflow-hidden" id="home">
+<header class="relative min-h-[90dvh] md:min-h-[100dvh] flex items-center overflow-hidden" id="home">
   <!-- Fondo y Filtros -->
   <div class="absolute inset-0 z-0 bg-black">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-surface z-10"></div>
-    <div class="absolute inset-0 bg-primary/20 mix-blend-screen z-10 pointer-events-none"></div>
-    <div class="w-full h-full bg-cover bg-[center_top] md:bg-center transition-transform duration-[20s] hover:scale-105 opacity-80" style="background-image: url('/assets/images/imagen-personas-entrenando.jpg');"></div>
-    <!-- Difuminado inferior -->
-    <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-surface to-transparent z-20 pointer-events-none"></div>
+    <!-- Degradados para legibilidad de texto a la izquierda -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10 w-full md:w-[70%]"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10"></div>
+    
+    <!-- Imagen a la derecha -->
+    <div class="absolute right-0 top-0 w-full md:w-[85%] h-full bg-cover bg-[center_top] transition-transform duration-[20s] hover:scale-105 opacity-60 mix-blend-luminosity" style="background-image: url('/assets/images/imagen-personas-entrenando.jpg');"></div>
+    
+    <!-- Foco de luz interactivo/pulsante -->
+    <div class="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] mix-blend-screen z-10 animate-[pulse-glow_8s_infinite] pointer-events-none"></div>
   </div>
   
   <!-- Contenido -->
-  <div class="relative z-30 text-center px-margin-mobile md:px-margin-desktop max-w-6xl pb-24 lg:pb-0 pt-32 lg:pt-40">
-    
-    <!-- Etiqueta de Ubicación (Glassmorphism) -->
-    <div class="inline-flex items-center gap-2 mb-8 py-2.5 px-6 bg-white/5 backdrop-blur-md border border-white/10 text-white font-label-bold text-[10px] uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(2,132,199,0.2)]">
-      <span class="material-symbols-outlined text-sm text-primary">location_on</span>
-      MONTT #1027 (3ER PISO) • TEMUCO, CHILE 
-      <img src="https://flagcdn.com/w20/cl.png" srcset="https://flagcdn.com/w40/cl.png 2x" alt="Chile" class="inline-block w-4 h-auto align-text-bottom ml-1 rounded-sm shadow-sm">
-    </div>
-    
-    <!-- Titulo Principal -->
-    <h1 class="font-headline-xl text-5xl md:text-7xl lg:text-[5.5rem] text-white mb-6 leading-[1.05] uppercase italic font-black drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]">
-      ELIXIR GYM <br class="hidden md:block">
-      <span class="text-3xl md:text-5xl lg:text-6xl text-white/90">GIMNASIO EN</span> 
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-electric-blue drop-shadow-[0_0_30px_rgba(2,132,199,0.5)]">TEMUCO, CHILE</span>
-    </h1>
-    
-    <!-- Subtitulo -->
-    <p class="font-body-lg text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-      Experimenta el alto rendimiento en el corazón de Temuco. Un espacio diseñado para atletas reales que buscan resultados excepcionales.
-    </p>
-    
-    <!-- Botones -->
-    <div class="flex flex-col md:flex-row gap-5 justify-center items-center">
-      <!-- Botón Primario Metálico -->
-      <a class="relative group bg-gradient-to-r from-primary to-electric-blue text-black font-black text-xs uppercase px-12 py-5 rounded-2xl tracking-[0.2em] shadow-[0_0_30px_rgba(2,132,199,0.4)] hover:shadow-[0_0_50px_rgba(2,132,199,0.7)] hover:-translate-y-1 transition-all duration-300 text-center inline-block overflow-hidden" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20clase%20de%20prueba%20en%20Elixir%20Gym." target="_blank">
-        <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-[shine_1.5s_ease-in-out]"></div>
-        <span class="relative z-10 flex items-center justify-center gap-2">
-          PRUEBA GRATIS
-          <span class="material-symbols-outlined text-sm">flash_on</span>
-        </span>
-      </a>
+  <div class="relative z-20 w-full px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto pt-32 lg:pt-0">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
       
-      <!-- Botón Secundario Glass -->
-      <a href="#plans" class="bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase px-12 py-5 rounded-2xl tracking-[0.2em] hover:bg-white/10 hover:border-white/40 hover:-translate-y-1 transition-all duration-300 text-center inline-block shadow-xl">
-        VER PLANES
-      </a>
+      <!-- Columna de Texto Izquierda -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left z-20">
+        
+        <!-- Etiqueta de Ubicación -->
+        <div class="inline-flex items-center gap-2 mb-6 py-2 px-5 bg-white/5 backdrop-blur-md border border-white/10 text-white font-label-bold text-[9px] sm:text-[10px] uppercase tracking-[0.3em] rounded-full shadow-[0_0_20px_rgba(2,132,199,0.15)] opacity-0 animate-[fade-in-up_0.8s_ease-out_0.2s_forwards]">
+          <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+          MONTT #1027 (3ER PISO) • TEMUCO
+        </div>
+        
+        <!-- Titulo Principal -->
+        <h1 class="font-headline-xl text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6rem] text-white leading-[0.95] uppercase italic font-black mb-8 w-full">
+          <span class="block opacity-0 animate-[fade-in-up_0.8s_ease-out_0.4s_forwards] text-transparent" style="-webkit-text-stroke: 1.5px rgba(255,255,255,0.7);">ELIXIR GYM</span>
+          <span class="block opacity-0 animate-[fade-in-up_0.8s_ease-out_0.5s_forwards] mt-1 lg:mt-2 text-white drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">GIMNASIO EN</span> 
+          <span class="block opacity-0 animate-[fade-in-up_0.8s_ease-out_0.6s_forwards] mt-1 lg:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-electric-blue drop-shadow-[0_0_30px_rgba(2,132,199,0.4)]">TEMUCO, CHILE</span>
+        </h1>
+        
+        <!-- Subtitulo -->
+        <p class="font-body-lg text-lg md:text-xl text-white/70 mb-10 max-w-xl leading-relaxed drop-shadow-md border-l-2 border-primary/50 pl-5 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.8s_forwards]">
+          Experimenta el alto rendimiento en un espacio diseñado exclusivamente para atletas reales que buscan resultados excepcionales.
+        </p>
+        
+        <!-- Botones -->
+        <div class="flex flex-col sm:flex-row gap-5 items-center w-full sm:w-auto opacity-0 animate-[fade-in-up_0.8s_ease-out_1s_forwards]">
+          <!-- Botón Primario Metálico -->
+          <a class="relative group w-full sm:w-auto bg-gradient-to-r from-primary to-electric-blue text-black font-black text-xs uppercase px-10 py-5 rounded-2xl tracking-[0.2em] shadow-[0_0_30px_rgba(2,132,199,0.3)] hover:shadow-[0_0_50px_rgba(2,132,199,0.6)] hover:-translate-y-1 transition-all duration-300 text-center overflow-hidden" href="https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20clase%20de%20prueba%20en%20Elixir%20Gym." target="_blank">
+            <div class="absolute inset-0 bg-white/30 transform -skew-x-12 -translate-x-full group-hover:animate-[shine_1.5s_ease-in-out]"></div>
+            <span class="relative z-10 flex items-center justify-center gap-2">
+              PRUEBA GRATIS
+              <span class="material-symbols-outlined text-sm">flash_on</span>
+            </span>
+          </a>
+          
+          <!-- Botón Secundario Glass -->
+          <a href="#plans" class="w-full sm:w-auto bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold text-xs uppercase px-10 py-5 rounded-2xl tracking-[0.2em] hover:bg-white/10 hover:border-white/40 hover:-translate-y-1 transition-all duration-300 text-center shadow-xl flex items-center justify-center gap-2">
+            VER PLANES
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+        
+      </div>
+      
+      <!-- Columna Derecha (Floating UI Card - Solo Desktop) -->
+      <div class="hidden lg:flex lg:col-span-5 justify-end opacity-0 animate-[fade-in-up_1s_ease-out_1.2s_forwards]">
+        <!-- Tarjeta Flotante estilo App -->
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.6)] relative animate-[float_6s_ease-in-out_infinite] w-full max-w-[320px]">
+           <!-- Glow superior -->
+           <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary/40 rounded-full blur-2xl pointer-events-none"></div>
+           
+           <div class="flex items-center gap-4 mb-8 relative z-10">
+             <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-electric-blue flex items-center justify-center text-black shadow-[0_0_15px_rgba(2,132,199,0.5)]">
+               <span class="material-symbols-outlined">monitoring</span>
+             </div>
+             <div>
+               <div class="text-white font-headline-md text-lg uppercase tracking-wider font-bold">Nivel Élite</div>
+               <div class="text-white/50 text-[10px] uppercase tracking-[0.2em] font-label-bold">Equipamiento Premium</div>
+             </div>
+           </div>
+           
+           <div class="space-y-6 relative z-10">
+             <div class="border-t border-white/10 pt-5">
+               <div class="flex justify-between items-end mb-3">
+                 <span class="text-white/70 text-[10px] font-label-bold uppercase tracking-widest">Compromiso</span>
+                 <span class="text-primary font-black text-xl italic">100%</span>
+               </div>
+               <div class="w-full bg-black/40 border border-white/5 h-2 rounded-full overflow-hidden">
+                 <div class="bg-gradient-to-r from-primary to-electric-blue w-full h-full shadow-[0_0_10px_rgba(2,132,199,0.8)]"></div>
+               </div>
+             </div>
+             
+             <div class="border-t border-white/10 pt-5 flex justify-between items-center">
+               <div class="flex -space-x-3">
+                 <img class="w-10 h-10 rounded-full border-2 border-[#1c1c1c] object-cover" src="/assets/images/personas-gym.jpg" alt="User 1">
+                 <img class="w-10 h-10 rounded-full border-2 border-[#1c1c1c] object-cover" src="/assets/images/discos-barra-sentadilla-libre.jpg" alt="User 2">
+                 <div class="w-10 h-10 rounded-full border-2 border-[#1c1c1c] bg-primary/20 backdrop-blur-md flex items-center justify-center text-xs font-bold text-white shadow-inner">+500</div>
+               </div>
+               <div class="text-right">
+                 <div class="text-white text-sm font-bold">Atletas Activos</div>
+                 <div class="text-primary/80 text-[9px] uppercase tracking-widest">En la comunidad</div>
+               </div>
+             </div>
+           </div>
+           
+        </div>
+      </div>
+      
     </div>
-
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fade-in-up_1s_ease-out_1.5s_forwards] z-30">
+    <span class="text-white/40 text-[9px] uppercase tracking-[0.3em] font-label-bold">Descubre Más</span>
+    <div class="w-[2px] h-10 bg-gradient-to-b from-primary to-transparent animate-[float_2s_ease-in-out_infinite]"></div>
   </div>
 </header>
