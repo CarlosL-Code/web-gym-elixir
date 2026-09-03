@@ -119,3 +119,42 @@
   50% { opacity: 0.7; transform: scale(1.05); }
 }
 
+
+/* Theming System */
+:root {
+  --color-primary: #7dd3fc;
+  --color-electric-blue: #00d4ff;
+  --color-primary-container: #0369a1;
+  --color-mint-accent: #2de5bb;
+}
+
+body.theme-orange {
+  --color-primary: #fdba74; /* orange-300 */
+  --color-electric-blue: #f97316; /* orange-500 */
+  --color-primary-container: #9a3412; /* orange-800 */
+  --color-mint-accent: #fcd34d; /* amber-300 */
+}
+
+body.theme-purple {
+  --color-primary: #d8b4fe; /* purple-300 */
+  --color-electric-blue: #a855f7; /* purple-500 */
+  --color-primary-container: #581c87; /* purple-800 */
+  --color-mint-accent: #f472b6; /* pink-400 */
+}
+
+body.theme-blue {
+  --color-primary: #7dd3fc;
+  --color-electric-blue: #00d4ff;
+  --color-primary-container: #0369a1;
+  --color-mint-accent: #2de5bb;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  "FILL" 0,
+  "wght" 200,
+  "GRAD" 0,
+  "opsz" 24;
+}
+

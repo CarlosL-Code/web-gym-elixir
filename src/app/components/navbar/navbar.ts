@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 export class Navbar {
   isScrolled = false;
   isMobileMenuOpen = false;
+  activeTheme = 'theme-blue';
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -22,5 +23,11 @@ export class Navbar {
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+  }
+
+  setTheme(themeName: string) {
+    this.activeTheme = themeName;
+    document.body.classList.remove('theme-blue', 'theme-orange', 'theme-purple');
+    document.body.classList.add(themeName);
   }
 }
