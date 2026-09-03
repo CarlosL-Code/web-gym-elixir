@@ -93,11 +93,84 @@
         </p>
         <span class="w-[1px] h-3 bg-white/10 hidden md:block"></span>
         <div class="flex gap-4">
-          <a href="#" class="text-on-surface-variant/40 hover:text-white text-[9px] uppercase tracking-[0.2em] transition-colors">Privacidad</a>
-          <a href="#" class="text-on-surface-variant/40 hover:text-white text-[9px] uppercase tracking-[0.2em] transition-colors">Términos</a>
+          <a href="#" (click)="openLegalModal('privacy', $event)" class="text-on-surface-variant/40 hover:text-white text-[9px] uppercase tracking-[0.2em] transition-colors">Privacidad</a>
+          <a href="#" (click)="openLegalModal('terms', $event)" class="text-on-surface-variant/40 hover:text-white text-[9px] uppercase tracking-[0.2em] transition-colors">Términos</a>
         </div>
       </div>
       
     </div>
   </div>
+
+  <!-- MODAL LEGAL -->
+  <div *ngIf="isLegalModalOpen" class="fixed inset-0 z-[200] flex items-center justify-center p-4 transition-opacity duration-300">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeLegalModal()"></div>
+    
+    <div class="relative w-full max-w-3xl bg-surface-container-high border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between p-6 border-b border-white/5 bg-surface/50">
+        <h3 class="font-headline-md text-xl md:text-2xl text-white uppercase font-black">
+          {{ legalContentType === 'privacy' ? 'Políticas de Privacidad' : 'Términos y Condiciones' }}
+        </h3>
+        <button (click)="closeLegalModal()" class="text-white/50 hover:text-white transition-colors bg-transparent border-none">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      
+      <!-- Content (Scrollable) -->
+      <div class="p-6 md:p-8 overflow-y-auto font-body-md text-sm text-on-surface-variant/80 space-y-6">
+        
+        <ng-container *ngIf="legalContentType === 'privacy'">
+          <div class="space-y-4">
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs">1. Información que Recopilamos</h4>
+            <p>Recopilamos información personal que usted nos proporciona voluntariamente, incluyendo su nombre, número de teléfono (WhatsApp), correo electrónico, y datos de salud básicos necesarios para evaluar su aptitud física antes de iniciar cualquier plan de entrenamiento.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">2. Uso de la Información</h4>
+            <p>Utilizamos sus datos exclusivamente para: contactarlo sobre membresías, gestionar su acceso a las instalaciones, enviar notificaciones relevantes sobre horarios, y garantizar su seguridad médica durante el entrenamiento. No vendemos ni compartimos sus datos con terceros bajo ninguna circunstancia.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">3. Seguridad de Datos</h4>
+            <p>Implementamos estrictas medidas de seguridad técnicas y organizativas para proteger su información personal contra accesos no autorizados, alteraciones, divulgación o destrucción, en pleno cumplimiento de las normativas de protección de datos vigentes.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">4. Cookies y Rastreo</h4>
+            <p>Nuestro sitio web utiliza cookies puramente funcionales y analíticas para mejorar su experiencia de navegación. Puede desactivarlas en su navegador, aunque algunas funciones del sitio podrían verse afectadas.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">5. Derechos del Usuario</h4>
+            <p>Usted tiene el derecho permanente de solicitar el acceso, rectificación, o eliminación completa de todos sus datos personales de nuestras bases de datos enviando un correo a contacto&#64;elixirgym.cl.</p>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="legalContentType === 'terms'">
+          <div class="space-y-4">
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs">1. Condiciones de Membresía</h4>
+            <p>Al adquirir un plan en Elixir Gym, el usuario se compromete a respetar las normas de convivencia del recinto, cuidar las maquinarias y seguir las instrucciones de los entrenadores certificados en todo momento.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">2. Liberación de Responsabilidad Física</h4>
+            <p>El usuario declara estar en condiciones físicas óptimas para realizar ejercicio de alta intensidad. Elixir Gym no se hace responsable por lesiones, accidentes o problemas de salud derivados de enfermedades preexistentes no declaradas, negligencia del usuario, o el uso inadecuado de las máquinas.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">3. Políticas de Pago y Reembolso</h4>
+            <p>Los pagos de mensualidades, pases diarios y planes especiales no son reembolsables una vez activados. La congelación o pausa temporal de planes (por razones médicas o viajes) está sujeta a los términos específicos del contrato firmado presencialmente.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">4. Derecho de Admisión</h4>
+            <p>Elixir Gym se reserva estrictamente el derecho de admisión, permanencia y expulsión frente a cualquier comportamiento que atente contra el orden público, la moral, las buenas costumbres o el respeto hacia otros socios y el personal del gimnasio.</p>
+            
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">5. Uso de Imagen y Videovigilancia</h4>
+            <p>Al ingresar a las instalaciones, el usuario autoriza a Elixir Gym a utilizar fotografías o videos de tipo ambiental tomados durante las rutinas de entrenamiento con fines promocionales. Además, acepta que el recinto cuenta con un sistema de videovigilancia cerrado por motivos de seguridad.</p>
+
+            <h4 class="text-white font-bold uppercase tracking-wider text-xs mt-6">6. Menores de Edad</h4>
+            <p>El ingreso y uso de las instalaciones por parte de menores de edad (a partir de los 14 años) está estrictamente condicionado a la firma presencial de un consentimiento informado por parte de su padre, madre o tutor legal.</p>
+          </div>
+        </ng-container>
+
+      </div>
+      
+      <!-- Footer del modal -->
+      <div class="p-6 border-t border-white/5 bg-surface/30 flex justify-end">
+        <button (click)="closeLegalModal()" class="bg-primary text-black hover:bg-white font-label-bold text-[10px] uppercase tracking-widest px-8 py-3 rounded-xl transition-colors shadow-lg">
+          Entendido
+        </button>
+      </div>
+
+    </div>
+  </div>
+
 </footer>
