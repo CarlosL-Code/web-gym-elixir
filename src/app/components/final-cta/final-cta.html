@@ -27,8 +27,8 @@
         TU MOMENTO ES AHORA
       </div>
 
-      <h2 class="font-headline-xl text-5xl md:text-7xl text-white uppercase italic font-black mb-8 leading-[1.1] drop-shadow-2xl">
-        ¿LISTO PARA TU <br><span class="text-gradient">TRANSFORMACIÓN?</span>
+      <h2 class="font-display-lg text-5xl md:text-7xl text-white uppercase font-black mb-8 leading-[1.1] drop-shadow-2xl">
+        ¿LISTO PARA TU <br><span class="text-gradient pr-2">TRANSFORMACIÓN?</span>
       </h2>
       
       <p class="font-body-lg text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -36,17 +36,20 @@
       </p>
       
       <div class="flex flex-col sm:flex-row justify-center items-center gap-5 sm:gap-8">
-        <!-- Botón Principal Metálico -->
+        <!-- Botón Principal Ghost -->
         <a href="https://wa.me/56991832903?text=Hola,%20quiero%20solicitar%20mi%20día%20de%20prueba" target="_blank" 
-           class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-gradient-to-r from-primary to-electric-blue text-black font-black text-xs uppercase px-12 py-5 rounded-2xl tracking-[0.25em] transition-all duration-300 hover:shadow-[0_0_40px_rgba(2,132,199,0.6)] hover:scale-[1.03]">
-          <span class="material-symbols-outlined text-xl">bolt</span>
-          SOLICITAR PRUEBA
+           class="relative overflow-hidden group w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-transparent border-2 border-primary text-primary hover:text-black font-black text-xs uppercase px-12 py-5 rounded-full tracking-[0.25em] transition-all duration-300">
+          <span class="relative z-10 flex items-center justify-center gap-2">
+            <i class="bi bi-lightning-charge-fill text-xl"></i>
+            SOLICITAR PRUEBA
+          </span>
+          <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
         </a>
         
         <!-- Botón Secundario Glassmorphism -->
         <a href="#plans" 
-           class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white font-label-bold text-xs uppercase px-12 py-5 rounded-2xl tracking-[0.25em] hover:bg-white/10 hover:border-primary/50 hover:text-primary transition-all duration-300">
-          <span class="material-symbols-outlined text-xl">view_list</span>
+           class="w-full sm:w-auto inline-flex justify-center items-center gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white font-label-bold text-xs uppercase px-12 py-5 rounded-full tracking-[0.25em] hover:bg-white/10 hover:border-primary/50 hover:text-primary transition-all duration-300">
+          <i class="bi bi-card-list text-xl"></i>
           VER MEMBRESÍAS
         </a>
       </div>
