@@ -16,9 +16,15 @@
       </div>
       
       <!-- Glass Horario -->
-      <div class="flex flex-wrap gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-2.5 rounded-2xl shadow-xl">
-        <div class="bg-gradient-to-r from-primary to-electric-blue text-black px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(2,132,199,0.3)]">LUN-VIE: 06:30 - 22:00</div>
-        <div class="bg-black/40 text-white px-6 py-3 rounded-xl font-label-bold text-[10px] uppercase tracking-[0.2em] border border-white/10">SÁB: 09:30 - 15:00</div>
+      <div class="flex flex-col sm:flex-row gap-3 bg-white/5 backdrop-blur-md border border-white/10 p-2.5 rounded-3xl shadow-xl w-full lg:w-auto">
+        <div class="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-electric-blue text-black px-6 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em]" style="box-shadow: 0 0 15px var(--color-primary-container);">
+          <i class="bi bi-calendar-event text-sm"></i>
+          LUNES A VIERNES: 06:30 - 22:00
+        </div>
+        <div class="flex items-center justify-center gap-2 bg-white/10 text-white px-6 py-4 rounded-2xl font-label-bold text-[10px] uppercase tracking-[0.2em] border border-white/20 shadow-sm hover:bg-white/20 transition-colors">
+          <i class="bi bi-calendar-check text-sm text-primary"></i>
+          SÁBADO: 09:30 - 15:00
+        </div>
       </div>
     </div>
     

@@ -129,8 +129,8 @@
 }
 
 body.theme-orange {
-  --color-primary: #fdba74; /* orange-300 */
-  --color-electric-blue: #f97316; /* orange-500 */
+  --color-primary: #ff8c00; /* orange-300 */
+  --color-electric-blue: #ff4500; /* orange-500 */
   --color-primary-container: #9a3412; /* orange-800 */
   --color-mint-accent: #fcd34d; /* amber-300 */
 }
