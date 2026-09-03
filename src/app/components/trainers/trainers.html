@@ -10,7 +10,7 @@
     <!-- Expanding Cards Layout -->
     <div class="flex flex-col lg:flex-row gap-4 lg:h-[600px] w-full">
       <div *ngFor="let trainer of trainers; let i = index"
-           class="group/card relative flex-1 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] overflow-hidden rounded-3xl cursor-pointer shadow-2xl border border-white/10 lg:hover:flex-[2.5] h-[380px] lg:h-auto"
+           class="group/card relative w-full h-[380px] shrink-0 lg:w-auto lg:h-full lg:flex-1 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] overflow-hidden rounded-3xl cursor-pointer shadow-2xl border border-white/10 lg:hover:flex-[2.5]"
            (click)="openModal(trainer)"
            [attr.aria-label]="'Ver perfil de ' + trainer.name"
            tabindex="0"
