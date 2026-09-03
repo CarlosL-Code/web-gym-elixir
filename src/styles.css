@@ -35,9 +35,9 @@
   ::-webkit-scrollbar-thumb { background: #353534; border-radius: 10px; }
   ::-webkit-scrollbar-thumb:hover { background: #ff5722; }
   .text-gradient {
-    background: linear-gradient(135deg, #7dd3fc 0%, #0ea5e9 50%, #0284c7 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-electric-blue) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; padding-right: 0.1em;
   }
   .btn-premium {
     position: relative;

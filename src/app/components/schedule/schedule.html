@@ -4,8 +4,8 @@
 
   <div class="relative z-10 max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="font-headline-xl text-4xl md:text-5xl text-on-surface uppercase leading-tight font-black mb-4 tracking-wide">
-        ENTRENA <span class="text-gradient italic">A TU RITMO</span>
+      <h2 class="font-display-lg text-4xl md:text-5xl text-on-surface uppercase leading-tight font-black mb-4 tracking-wide">
+        ENTRENA <span class="text-gradient pr-2">A TU RITMO</span>
       </h2>
       <p class="font-body-lg text-on-surface-variant/80 max-w-2xl mx-auto">
         Conoce nuestros horarios de atención y descubre los planes que mejor se adaptan a tus objetivos.
@@ -18,23 +18,23 @@
       <!-- LADO IZQUIERDO: HORARIOS -->
       <div class="bg-surface-container-low/30 backdrop-blur-md rounded-[2rem] border border-white/5 p-6 md:p-8 flex flex-col">
         <h3 class="text-2xl font-black text-on-surface mb-6 uppercase tracking-wider flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary-container">schedule</span>
+          <i class="bi bi-clock-fill text-primary"></i>
           Nuestros Horarios
         </h3>
         
         <div class="flex flex-col gap-4 flex-1 justify-center">
           @for (day of days; track day.name) {
             <div class="flex items-center justify-between p-5 rounded-2xl border transition-all duration-300"
-                 [class]="day.active ? 'bg-white/[0.03] border-white/10 hover:border-primary-container/30 hover:scale-[1.02]' : 'bg-transparent border-white/5 opacity-60'">
+                 [class]="day.active ? 'bg-white/[0.03] border-white/10 hover:border-primary/50 hover:scale-[1.02]' : 'bg-transparent border-white/5 opacity-60'">
               
               <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-                     [class]="day.highlight ? 'bg-primary-container/20 text-primary-container' : (day.active ? 'bg-surface-container-high text-on-surface-variant' : 'bg-surface-container text-on-surface-variant/50')">
-                  <span class="material-symbols-outlined text-2xl">{{day.icon}}</span>
+                     [class]="day.highlight ? 'bg-primary/20 text-primary' : (day.active ? 'bg-surface-container-high text-on-surface-variant' : 'bg-surface-container text-on-surface-variant/50')">
+                  <i class="bi {{day.icon}} text-2xl"></i>
                 </div>
                 <div>
                   <h4 class="text-lg font-bold transition-colors leading-none"
-                      [class]="day.highlight ? 'text-primary-container' : 'text-on-surface'">
+                      [class]="day.highlight ? 'text-primary' : 'text-on-surface'">
                     {{day.name}}
                   </h4>
                   @if (!day.active) {
@@ -59,15 +59,15 @@
       <!-- LADO DERECHO: PRECIOS DESTACADOS -->
       <div class="bg-surface-container-low/30 backdrop-blur-md rounded-[2rem] border border-white/5 p-6 md:p-8 flex flex-col">
         <h3 class="text-2xl font-black text-on-surface mb-6 uppercase tracking-wider flex items-center gap-3">
-          <span class="material-symbols-outlined text-primary-container">loyalty</span>
+          <i class="bi bi-tags-fill text-primary"></i>
           Planes Populares
         </h3>
         
         <div class="flex flex-col gap-4 flex-1 justify-center">
           <!-- Universitario -->
-          <div class="flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-primary-container/20 to-transparent border border-primary-container/50 transition-transform hover:scale-[1.02] duration-300">
+          <div class="flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/30 transition-transform hover:scale-[1.02] duration-300">
             <div>
-              <div class="font-label-bold text-[10px] text-primary-container uppercase tracking-widest mb-1 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> Más buscado</div>
+              <div class="font-label-bold text-[10px] text-primary uppercase tracking-widest mb-1 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Más buscado</div>
               <h4 class="text-xl font-bold text-white leading-tight">Plan Universitario</h4>
               <p class="text-sm text-white/70 mt-1">Horario libre, sin matrícula</p>
             </div>
@@ -78,7 +78,7 @@
           </div>
           
           <!-- General Mensual -->
-          <div class="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary-container/30 transition-all hover:scale-[1.02] duration-300">
+          <div class="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary/30 transition-all hover:scale-[1.02] duration-300">
             <div>
               <h4 class="text-xl font-bold text-on-surface leading-tight">General Mensual</h4>
               <p class="text-sm text-on-surface-variant mt-1">Acceso completo</p>
@@ -90,7 +90,7 @@
           </div>
 
           <!-- Pase Diario -->
-          <div class="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary-container/30 transition-all hover:scale-[1.02] duration-300">
+          <div class="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary/30 transition-all hover:scale-[1.02] duration-300">
             <div>
               <h4 class="text-xl font-bold text-on-surface leading-tight">Pase Diario</h4>
               <p class="text-sm text-on-surface-variant mt-1">Prueba nuestras instalaciones</p>
