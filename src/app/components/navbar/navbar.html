@@ -137,10 +137,21 @@
         <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-primary-container transition-all duration-300 group-hover:w-full"></span>
       </a>
       
-      <div class="mt-auto pt-8">
-        <a (click)="closeMobileMenu()" href="https://wa.me/56991832903" target="_blank" class="relative overflow-hidden group block w-full text-center bg-transparent border border-primary-container text-white font-label-bold text-[11px] uppercase tracking-widest px-8 py-4 transition-all duration-500">
-          <span class="relative z-10">PRUEBA GRATIS</span>
-          <div class="absolute inset-0 bg-primary-container transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+      <div class="mt-auto pt-8 flex flex-col gap-6">
+        
+        <!-- Mobile Theme Switcher -->
+        <div class="flex items-center justify-between bg-white/5 border border-white/10 rounded-full px-5 py-3 backdrop-blur-md">
+          <span class="text-xs uppercase tracking-widest text-white/70 font-label-bold">TEMA</span>
+          <div class="flex items-center gap-3">
+            <button (click)="setTheme('theme-orange')" [class.border-2]="activeTheme === 'theme-orange'" [class.border-white]="activeTheme === 'theme-orange'" class="w-5 h-5 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 hover:scale-110 transition-transform" title="Tema Naranja"></button>
+            <button (click)="setTheme('theme-blue')" [class.border-2]="activeTheme === 'theme-blue'" [class.border-white]="activeTheme === 'theme-blue'" class="w-5 h-5 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 hover:scale-110 transition-transform" title="Tema Azul"></button>
+            <button (click)="setTheme('theme-purple')" [class.border-2]="activeTheme === 'theme-purple'" [class.border-white]="activeTheme === 'theme-purple'" class="w-5 h-5 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 hover:scale-110 transition-transform" title="Tema Púrpura"></button>
+          </div>
+        </div>
+
+        <a (click)="closeMobileMenu()" href="https://wa.me/56991832903" target="_blank" class="relative overflow-hidden group block w-full text-center bg-transparent border border-primary text-primary hover:text-black font-black text-[11px] uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300">
+          <span class="relative z-10 flex items-center justify-center gap-2">PRUEBA GRATIS <i class="bi bi-ticket-perforated-fill text-sm"></i></span>
+          <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
         </a>
       </div>
     </div>
