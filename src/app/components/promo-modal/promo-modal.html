@@ -1,10 +1,13 @@
 <!-- Mini Widget Flotante (Se muestra cuando el modal se cierra) -->
-<div class="fixed bottom-24 right-4 md:right-6 z-[250] transition-all duration-500"
-     [ngClass]="isMiniFloating ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'">
+<div class="fixed bottom-24 right-4 md:right-6 z-[250] transition-all duration-700 ease-in-out"
+     [ngClass]="isMiniFloating ? 'opacity-100 translate-y-0 pointer-events-auto scale-100' : 'opacity-0 translate-y-12 pointer-events-none scale-50'">
   <button (click)="reopenModal()" aria-label="Abrir Promoción"
-          class="relative group bg-surface-container-highest border border-primary/50 text-white p-3 md:p-4 rounded-full shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:shadow-[0_0_30px_rgba(255,69,0,0.6)] flex items-center justify-center transition-all duration-300">
-    <div class="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
-    <i class="bi bi-gift-fill text-xl md:text-2xl text-primary drop-shadow-md relative z-10 group-hover:scale-110 transition-transform"></i>
+          class="relative group text-primary hover:text-white flex items-center justify-center transition-all duration-300">
+    <!-- Pulso sutil detrás del icono -->
+    <div class="absolute inset-0 bg-primary/30 rounded-full animate-ping scale-75"></div>
+    <!-- Solo el Icono -->
+    <i class="bi bi-gift-fill text-[3.5rem] drop-shadow-[0_0_20px_rgba(255,140,0,0.9)] relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"></i>
+    
     <!-- Tooltip -->
     <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm border border-white/10 text-white text-[10px] uppercase font-bold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
       Tu Día Gratis
@@ -20,17 +23,17 @@
   <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeModal()"></div>
   
   <!-- Modal Card -->
-  <div class="relative w-full max-w-lg bg-surface-container-high border border-primary/30 rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(255,69,0,0.3)] flex flex-col transform transition-transform duration-500"
-       [ngClass]="isModalOpen ? 'translate-y-0 scale-100' : 'translate-y-8 scale-95'">
+  <div class="relative w-full max-w-lg bg-surface-container-high border border-primary/30 rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(255,69,0,0.3)] flex flex-col transform origin-bottom-right transition-all duration-700 cubic-bezier(0.68,-0.55,0.26,1.55)"
+       [ngClass]="isModalOpen ? 'translate-y-0 translate-x-0 scale-100 opacity-100' : 'translate-y-[40vh] translate-x-[40vw] scale-0 opacity-0'">
     
     <!-- Header Image with Background Image -->
-    <div class="relative h-48 flex flex-col items-center justify-center overflow-hidden">
+    <div class="relative h-64 flex flex-col items-center justify-center overflow-hidden">
       <!-- Background Image -->
       <img src="/promo-bg.jpg" alt="Promo Elixir Gym" class="absolute inset-0 w-full h-full object-cover filter brightness-75">
       <!-- Glow effect overlay -->
       <div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-black/40 to-black/20"></div>
       
-      <i class="bi bi-lightning-charge-fill text-6xl text-primary drop-shadow-[0_0_15px_rgba(255,69,0,0.8)] relative z-10 animate-pulse mb-4"></i>
+      <i class="bi bi-lightning-charge-fill text-7xl text-primary drop-shadow-[0_0_20px_rgba(255,140,0,0.9)] relative z-10 animate-pulse mb-4"></i>
       
       <!-- Ticker banner effect -->
       <div class="absolute bottom-0 w-full bg-black/60 backdrop-blur-sm py-1.5 text-center border-t border-primary/30">
