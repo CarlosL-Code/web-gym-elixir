@@ -8,7 +8,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   templateUrl: './promo-modal.html'
 })
 export class PromoModal implements OnInit {
-  isVisible = false;
+  isModalOpen = false;
+  isMiniFloating = false;
   isBrowser = false;
   
   constructor(
@@ -20,24 +21,25 @@ export class PromoModal implements OnInit {
 
   ngOnInit() {
     if (this.isBrowser) {
-      const hasSeenPromo = localStorage.getItem('hasSeenPromo_Elixir');
-      
-      if (!hasSeenPromo) {
-        setTimeout(() => {
-          this.isVisible = true;
-          document.body.style.overflow = 'hidden';
-          this.cdr.detectChanges(); // Force view update
-        }, 4000);
-      }
+      setTimeout(() => {
+        this.isModalOpen = true;
+        document.body.style.overflow = 'hidden';
+        this.cdr.detectChanges(); // Force view update
+      }, 4000);
     }
   }
 
   closeModal() {
-    this.isVisible = false;
-    document.body.style.overflow = ''; // Use empty string to restore original
+    this.isModalOpen = false;
+    document.body.style.overflow = ''; // Restore original overflow
+    this.isMiniFloating = true; // Activar widget flotante
     this.cdr.detectChanges();
-    if (this.isBrowser) {
-      localStorage.setItem('hasSeenPromo_Elixir', 'true');
-    }
+  }
+
+  reopenModal() {
+    this.isMiniFloating = false;
+    this.isModalOpen = true;
+    document.body.style.overflow = 'hidden';
+    this.cdr.detectChanges();
   }
 }
