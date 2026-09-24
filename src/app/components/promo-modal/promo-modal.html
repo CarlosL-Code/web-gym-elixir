@@ -1,15 +1,16 @@
 <!-- Mini Widget Flotante (Se muestra cuando el modal se cierra) -->
-<div class="fixed bottom-[110px] right-6 z-[250] transition-all duration-500 ease-in-out"
+<div class="fixed bottom-6 left-6 z-[250] transition-all duration-500 ease-in-out"
      [ngClass]="isMiniFloating ? 'opacity-100 translate-y-0 pointer-events-auto scale-100' : 'opacity-0 translate-y-12 pointer-events-none scale-50'">
   <button (click)="reopenModal()" aria-label="Abrir Promoción"
           class="relative group w-14 h-14 flex items-center justify-center transition-all duration-300">
-    <!-- Pulso sutil detrás del icono -->
-    <div class="absolute inset-0 bg-primary/30 rounded-full animate-ping scale-75"></div>
-    <!-- Solo el Icono (Alineado y de tamaño exacto) -->
-    <i class="bi bi-gift-fill text-[1.75rem] text-primary drop-shadow-[0_0_15px_rgba(255,140,0,0.9)] relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"></i>
+    <!-- Solo el Icono con animación de sacudida (wiggle) -->
+    <i class="bi bi-gift-fill text-[1.75rem] text-primary drop-shadow-[0_0_15px_rgba(255,140,0,0.9)] relative z-10 animate-wiggle hover:scale-110 transition-transform duration-300"></i>
+    
+    <!-- Puntito Blanquito de Notificación -->
+    <span class="absolute top-1 right-1 w-3.5 h-3.5 bg-white rounded-full border-[2.5px] border-surface-container-low shadow-[0_0_10px_rgba(255,255,255,0.8)] z-20"></span>
     
     <!-- Tooltip -->
-    <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm border border-white/10 text-white text-[10px] uppercase font-bold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+    <span class="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm border border-white/10 text-white text-[10px] uppercase font-bold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
       Tu Día Gratis
     </span>
   </button>
@@ -22,9 +23,9 @@
   <!-- Backdrop -->
   <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeModal()"></div>
   
-  <!-- Modal Card con Efecto Succión (Teardrop) al cerrar -->
-  <div class="relative w-full max-w-lg bg-surface-container-high border border-primary/30 overflow-hidden shadow-[0_30px_60px_-15px_rgba(255,69,0,0.3)] flex flex-col transform origin-bottom-right transition-all duration-500 ease-in"
-       [ngClass]="isModalOpen ? 'translate-y-0 translate-x-0 scale-100 rounded-3xl opacity-100' : 'translate-y-[40vh] translate-x-[40vw] scale-0 rounded-[100%_100%_0%_100%] opacity-0'">
+  <!-- Modal Card con Efecto Succión (Teardrop) hacia la izquierda -->
+  <div class="relative w-full max-w-lg bg-surface-container-high border border-primary/30 overflow-hidden shadow-[0_30px_60px_-15px_rgba(255,69,0,0.3)] flex flex-col transform origin-bottom-left transition-all duration-500 ease-in"
+       [ngClass]="isModalOpen ? 'translate-y-0 translate-x-0 scale-100 rounded-3xl opacity-100' : 'translate-y-[40vh] translate-x-[-40vw] scale-0 rounded-[100%_100%_100%_0%] opacity-0'">
     
     <!-- Header Image with Background Image -->
     <div class="relative h-64 flex flex-col items-center justify-center overflow-hidden">

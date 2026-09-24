@@ -86,7 +86,7 @@ module.exports = {
               "display-lg": ["Montserrat", "sans-serif"],
               "display-lg-mobile": ["Montserrat", "sans-serif"]
       },
-      "fontSize": {
+      fontSize: {
               "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
               "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
               "headline-xl-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
@@ -96,6 +96,15 @@ module.exports = {
               "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
               "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
               "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-5deg)' },
+          '50%': { transform: 'rotate(5deg)' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 0.3s ease-in-out infinite',
       }
     },
   },
