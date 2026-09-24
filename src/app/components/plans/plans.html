@@ -101,21 +101,47 @@
         <p class="text-on-surface-variant uppercase tracking-[0.3em] md:tracking-[0.4em] font-label-bold text-[9px] md:text-[10px] mt-4">Entrena como un campeón con nuestros planes especializados</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        <div *ngFor="let boxingPlan of boxingPlans" class="group relative rounded-3xl overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(255,140,0,0.3)] hover:-translate-y-2 transition-all duration-500 cursor-pointer aspect-[3/4] md:aspect-[4/5] border border-white/10 hover:border-primary/50">
-          <!-- Background Image -->
-          <img [src]="boxingPlan.image" [alt]="boxingPlan.title" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+      <div class="grid grid-cols-1 gap-8 lg:gap-10">
+        <div *ngFor="let boxingPlan of boxingPlans" class="group relative flex flex-col md:flex-row bg-surface-container-high/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(255,140,0,0.3)] hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
           
-          <!-- Gradient Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
-
-          <!-- Content overlay -->
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <!-- CTA Button -->
-            <a [href]="boxingPlan.ctaLink" target="_blank" class="w-full py-4 mt-auto border border-white/30 bg-black/60 backdrop-blur-md text-white font-label-bold text-[11px] uppercase tracking-[0.2em] text-center rounded-xl hover:bg-primary hover:border-primary hover:text-black transition-all duration-300">
-              SOLICITAR PLAN
-            </a>
+          <!-- Lado Fotográfico (Izquierda) -->
+          <div class="relative w-full md:w-5/12 h-64 md:h-auto overflow-hidden shrink-0">
+            <img [src]="boxingPlan.image" [alt]="boxingPlan.title" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
           </div>
+          
+          <!-- Lado Informativo (Derecha) -->
+          <div class="w-full md:w-7/12 p-6 md:p-8 lg:p-10 flex flex-col relative z-10">
+            <!-- Brillo trasero en hover -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 blur-3xl rounded-full group-hover:bg-primary/20 transition-colors duration-500 pointer-events-none"></div>
+
+            <!-- Cabecera y Precio -->
+            <div class="flex flex-col md:flex-row md:items-start justify-between mb-6 border-b border-white/10 pb-6">
+              <div>
+                <h3 class="font-headline-md text-2xl lg:text-3xl text-white uppercase font-black tracking-widest mb-1">{{ boxingPlan.title }}</h3>
+                <span class="font-label-bold text-[10px] text-primary uppercase tracking-[0.2em]">{{ boxingPlan.subtitle }}</span>
+              </div>
+              <div class="mt-4 md:mt-0 text-left md:text-right shrink-0">
+                <div class="text-3xl lg:text-4xl font-black text-white">{{ boxingPlan.price }}</div>
+              </div>
+            </div>
+
+            <!-- Características / Horarios -->
+            <ul class="space-y-3 mb-8 text-xs lg:text-sm text-on-surface-variant/90 font-medium flex-grow">
+              <li class="flex items-start gap-3" *ngFor="let feature of boxingPlan.features">
+                <span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">sports_martial_arts</span>
+                <span>{{ feature }}</span>
+              </li>
+            </ul>
+
+            <!-- Botón CTA -->
+            <div class="mt-auto pt-4 flex md:justify-end">
+              <a [href]="boxingPlan.ctaLink" target="_blank" class="w-full md:w-auto inline-block py-4 px-10 border border-primary text-primary hover:bg-primary hover:text-black font-label-bold text-[11px] uppercase tracking-[0.2em] text-center rounded-xl transition-all duration-300 font-black shadow-[0_0_15px_rgba(255,140,0,0.1)] hover:shadow-[0_0_20px_rgba(255,140,0,0.4)]">
+                SOLICITAR PLAN
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

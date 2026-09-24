@@ -84,21 +84,46 @@ export class PlansService {
     return [
       {
         id: 'boxeo-1',
-        title: 'Plan Boxeo 1',
+        title: 'Plan Élite',
+        price: '$50.000',
+        subtitle: 'MENSUAL',
         image: '/assets/post/boxeo.jpeg',
-        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20de%20Boxeo%20visto%20en%20la%20página%20web.'
+        features: [
+          'Boxeo + Acondicionamiento físico',
+          'Acondicionamiento: 8 clases al mes (2x sem)',
+          'Boxeo: Lunes, Miércoles y Viernes',
+          'Horarios: 17:00 a 18:00 y 18:00 a 19:00',
+          'Plan disponible de Lunes a Viernes'
+        ],
+        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20Élite%20de%20Boxeo%20visto%20en%20la%20página%20web.'
       },
       {
         id: 'boxeo-2',
-        title: 'Plan Boxeo 2',
+        title: 'Pro Boxing Session',
+        price: '$150.000',
+        subtitle: 'PERSONALIZADO MENSUAL',
         image: '/assets/post/boxeo-2.jpeg',
-        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20de%20Boxeo%20visto%20en%20la%20página%20web.'
+        features: [
+          'Boxeo + Acondicionamiento físico',
+          '12 clases al mes (3 clases por semana)',
+          'Lunes, Miércoles y Viernes',
+          'Horarios: 7:30 a 9:30 AM y 10:00 a 11:20 AM'
+        ],
+        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20Personalizado%20Pro%20Boxing%20Session%20visto%20en%20la%20página%20web.'
       },
       {
         id: 'boxeo-3',
-        title: 'Plan Boxeo 3',
+        title: 'Plan Boxeo Activo',
+        price: '$40.000',
+        subtitle: 'MENSUAL',
         image: '/assets/post/boxeo-3.jpeg',
-        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20de%20Boxeo%20visto%20en%20la%20página%20web.'
+        features: [
+          'Clases de Boxeo',
+          '12 clases al mes (3 clases por semana)',
+          'Lunes, Miércoles y Viernes',
+          'Horarios: 17:00 a 18:00 y 18:00 a 19:00'
+        ],
+        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20Boxeo%20Activo%20visto%20en%20la%20página%20web.'
       }
     ];
   }
