@@ -79,4 +79,27 @@ export class PlansService {
       }
     ];
   }
+
+  getBoxingPlans() {
+    return [
+      {
+        id: 'boxeo-1',
+        title: 'Plan Boxeo 1',
+        image: '/assets/post/boxeo.jpeg',
+        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20de%20Boxeo%20visto%20en%20la%20página%20web.'
+      },
+      {
+        id: 'boxeo-2',
+        title: 'Plan Boxeo 2',
+        image: '/assets/post/boxeo-2.jpeg',
+        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20de%20Boxeo%20visto%20en%20la%20página%20web.'
+      },
+      {
+        id: 'boxeo-3',
+        title: 'Plan Boxeo 3',
+        image: '/assets/post/boxeo-3.jpeg',
+        ctaLink: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20inscribirme%20en%20el%20Plan%20de%20Boxeo%20visto%20en%20la%20página%20web.'
+      }
+    ];
+  }
 }

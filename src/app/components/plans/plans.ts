@@ -10,12 +10,14 @@ import { PlansService, Plan } from '../../services/plans.service';
 })
 export class Plans implements OnInit {
   plans: Plan[] = [];
+  boxingPlans: any[] = [];
   private plansService = inject(PlansService);
 
   isModalOpen = false;
 
   ngOnInit() {
     this.plans = this.plansService.getPlans();
+    this.boxingPlans = this.plansService.getBoxingPlans();
   }
 
   handlePlanClick(event: Event, planId: string) {
