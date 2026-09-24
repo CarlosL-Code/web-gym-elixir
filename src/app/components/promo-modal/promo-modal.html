@@ -4,10 +4,10 @@
   <button (click)="reopenModal()" aria-label="Abrir Promoción"
           class="relative group w-14 h-14 flex items-center justify-center transition-all duration-300">
     <!-- Solo el Icono con animación de sacudida espaciada (wiggle) -->
-    <i class="bi bi-gift-fill text-[1.75rem] text-primary drop-shadow-[0_0_15px_rgba(255,140,0,0.9)] relative z-10 animate-wiggle group-hover:animate-none group-hover:scale-125 group-hover:rotate-[15deg] group-hover:text-white transition-all duration-300"></i>
+    <i class="bi bi-gift-fill text-[1.75rem] text-primary drop-shadow-[0_0_15px_rgba(255,140,0,0.9)] relative z-10 animate-wiggle group-hover:animate-none group-hover:scale-110 group-hover:rotate-12 group-hover:text-white transition-all duration-500 ease-out"></i>
     
-    <!-- Puntito Blanquito de Notificación -->
-    <span class="absolute top-1 right-1 w-3.5 h-3.5 bg-white rounded-full border-[2.5px] border-surface-container-low shadow-[0_0_10px_rgba(255,255,255,0.8)] z-20"></span>
+    <!-- Puntito Blanquito de Notificación (Se oculta suavemente al hacer hover) -->
+    <span class="absolute top-1 right-1 w-3.5 h-3.5 bg-white rounded-full border-[2.5px] border-surface-container-low shadow-[0_0_10px_rgba(255,255,255,0.8)] z-20 transition-all duration-500 ease-out opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-0"></span>
     
     <!-- Tooltip -->
     <span class="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm border border-white/10 text-white text-[10px] uppercase font-bold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
