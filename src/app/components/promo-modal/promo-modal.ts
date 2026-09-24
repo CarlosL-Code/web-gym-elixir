@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -11,7 +11,10 @@ export class PromoModal implements OnInit {
   isVisible = false;
   isBrowser = false;
   
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private cdr: ChangeDetectorRef
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
@@ -20,10 +23,10 @@ export class PromoModal implements OnInit {
       const hasSeenPromo = localStorage.getItem('hasSeenPromo_Elixir');
       
       if (!hasSeenPromo) {
-        // Show after 4 seconds
         setTimeout(() => {
           this.isVisible = true;
           document.body.style.overflow = 'hidden';
+          this.cdr.detectChanges(); // Force view update
         }, 4000);
       }
     }
@@ -31,7 +34,8 @@ export class PromoModal implements OnInit {
 
   closeModal() {
     this.isVisible = false;
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = ''; // Use empty string to restore original
+    this.cdr.detectChanges();
     if (this.isBrowser) {
       localStorage.setItem('hasSeenPromo_Elixir', 'true');
     }
