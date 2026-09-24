@@ -99,12 +99,13 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-5deg)' },
-          '50%': { transform: 'rotate(5deg)' },
+          '0%, 25%, 100%': { transform: 'rotate(0)' },
+          '5%, 15%': { transform: 'rotate(-12deg)' },
+          '10%, 20%': { transform: 'rotate(12deg)' },
         }
       },
       animation: {
-        wiggle: 'wiggle 0.3s ease-in-out infinite',
+        wiggle: 'wiggle 2.5s ease-in-out infinite',
       }
     },
   },
