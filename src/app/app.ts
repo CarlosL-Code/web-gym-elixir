@@ -17,12 +17,13 @@ import { Footer } from './components/footer/footer';
 import { WhatsappButton } from './components/whatsapp-button/whatsapp-button';
 import { VideoShowcase } from './components/video-showcase/video-showcase';
 import { Schedule } from './components/schedule/schedule';
+import { PromoModal } from './components/promo-modal/promo-modal';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    Navbar, Hero, VideoShowcase, Schedule, Benefits, Plans, Classes, Trainers, Gallery, Stats, Partners, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton
+    Navbar, Hero, VideoShowcase, Schedule, Benefits, Plans, Classes, Trainers, Gallery, Stats, Partners, Testimonials, Faq, Contact, Location, FinalCta, Footer, WhatsappButton, PromoModal
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

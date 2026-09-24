@@ -1,0 +1,53 @@
+<div *ngIf="isVisible" class="fixed inset-0 z-[300] flex items-center justify-center p-4 transition-opacity duration-500 animate-[fade-in_0.5s_ease-out]">
+  
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/80 backdrop-blur-md" (click)="closeModal()"></div>
+  
+  <!-- Modal Card -->
+  <div class="relative w-full max-w-lg bg-surface-container-high border border-primary/30 rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(255,69,0,0.3)] flex flex-col transform animate-[slide-up_0.5s_ease-out]">
+    
+    <!-- Header Image / Banner with Lightning -->
+    <div class="relative h-40 bg-gradient-to-br from-primary to-electric-blue flex flex-col items-center justify-center overflow-hidden">
+      <!-- Glow effect -->
+      <div class="absolute inset-0 bg-black/20 mix-blend-overlay"></div>
+      <i class="bi bi-lightning-charge-fill text-6xl text-black drop-shadow-lg relative z-10 animate-pulse"></i>
+      <!-- Ticker banner effect -->
+      <div class="absolute bottom-0 w-full bg-black/40 py-1 text-center border-t border-white/20">
+         <span class="text-white font-label-bold text-[9px] uppercase tracking-[0.3em]">Solo 10 Cupos Semanales</span>
+      </div>
+    </div>
+    
+    <!-- Close button -->
+    <button (click)="closeModal()" aria-label="Cerrar promoción"
+            class="absolute top-4 right-4 z-30 w-8 h-8 bg-black/40 hover:bg-black/60 border border-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors">
+      <i class="bi bi-x text-lg"></i>
+    </button>
+    
+    <!-- Content -->
+    <div class="p-8 text-center flex flex-col gap-4">
+      <h3 class="font-headline-md text-3xl md:text-4xl text-white uppercase font-black leading-tight drop-shadow-md">
+        Desbloquea <br><span class="text-gradient pr-2">1 Día Gratis</span>
+      </h3>
+      
+      <p class="font-body-md text-sm md:text-base text-on-surface-variant/90 leading-relaxed max-w-[90%] mx-auto">
+        Regalamos <strong class="text-white font-bold">10 pases diarios gratis</strong> cada semana a nuevos miembros. ¡Asegura el tuyo antes de que se acaben y vive la experiencia Elixir!
+      </p>
+      
+      <!-- CTA Button -->
+      <a href="https://wa.me/56991832903?text=Hola!%20Quiero%20reclamar%20mi%20pase%20diario%20gratis%20que%20vi%20en%20la%20web" 
+         target="_blank" rel="noopener" (click)="closeModal()"
+         class="mt-4 relative overflow-hidden group w-full flex items-center justify-center gap-3 bg-transparent border-2 border-primary text-primary hover:text-black font-black text-xs uppercase px-8 py-4 rounded-xl tracking-[0.2em] transition-all duration-300 shadow-[0_0_20px_rgba(255,140,0,0.15)] hover:shadow-[0_0_40px_rgba(255,140,0,0.4)]">
+        <span class="relative z-10 flex items-center justify-center gap-2">
+          <i class="bi bi-ticket-perforated-fill text-lg"></i>
+          ¡QUIERO MI DÍA GRATIS!
+        </span>
+        <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+      </a>
+      
+      <button (click)="closeModal()" class="mt-2 text-[10px] text-on-surface-variant/50 hover:text-white uppercase tracking-widest font-label-bold transition-colors">
+        Quizás más tarde
+      </button>
+    </div>
+    
+  </div>
+</div>
