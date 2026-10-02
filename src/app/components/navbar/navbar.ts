@@ -19,10 +19,16 @@ export class Navbar {
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    if (this.isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+    document.body.style.overflow = '';
   }
 
   setTheme(themeName: string) {
