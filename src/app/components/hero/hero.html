@@ -1,4 +1,4 @@
-<header class="relative h-[100svh] md:min-h-[90vh] md:h-auto flex flex-col justify-center overflow-hidden" id="home">
+<header class="relative h-[100svh] md:h-[100vh] flex flex-col justify-center overflow-hidden" id="home">
   
   <!-- Slides Container -->
   <ng-container *ngFor="let slide of slides; let i = index">
@@ -15,7 +15,7 @@
       </div>
       
       <!-- Contenido -->
-      <div class="relative z-20 w-full h-full flex flex-col items-center justify-center px-5 md:px-margin-desktop max-w-5xl mx-auto pb-12 md:pb-12 pt-16 md:pt-32 text-center">
+      <div class="relative z-20 w-full h-full flex flex-col items-center justify-center px-5 md:px-margin-desktop max-w-5xl mx-auto pb-12 md:pb-28 pt-16 md:pt-32 text-center">
         
         <div class="max-w-4xl flex flex-col items-center w-full">
           <!-- Etiqueta -->
@@ -65,7 +65,7 @@
   </ng-container>
 
   <!-- Indicadores (Puntos) -->
-  <div class="absolute bottom-[80px] md:bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+  <div class="absolute bottom-[80px] md:bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-3">
     <button *ngFor="let slide of slides; let i = index" 
             (click)="goToSlide(i)"
             class="w-3 h-3 md:w-3 md:h-3 rounded-full transition-all duration-500 ease-out border border-white/50"
