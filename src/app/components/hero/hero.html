@@ -5,11 +5,14 @@
     <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out"
          [ngClass]="i === currentIndex ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'">
       
-      <!-- Fondo con efecto sutil -->
-      <div class="absolute inset-0 bg-black">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-surface z-10"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] z-10 pointer-events-none"></div>
-        <div class="w-full h-full bg-cover bg-[center_top] md:bg-center transition-transform duration-[15s] ease-out opacity-70" 
+      <!-- Fondo con efecto luminoso -->
+      <div class="absolute inset-0 bg-[#0a0a0a]">
+        <!-- Degradado base mucho más suave para dejar pasar la luz -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-surface z-10"></div>
+        <!-- Viñeta radial reducida -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.6)_100%)] z-10 pointer-events-none"></div>
+        <!-- Opacidad de imagen casi al 100% para máxima viveza -->
+        <div class="w-full h-full bg-cover bg-[center_top] md:bg-center transition-transform duration-[15s] ease-out opacity-90" 
              [ngClass]="i === currentIndex ? 'scale-105' : 'scale-100'"
              [style.background-image]="'url(' + slide.bgImage + ')'"></div>
       </div>

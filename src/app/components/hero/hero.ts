@@ -58,6 +58,9 @@ export class Hero implements OnInit, OnDestroy {
       btn1Text: 'ENTRENA COMO CAMPEÓN',
       btn1Link: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20las%20clases%20de%20Boxeo.',
       btn1Icon: 'bi-whatsapp',
+      btn2Text: 'VER PLANES',
+      btn2Link: '#plans',
+      btn2Icon: 'bi-arrow-down',
       bgImage: '/assets/post/boxeo.jpeg'
     },
     {
@@ -71,6 +74,9 @@ export class Hero implements OnInit, OnDestroy {
       btn1Text: 'APROVECHAR OFERTA',
       btn1Link: 'https://wa.me/56991832903?text=Hola,%20quiero%20aprovechar%20las%20promociones%20del%20Cyber%20Day.',
       btn1Icon: 'bi-fire',
+      btn2Text: 'VER PLANES',
+      btn2Link: '#plans',
+      btn2Icon: 'bi-arrow-down',
       bgImage: '/promo-bg.jpg'
     }
   ];
