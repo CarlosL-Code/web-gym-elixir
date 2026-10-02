@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 export interface Slide {
@@ -29,6 +29,7 @@ export interface Slide {
 })
 export class Hero implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
+  private cdr = inject(ChangeDetectorRef);
   
   slides: Slide[] = [
     {
@@ -113,14 +114,17 @@ export class Hero implements OnInit, OnDestroy {
 
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    this.cdr.detectChanges();
   }
 
   prevSlide() {
     this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    this.cdr.detectChanges();
   }
 
   goToSlide(index: number) {
     this.currentIndex = index;
-    this.startAutoPlay(); // Reset timer upon manual interaction
+    this.cdr.detectChanges();
+    this.startAutoPlay();
   }
 }
