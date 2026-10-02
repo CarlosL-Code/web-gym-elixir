@@ -65,7 +65,7 @@ export class Hero implements OnInit, OnDestroy {
       btn2Text: 'VER PLANES',
       btn2Link: '#plans',
       btn2Icon: 'bi-arrow-down',
-      bgImage: '/assets/post/boxeo.jpeg'
+      bgImage: '/assets/images/hero-boxeo.jpg'
     },
     {
       id: 2,
