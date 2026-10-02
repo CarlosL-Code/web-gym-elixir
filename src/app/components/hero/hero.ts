@@ -3,6 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 export interface Slide {
   id: number;
+  layout: 'left' | 'center' | 'right';
   tagline: string;
   tagIcon?: string;
   tagImage?: string;
@@ -32,6 +33,7 @@ export class Hero implements OnInit, OnDestroy {
   slides: Slide[] = [
     {
       id: 0,
+      layout: 'left',
       tagline: 'MONTT #1027 (3ER PISO) • TEMUCO, CHILE',
       tagIcon: 'bi-geo-alt-fill',
       tagImage: 'https://flagcdn.com/w40/cl.png',
@@ -49,6 +51,7 @@ export class Hero implements OnInit, OnDestroy {
     },
     {
       id: 1,
+      layout: 'right',
       tagline: 'NUEVAS CLASES',
       tagIcon: 'bi-lightning-fill',
       titleLine1: 'BOXEO ELIXIR',
@@ -65,6 +68,7 @@ export class Hero implements OnInit, OnDestroy {
     },
     {
       id: 2,
+      layout: 'center',
       tagline: 'OFERTA LIMITADA (2 AL 5 DE OCTUBRE)',
       tagIcon: 'bi-tag-fill',
       titleLine1: 'CYBER DAY',
