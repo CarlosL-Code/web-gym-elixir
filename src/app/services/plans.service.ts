@@ -100,7 +100,7 @@ export class PlansService {
       {
         id: 'boxeo-2',
         title: 'Pro Boxing Session',
-        price: '$150.000',
+        price: '$100.000',
         subtitle: 'PERSONALIZADO MENSUAL',
         image: '/assets/post/boxeo-2.jpeg',
         features: [
