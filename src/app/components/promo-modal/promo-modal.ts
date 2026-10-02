@@ -21,6 +21,11 @@ export class PromoModal implements OnInit {
 
   ngOnInit() {
     if (this.isBrowser) {
+      const isClaimed = localStorage.getItem('elixir_promo_claimed') === 'true';
+      if (isClaimed) {
+        return; // No mostramos nada si ya reclamó la promo
+      }
+
       setTimeout(() => {
         this.isModalOpen = true;
         document.body.style.overflow = 'hidden';
@@ -40,6 +45,16 @@ export class PromoModal implements OnInit {
     this.isMiniFloating = false;
     this.isModalOpen = true;
     document.body.style.overflow = 'hidden';
+    this.cdr.detectChanges();
+  }
+
+  claimPromo() {
+    if (this.isBrowser) {
+      localStorage.setItem('elixir_promo_claimed', 'true');
+    }
+    this.isModalOpen = false;
+    this.isMiniFloating = false;
+    document.body.style.overflow = '';
     this.cdr.detectChanges();
   }
 }
