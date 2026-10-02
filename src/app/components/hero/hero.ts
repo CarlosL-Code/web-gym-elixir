@@ -33,7 +33,7 @@ export class Hero implements OnInit, OnDestroy {
   slides: Slide[] = [
     {
       id: 0,
-      layout: 'left',
+      layout: 'center',
       tagline: 'MONTT #1027 (3ER PISO) • TEMUCO, CHILE',
       tagIcon: 'bi-geo-alt-fill',
       tagImage: 'https://flagcdn.com/w40/cl.png',
@@ -51,7 +51,7 @@ export class Hero implements OnInit, OnDestroy {
     },
     {
       id: 1,
-      layout: 'right',
+      layout: 'center',
       tagline: 'NUEVAS CLASES',
       tagIcon: 'bi-lightning-fill',
       titleLine1: 'BOXEO ELIXIR',
