@@ -88,6 +88,7 @@ export class PlansService {
         price: '$50.000',
         subtitle: 'MENSUAL',
         image: '/assets/post/boxeo.jpeg',
+        theme: 'red',
         features: [
           'Boxeo + Acondicionamiento Físico',
           'Plan de lunes a viernes',
@@ -103,6 +104,7 @@ export class PlansService {
         price: '$100.000',
         subtitle: 'MENSUALES',
         image: '/assets/post/boxeo-2.jpeg',
+        theme: 'blue',
         features: [
           'Plan personalizado de boxeo + acondicionamiento físico',
           '12 clases al mes (3 por semana)',
@@ -117,6 +119,7 @@ export class PlansService {
         price: '$40.000',
         subtitle: 'MENSUALES',
         image: '/assets/post/boxeo-3.jpeg',
+        theme: 'orange',
         features: [
           'Boxeo: Lunes, miércoles y viernes',
           'Horarios Boxeo: 17:00 - 18:00 | 18:00 - 19:00',

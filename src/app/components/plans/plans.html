@@ -101,7 +101,7 @@
         <p class="text-on-surface-variant uppercase tracking-[0.3em] md:tracking-[0.4em] font-label-bold text-[9px] md:text-[10px] mt-4">Entrena como un campeón con nuestros planes especializados</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-xs sm:max-w-none md:max-w-3xl lg:max-w-5xl mx-auto">
         <div *ngFor="let boxingPlan of boxingPlans" class="group relative flex flex-col bg-[#0a0a0a] backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(255,140,0,0.3)] hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
           
           <!-- Lado Fotográfico (El Poster Completo sin recortes) -->
@@ -112,9 +112,20 @@
           
           <!-- Footer con Botón -->
           <div class="p-5 md:p-6 bg-gradient-to-t from-surface-container-high to-[#0a0a0a] border-t border-white/5">
-            <a [href]="boxingPlan.ctaLink" target="_blank" class="w-full block py-4 px-6 bg-transparent border-2 border-primary text-primary hover:text-black font-label-bold text-[11px] uppercase tracking-[0.2em] text-center rounded-xl transition-all duration-300 font-black shadow-[0_0_15px_rgba(255,140,0,0.1)] hover:shadow-[0_0_20px_rgba(255,140,0,0.4)] relative overflow-hidden group">
+            <a [href]="boxingPlan.ctaLink" target="_blank" 
+               class="w-full block py-4 px-6 bg-transparent border-2 font-label-bold text-[11px] uppercase tracking-[0.2em] text-center rounded-xl transition-all duration-300 font-black relative overflow-hidden group/btn"
+               [ngClass]="{
+                 'border-red-600 text-red-600 hover:text-white shadow-[0_0_15px_rgba(220,38,38,0.1)] hover:shadow-[0_0_20px_rgba(220,38,38,0.4)]': boxingPlan.theme === 'red',
+                 'border-blue-500 text-blue-500 hover:text-white shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]': boxingPlan.theme === 'blue',
+                 'border-primary text-primary hover:text-black shadow-[0_0_15px_rgba(255,140,0,0.1)] hover:shadow-[0_0_20px_rgba(255,140,0,0.4)]': boxingPlan.theme === 'orange'
+               }">
               <span class="relative z-10 flex items-center justify-center gap-2">SOLICITAR PLAN <i class="bi bi-whatsapp"></i></span>
-              <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+              <div class="absolute inset-0 transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-out z-0"
+                   [ngClass]="{
+                     'bg-red-600': boxingPlan.theme === 'red',
+                     'bg-blue-500': boxingPlan.theme === 'blue',
+                     'bg-primary': boxingPlan.theme === 'orange'
+                   }"></div>
             </a>
           </div>
 
