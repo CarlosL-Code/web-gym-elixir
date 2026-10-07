@@ -87,7 +87,7 @@ export class PlansService {
         title: 'Plan Élite',
         price: '$50.000',
         subtitle: 'MENSUAL',
-        image: '/assets/post/boxeo.jpeg',
+        image: '/assets/post/boxeo.webp',
         theme: 'red',
         features: [
           'Boxeo + Acondicionamiento Físico',
@@ -103,7 +103,7 @@ export class PlansService {
         title: 'Pro Boxing Session',
         price: '$100.000',
         subtitle: 'MENSUALES',
-        image: '/assets/post/boxeo-2.jpeg',
+        image: '/assets/post/boxeo-2.webp',
         theme: 'blue',
         features: [
           'Plan personalizado de boxeo + acondicionamiento físico',
@@ -118,7 +118,7 @@ export class PlansService {
         title: 'Boxeo Activo',
         price: '$40.000',
         subtitle: 'MENSUALES',
-        image: '/assets/post/boxeo-3.jpeg',
+        image: '/assets/post/boxeo-3.webp',
         theme: 'orange',
         features: [
           'Boxeo: Lunes, miércoles y viernes',

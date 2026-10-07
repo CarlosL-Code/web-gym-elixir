@@ -48,7 +48,7 @@ export class Hero implements OnInit, OnDestroy {
       btn2Text: 'VER PLANES',
       btn2Link: '#plans',
       btn2Icon: 'bi-arrow-down',
-      bgImage: '/assets/images/imagen-personas-entrenando.jpg'
+      bgImage: '/assets/images/imagen-personas-entrenando.webp'
     },
     {
       id: 1,
@@ -65,7 +65,7 @@ export class Hero implements OnInit, OnDestroy {
       btn2Text: 'VER PLANES',
       btn2Link: '#plans',
       btn2Icon: 'bi-arrow-down',
-      bgImage: '/assets/images/hero-boxeo.jpg'
+      bgImage: '/assets/images/hero-boxeo.webp'
     },
     {
       id: 2,
@@ -82,7 +82,7 @@ export class Hero implements OnInit, OnDestroy {
       btn2Text: 'VER PLANES',
       btn2Link: '#plans',
       btn2Icon: 'bi-arrow-down',
-      bgImage: '/promo-bg.jpg'
+      bgImage: '/promo-bg.webp'
     }
   ];
 

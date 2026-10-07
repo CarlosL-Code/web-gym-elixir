@@ -46,8 +46,8 @@ export class TrainersService {
         shortDescription: 'Profesional certificado con más de 1 año de experiencia, enfocado en potenciar tus habilidades al máximo.',
         fullDescription: 'Profesional certificado con 1 año de experiencia en preparación física y entrenamiento personalizado. Enfocado en ayudarte a alcanzar tus objetivos a través de metodologías de alta intensidad, planificación periodizada y seguimiento constante de tu progreso.',
         experience: '1 año',
-        image: '/perfil-1.jpg',
-        images: ['/perfil-1.jpg', '/perfil-2.jpg', '/perfil-3.jpg'],
+        image: '/perfil-1.webp',
+        images: ['/perfil-1.webp', '/perfil-2.webp', '/perfil-3.webp'],
         videoUrl: '/video-gym.mp4',
         whatsapp: '56962478753',
         modalities: [
@@ -67,8 +67,8 @@ export class TrainersService {
         shortDescription: 'Coach y Preparador Físico con más de 4 años de experiencia trabajando con personas de diferentes edades y niveles.',
         fullDescription: 'Soy Coach y Preparador Físico con más de 4 años de experiencia trabajando en distintos gimnasios y con personas de diferentes edades y niveles. Planifico y adapto cada entrenamiento según los objetivos, capacidades y necesidades de cada persona, enfocándome principalmente en fuerza, hipertrofia y rendimiento físico. Mi objetivo es que cada persona entrene con propósito, técnica y progresión, buscando resultados reales y sostenibles.',
         experience: '+4 años',
-        image: '/personal/Lorenzo/imagen-1.jpeg',
-        images: ['/personal/Lorenzo/imagen-1.jpeg', '/personal/Lorenzo/imagen-2.jpeg', '/personal/Lorenzo/imagen-3.jpeg'],
+        image: '/personal/Lorenzo/imagen-1.webp',
+        images: ['/personal/Lorenzo/imagen-1.webp', '/personal/Lorenzo/imagen-2.webp', '/personal/Lorenzo/imagen-3.webp'],
         videoUrl: '/personal/Lorenzo/video-1.mp4',
         whatsapp: '56975144096',
         modalities: [
@@ -88,8 +88,8 @@ export class TrainersService {
         shortDescription: 'Más de 10 años formando boxeadores. Ex atleta de alto rendimiento con 124 combates en boxeo amateur.',
         fullDescription: 'Cuenta con más de 10 años de experiencia como entrenador de boxeo. Fue atleta de alto rendimiento en boxeo amateur con una trayectoria competitiva de 124 combates. Ha realizado formación y cursos especializados en entrenamiento de boxeo en Cuba, Uruguay y Venezuela. Su metodología abarca desde las bases técnicas del boxeo recreativo hasta la preparación de atletas competitivos.',
         experience: '+10 años',
-        image: '/personal/exabiel-1.jpg',
-        images: ['/personal/exabiel-1.jpg', '/personal/exabiel-2.jpg'],
+        image: '/personal/exabiel-1.webp',
+        images: ['/personal/exabiel-1.webp', '/personal/exabiel-2.webp'],
         videoUrl: '/personal/video-exabiel.mp4',
         whatsapp: '56975259660',
         stats: [
@@ -109,13 +109,13 @@ export class TrainersService {
             title: 'Licencia de Entrenador de Boxeo',
             issuer: 'Comisión Uruguaya de Boxeo Amateur y Profesional — Uruguay',
             year: '2026',
-            image: '/personal/licencia-exabiel.jpg'
+            image: '/personal/licencia-exabiel.webp'
           },
           {
             title: 'Diploma de Entrenador',
             issuer: 'Certificación Técnica en Boxeo',
             year: '2026',
-            image: '/personal/diploma-exabiel.jpg'
+            image: '/personal/diploma-exabiel.webp'
           }
         ],
         socials: {
