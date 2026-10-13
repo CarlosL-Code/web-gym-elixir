@@ -28,10 +28,10 @@
         <!-- Prices -->
         <div class="flex-grow flex flex-col justify-center mb-8">
           
-          <div *ngIf="plan.id === 'general'" class="space-y-4">
-            <div *ngFor="let price of plan.prices" class="flex flex-col items-center p-3 rounded-xl bg-white/5 border border-white/5" [ngClass]="price.color">
-              <span class="font-label-bold text-[10px] tracking-widest uppercase mb-1" [ngClass]="price.textColor">{{ price.label }}</span>
-              <span class="text-2xl font-black text-white">{{ price.amount }}</span>
+          <div *ngIf="plan.id === 'general'" class="space-y-2">
+            <div *ngFor="let price of plan.prices" class="flex items-center justify-between px-3.5 py-2 rounded-xl bg-white/5 border border-white/5 transition-all hover:bg-white/10" [ngClass]="price.color">
+              <span class="font-label-bold text-[10px] tracking-widest uppercase" [ngClass]="price.textColor">{{ price.label }}</span>
+              <span class="text-lg font-black text-white tracking-wider">{{ price.amount }}</span>
             </div>
           </div>
 
@@ -132,33 +132,56 @@
   <!-- Modal for General Plan Options -->
   <div *ngIf="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4">
     <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" (click)="closeModal()"></div>
-    <div class="bg-surface-container-high border border-white/10 p-8 rounded-xl relative z-10 w-full max-w-md shadow-2xl">
-      <button (click)="closeModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors">
+    <div class="bg-surface-container-high border border-white/10 p-6 md:p-8 rounded-2xl relative z-10 w-full max-w-md shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button (click)="closeModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors" aria-label="Cerrar modal">
         <span class="material-symbols-outlined">close</span>
       </button>
-      <h3 class="font-headline-md text-2xl text-on-surface uppercase font-black mb-6 text-center">SELECCIONA <br><span class="text-gradient">TU PERIODO</span></h3>
+      <h3 class="font-headline-md text-2xl text-on-surface uppercase font-black mb-6 text-center">SELECCIONA <br><span class="text-gradient">TU PERÍODO</span></h3>
       
-      <div class="space-y-4">
-        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustaría%20consultar%20por%20el%20Plan%20General%20Mensual" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-primary p-4 rounded-xl text-center transition-all">
+      <div class="space-y-3">
+        <!-- Mensual -->
+        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20Mensual%20(%2430.000)" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-mint-accent/80 p-3.5 rounded-xl text-center transition-all hover:border-mint-accent">
           <div class="relative z-10">
-            <div class="font-label-bold text-xs uppercase tracking-widest text-primary group-hover:text-black mb-1 transition-colors">MENSUAL</div>
-            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$28.000</div>
+            <div class="font-label-bold text-[10px] uppercase tracking-widest text-mint-accent group-hover:text-black mb-0.5 transition-colors">MENSUAL</div>
+            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$30.000</div>
           </div>
-          <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+          <div class="absolute inset-0 bg-mint-accent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
         </a>
-        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustaría%20consultar%20por%20el%20Plan%20General%20Bimestral" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-primary p-4 rounded-xl text-center transition-all">
+
+        <!-- Bimestral -->
+        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20Bimestral%20(%2452.000)" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-yellow-400/80 p-3.5 rounded-xl text-center transition-all hover:border-yellow-400">
           <div class="relative z-10">
-            <div class="font-label-bold text-xs uppercase tracking-widest text-primary group-hover:text-black mb-1 transition-colors">BIMESTRAL</div>
-            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$50.000</div>
+            <div class="font-label-bold text-[10px] uppercase tracking-widest text-yellow-400 group-hover:text-black mb-0.5 transition-colors">BIMESTRAL</div>
+            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$52.000</div>
           </div>
-          <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+          <div class="absolute inset-0 bg-yellow-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
         </a>
-        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustaría%20consultar%20por%20el%20Plan%20General%20Trimestral" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-primary p-4 rounded-xl text-center transition-all">
+
+        <!-- Trimestral -->
+        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20Trimestral%20(%2469.000)" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-vibrant-pink/80 p-3.5 rounded-xl text-center transition-all hover:border-vibrant-pink">
           <div class="relative z-10">
-            <div class="font-label-bold text-xs uppercase tracking-widest text-primary group-hover:text-black mb-1 transition-colors">TRIMESTRAL</div>
-            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$66.000</div>
+            <div class="font-label-bold text-[10px] uppercase tracking-widest text-vibrant-pink group-hover:text-black mb-0.5 transition-colors">TRIMESTRAL</div>
+            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$69.000</div>
           </div>
-          <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+          <div class="absolute inset-0 bg-vibrant-pink transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+        </a>
+
+        <!-- Cuatrimestral -->
+        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20Cuatrimestral%20(%2485.000)" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-electric-blue/80 p-3.5 rounded-xl text-center transition-all hover:border-electric-blue">
+          <div class="relative z-10">
+            <div class="font-label-bold text-[10px] uppercase tracking-widest text-electric-blue group-hover:text-black mb-0.5 transition-colors">CUATRIMESTRAL</div>
+            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$85.000</div>
+          </div>
+          <div class="absolute inset-0 bg-electric-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+        </a>
+
+        <!-- Semestral -->
+        <a href="https://wa.me/56991832903?text=Hola,%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20Semestral%20(%24109.000)" target="_blank" (click)="closeModal()" class="relative overflow-hidden group block w-full bg-transparent border-2 border-purple-400/80 p-3.5 rounded-xl text-center transition-all hover:border-purple-400">
+          <div class="relative z-10">
+            <div class="font-label-bold text-[10px] uppercase tracking-widest text-purple-400 group-hover:text-black mb-0.5 transition-colors">SEMESTRAL</div>
+            <div class="text-2xl font-black text-on-surface group-hover:text-black transition-colors">$109.000</div>
+          </div>
+          <div class="absolute inset-0 bg-purple-400 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
         </a>
       </div>
     </div>

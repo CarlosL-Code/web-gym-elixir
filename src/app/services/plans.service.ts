@@ -32,13 +32,15 @@ export class PlansService {
         badgeColor: 'bg-primary-container text-white',
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyJwWS6642LGMXoyBIzJLMnRfAeLkAzOffSTmlnAHNUJdugI7jNaDmcm-gJnSNqK_LEAcRbCYUynS-Vq7MM-zk1IE-CPKdejRe7AWxbeKCfrlH9bZWU3yOaobeaIA3hz7-AFfFlzY1Qw42O_Coc4oSifiwdgi6qBxchDObQiQnldL9IPgTBkSlSmLkU1IXWMww63me_xhyjT7qmpUdqo2NxgfkNGwq3x47Oh00NFCdtgANud4vvG8qcU_7q1UUzc1E2SM',
         prices: [
-          { label: 'MENSUAL', amount: '$28.000', color: 'border-mint-accent', textColor: 'text-mint-accent' },
-          { label: 'BIMESTRAL', amount: '$50.000', color: 'border-yellow-400', textColor: 'text-yellow-400' },
-          { label: 'TRIMESTRAL', amount: '$66.000', color: 'border-vibrant-pink', textColor: 'text-vibrant-pink' }
+          { label: 'MENSUAL', amount: '$30.000', color: 'border-mint-accent', textColor: 'text-mint-accent' },
+          { label: 'BIMESTRAL', amount: '$52.000', color: 'border-yellow-400', textColor: 'text-yellow-400' },
+          { label: 'TRIMESTRAL', amount: '$69.000', color: 'border-vibrant-pink', textColor: 'text-vibrant-pink' },
+          { label: 'CUATRIMESTRAL', amount: '$85.000', color: 'border-electric-blue', textColor: 'text-electric-blue' },
+          { label: 'SEMESTRAL', amount: '$109.000', color: 'border-purple-400', textColor: 'text-purple-400' }
         ],
         features: ['Horario Libre', 'Sin Matrícula'],
         ctaText: 'SELECCIONAR',
-        ctaLink: 'https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20General%20de%20%2428.000%20visto%20en%20el%20sitio%20web.'
+        ctaLink: 'https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20los%20Planes%20Generales%20vistos%20en%20el%20sitio%20web.'
       },
       {
         id: 'universitario',
@@ -46,11 +48,11 @@ export class PlansService {
         description: 'Con Certificado o Pase',
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPIjqlvXb_hw2h7fKn11F_wzgHYpyxxjRnFC0Ntqa5tdPmAnQpJt8x4e58Kzs-BrGHvRRdxwF6bKmrmZAVdg9ipqwzhQ-ntQ4tpVVfTky3KpuePlNnqe-TTDpQO0Kel6dMFpfluTwLsCFUPfRwMVKWFFbuxsoAsgfabezkF3RcXQHUh2riaHYBDMJ66PxXfXJUcTh9DWSTSNYADAsrsrTnrqnWH20eeCtAdoy4RAop1TX2NCo2isHgVpiGiMjdbbu5eZw',
         prices: [
-          { label: 'PAGO MENSUAL', amount: '$22.000', color: 'border-electric-blue/20', textColor: 'text-electric-blue' }
+          { label: 'PAGO MENSUAL', amount: '$24.000', color: 'border-electric-blue/20', textColor: 'text-electric-blue' }
         ],
         features: ['Horario Libre', 'Sin Matrícula'],
         ctaText: 'SELECCIONAR',
-        ctaLink: 'https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Universitario%20de%20%2422.000%20visto%20en%20el%20sitio%20web.'
+        ctaLink: 'https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Universitario%20de%20%2424.000%20visto%20en%20el%20sitio%20web.'
       },
       {
         id: 'escolares',
@@ -58,12 +60,11 @@ export class PlansService {
         description: '14 a 18 años con pase',
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwymJf6Ig79zo_0SPd8zr2MHsA0ntEIshhUpWGrW45gT4KDbFzlbW2X1hhqdk96LjDsL9r-teE6QcT355tDfN0m51AGuZFC-GPf9p65zAWRBvThXkW3e_jFtZ59Ce_CKsn2zR1BhjzkcoKKRoX7z2qfM4L8-sa-eC1Ig6ByMFwIxxuQoM6cfHDOX5bm-KPOIPm8G3CC9L_Nod523bCrYz76glBoMyi7-7CXYecUEcGLlxsGpf2qo2iPTWYIUQYu3suwt8',
         prices: [
-          { label: 'PLAN LIBRE', amount: '$20.000', color: 'border-mint-accent', textColor: 'text-mint-accent' },
-          { label: 'RESTRINGIDO', amount: '$15.000', color: 'border-white/20', textColor: 'text-on-surface-variant' }
+          { label: 'PAGO MENSUAL', amount: '$22.000', color: 'border-mint-accent', textColor: 'text-mint-accent' }
         ],
-        features: ['Evaluación inicial', 'Plan de entrenamiento'],
+        features: ['Horario Libre', 'Sin Matrícula'],
         ctaText: 'SELECCIONAR',
-        ctaLink: 'https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Escolar%20visto%20en%20el%20sitio%20web.'
+        ctaLink: 'https://wa.me/56991832903?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20el%20Plan%20Escolar%20de%20%2422.000%20visto%20en%20el%20sitio%20web.'
       },
       {
         id: 'adulto-mayor',
