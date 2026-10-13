@@ -17,27 +17,19 @@ export class TestimonialsService {
     return [
       {
         id: 't1',
-        name: 'Javier Soto',
-        avatar: 'https://randomuser.me/api/portraits/men/32.webp',
-        comment: 'Elixir Gym no es solo un lugar para entrenar, es una comunidad. Las máquinas están siempre en excelente estado y el ambiente te motiva a empujar tus límites cada día.',
+        name: 'Joel Cheuqueman',
+        avatar: 'https://ui-avatars.com/api/?name=Joel+Cheuqueman&background=ea4335&color=fff&size=128&bold=true',
+        comment: 'Excelente gimnasio. 5 estrellas en máquinas, ambiente motivador y la atención de todo el equipo.',
         rating: 5,
-        timeClient: 'Socio hace 3 meses'
+        timeClient: 'Opinión en Google · Hace 5 meses'
       },
       {
         id: 't2',
-        name: 'Camila Herrera',
-        avatar: 'https://randomuser.me/api/portraits/women/44.webp',
-        comment: 'He probado varios gimnasios en Temuco y ninguno se compara. La asesoría de los profesores es real, se nota que se preocupan por tus avances y tu técnica.',
+        name: 'Yanira Diaz',
+        avatar: 'https://ui-avatars.com/api/?name=Yanira+Diaz&background=0284c7&color=fff&size=128&bold=true',
+        comment: 'Muy buena experiencia en Elixir Gym. Máquinas de primer nivel, todo muy limpio y excelente ambiente para entrenar.',
         rating: 5,
-        timeClient: 'Socia hace 8 meses'
-      },
-      {
-        id: 't3',
-        name: 'Diego Araneda',
-        avatar: 'https://randomuser.me/api/portraits/men/44.webp',
-        comment: 'Excelente ubicación y los horarios son perfectos para ir antes o después del trabajo. La zona de peso libre es súper completa.',
-        rating: 4,
-        timeClient: 'Socio hace 5 meses'
+        timeClient: 'Opinión en Google · Hace 1 mes'
       }
     ];
   }
