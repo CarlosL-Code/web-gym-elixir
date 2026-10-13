@@ -70,19 +70,19 @@ export class Hero implements OnInit, OnDestroy {
     {
       id: 2,
       layout: 'center',
-      tagline: 'OFERTA LIMITADA (2 AL 5 DE OCTUBRE)',
-      tagIcon: 'bi-tag-fill',
-      titleLine1: 'CYBER DAY',
-      titleLine2: 'PRECIOS ÚNICOS',
-      titleHighlight: 'Y DESCUENTOS',
-      subtitle: 'No dejes pasar estas excelentes promociones. Congela tu membresía anual o semestral con descuentos exclusivos solo por estos días.',
-      btn1Text: 'APROVECHAR OFERTA',
-      btn1Link: 'https://wa.me/56991832903?text=Hola,%20quiero%20aprovechar%20las%20promociones%20del%20Cyber%20Day.',
-      btn1Icon: 'bi-fire',
+      tagline: 'MATRÍCULA COSTO CERO • HORARIO LIBRE',
+      tagIcon: 'bi-award-fill',
+      titleLine1: 'MEMBRESÍAS 2026',
+      titleLine2: 'PLANES A TU MEDIDA',
+      titleHighlight: 'SIN MATRÍCULA',
+      subtitle: 'Entrena a tu ritmo con acceso total a sala de musculación. Planes mensuales, semestrales y tarifas preferenciales para estudiantes y escolares.',
+      btn1Text: 'CONSULTAR PLANES',
+      btn1Link: 'https://wa.me/56991832903?text=Hola,%20me%20gustaría%20consultar%20por%20las%20membresías%20y%20planes%20de%20Elixir%20Gym.',
+      btn1Icon: 'bi-whatsapp',
       btn2Text: 'VER PLANES',
       btn2Link: '#plans',
       btn2Icon: 'bi-arrow-down',
-      bgImage: '/promo-bg.webp'
+      bgImage: '/assets/images/maquinas-principales.webp'
     }
   ];
 
