@@ -36,6 +36,11 @@ export class FaqService {
         id: 'faq-5',
         question: '¿Cómo puedo contactar al gimnasio?',
         answer: 'Puedes comunicarte con nosotros directamente por WhatsApp al +56 9 9183 2903, o visitarnos en nuestra sede en Temuco para que conozcas nuestras instalaciones de primer nivel antes de inscribirte.'
+      },
+      {
+        id: 'faq-6',
+        question: '¿Cuentan con convenio de estacionamiento?',
+        answer: '¡Sí! Tenemos un convenio exclusivo en el estacionamiento del Edificio Telar: 2 horas por solo $2.500 (un 40% de descuento), válido por tu día de entrenamiento para que entrenes con total tranquilidad.'
       }
     ];
   }
